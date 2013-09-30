@@ -39,7 +39,13 @@ def bezier_spline_pointset(base, bzspline):
         ctrlpoints = numpy.array([bzleft.co, bzleft.handle_right, bzright.handle_left, bzright.co])
         # print('===', i, ctrlpoints)
 
-        pointsets.append(base + bezier_pointset(ctrlpoints))
+        pointset_1 = base + bezier_pointset(ctrlpoints)
+        if i < len(bzspline.bezier_points)-2:
+            # remove the last point, which will be re-added
+            # by the next spline segment
+            pointset_1 = numpy.delete(pointset_1, len(pointset_1)-1, 0)
+            pass
+        pointsets.append(pointset_1)
 
     return numpy.concatenate(pointsets)
 
