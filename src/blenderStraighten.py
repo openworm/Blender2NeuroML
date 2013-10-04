@@ -19,8 +19,7 @@ def bezier_pointset(p, resolution = 100):
     Interpolate the Bezier curve of given control points.
     """
     t = numpy.linspace(0.0, 1.0, resolution)
-    # N.B. this array construction involves a funky coordinate shuffle.
-    coordset = numpy.array([numpy.zeros(resolution), bezier_poly(p[:,0], t), bezier_poly(p[:,1], t)])
+    coordset = numpy.array([numpy.zeros(resolution), bezier_poly(p[:,1], t), bezier_poly(p[:,2], t)])
     return coordset.T
 
 def bezier_spline_pointset(base, bzspline):
