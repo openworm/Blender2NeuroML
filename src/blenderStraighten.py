@@ -1,4 +1,19 @@
 #!/usr/bin/env python
+#
+# (c) 2013  Petr Baudis <pasky@ucw.cz>
+# MIT licence
+#
+# Blender script for straightening worm data (mesh objects) assuming that
+# (i) the worm is already straight along the x axis, and (ii) a bezier curve
+# 'Center spine for worm model' is put through the middle of the worm body
+# all along.
+#
+# Example: blender virtualworm.blend -P blenderStraighten.py
+#
+# Algorithm: The spine curve is converted to a densely segmented line;
+# then, for each mesh vertex, the nearest point on this line is found,
+# distance on the line (from its beginning) is used as the y coordinate,
+# distance of the vertex from the line is used as the z coordinate.
 
 import bpy
 import mathutils
