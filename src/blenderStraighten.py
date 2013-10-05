@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#- invoke from blender, not as a standalone script -
 #
 # (c) 2013  Petr Baudis <pasky@ucw.cz>
 # MIT licence
