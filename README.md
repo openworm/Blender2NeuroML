@@ -26,6 +26,7 @@ In root folder two files are which you can run in console independent and blende
         and choose "Append environment to native environment"
      Also you need in your blender folder create folder with name Output there are will be save output file.
   4. blenderStraighten.py - edit blender file, straightening the worm body; see the file header for details.
+  5. blenderExportSpine.py - export spine information from the Blender model (e.g. for NeuroML transformation); see the file header for details.
      
 If you have any problem will be glad to help
 write s.khayrulin@gmail.com
