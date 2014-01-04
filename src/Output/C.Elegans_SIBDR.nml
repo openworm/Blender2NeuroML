@@ -1,0 +1,296 @@
+<?xml version="1.0" ?>
+<neuroml id="SIBDR" xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/master/Schemas/NeuroML2/NeuroML_v2beta.xsd">
+  <include href="LeakConductance.nml"/>
+  <cell id="SIBDR">
+    <notes>Interneuron</notes>
+    <morphology id="morphology_SIBDR">
+      <segment id="0" name="Seg0_soma_0">
+        <proximal diameter="2.05286203667" x="0.96407" y="-269.12824" z="45.80804"/>
+        <distal diameter="2.05286203667" x="0.96407" y="-269.12824" z="45.808041"/>
+      </segment>
+      <segment id="24" name="Seg0_axon_0">
+        <parent segment="0"/>
+        <proximal diameter="0.40200600692" x="0.96407" y="-269.12824" z="45.80804"/>
+        <distal diameter="0.40200600692" x="4.44715" y="-268.4882" z="51.07639"/>
+      </segment>
+      <segment id="25" name="Seg25_axon_0">
+        <parent segment="24"/>
+        <distal diameter="0.401794547001" x="4.44715" y="-259.88607" z="50.89045"/>
+      </segment>
+      <segment id="26" name="Seg26_axon_0">
+        <parent segment="25"/>
+        <distal diameter="0.401713253951" x="10.86526" y="-238.37556" z="49.11355"/>
+      </segment>
+      <segment id="27" name="Seg27_axon_0">
+        <parent segment="26"/>
+        <distal diameter="0.401768170964" x="13.20216" y="-210.77774" z="37.92742"/>
+      </segment>
+      <segment id="28" name="Seg28_axon_0">
+        <parent segment="27"/>
+        <distal diameter="0.397533224272" x="13.6969" y="-155.87352" z="3.07923"/>
+      </segment>
+      <segment id="29" name="Seg29_axon_0">
+        <parent segment="28"/>
+        <distal diameter="0.396266692014" x="13.6969" y="-129.98602" z="-11.71344"/>
+      </segment>
+      <segment id="30" name="Seg30_axon_0">
+        <parent segment="29"/>
+        <distal diameter="0.405564901834" x="13.6969" y="-113.7707" z="-18.2564"/>
+      </segment>
+      <segment id="31" name="Seg31_axon_0">
+        <parent segment="30"/>
+        <distal diameter="0.422791653655" x="14.23168" y="-82.05139" z="-25.79492"/>
+      </segment>
+      <segment id="32" name="Seg32_axon_0">
+        <parent segment="31"/>
+        <distal diameter="0.470715477969" x="14.23173" y="-47.77178" z="-20.24754"/>
+      </segment>
+      <segment id="33" name="Seg33_axon_0">
+        <parent segment="32"/>
+        <distal diameter="0.491103437577" x="14.72368" y="4.00326" z="2.79512"/>
+      </segment>
+      <segment id="34" name="Seg34_axon_0">
+        <parent segment="33"/>
+        <distal diameter="0.46587524081" x="15.43581" y="36.60322" z="22.0972"/>
+      </segment>
+      <segment id="35" name="Seg35_axon_0">
+        <parent segment="34"/>
+        <distal diameter="0.466851148012" x="15.46171" y="37.78551" z="22.79733"/>
+      </segment>
+      <segment id="36" name="Seg36_axon_0">
+        <parent segment="35"/>
+        <distal diameter="0.49759419651" x="17.83628" y="43.44902" z="23.05959"/>
+      </segment>
+      <segment id="37" name="Seg37_axon_0">
+        <parent segment="36"/>
+        <distal diameter="0.46698802126" x="20.5949" y="47.79344" z="22.09708"/>
+      </segment>
+      <segment id="38" name="Seg38_axon_0">
+        <parent segment="37"/>
+        <distal diameter="0.46699293742" x="22.52779" y="51.16226" z="20.22552"/>
+      </segment>
+      <segment id="39" name="Seg39_axon_0">
+        <parent segment="38"/>
+        <distal diameter="0.49770084589" x="24.31487" y="53.9963" z="18.46088"/>
+      </segment>
+      <segment id="40" name="Seg40_axon_0">
+        <parent segment="39"/>
+        <distal diameter="0.466956376121" x="23.39017" y="57.20468" z="17.49847"/>
+      </segment>
+      <segment id="41" name="Seg41_axon_0">
+        <parent segment="40"/>
+        <distal diameter="0.466708168345" x="23.39017" y="60.94567" z="19.20633"/>
+      </segment>
+      <segment id="42" name="Seg42_axon_0">
+        <parent segment="41"/>
+        <distal diameter="0.466804768613" x="21.99967" y="89.24683" z="32.381"/>
+      </segment>
+      <segment id="43" name="Seg43_axon_0">
+        <parent segment="42"/>
+        <distal diameter="0.466708214627" x="21.99967" y="122.83424" z="38.80576"/>
+      </segment>
+      <segment id="44" name="Seg44_axon_0">
+        <parent segment="43"/>
+        <distal diameter="0.437169497106" x="21.46495" y="172.19893" z="35.30888"/>
+      </segment>
+      <segment id="45" name="Seg45_axon_0">
+        <parent segment="44"/>
+        <distal diameter="0.430064926726" x="22.10666" y="222.29547" z="21.32112"/>
+      </segment>
+      <segment id="46" name="Seg46_axon_0">
+        <parent segment="45"/>
+        <distal diameter="0.434307796384" x="19.96761" y="254.08289" z="9.32366"/>
+      </segment>
+      <segment id="47" name="Seg47_axon_0">
+        <parent segment="46"/>
+        <distal diameter="0.4348594389" x="17.20234" y="288.2203" z="1.77894"/>
+      </segment>
+      <segment id="48" name="Seg48_axon_0">
+        <parent segment="47"/>
+        <distal diameter="0.444813296564" x="15.7384" y="320.50239" z="-3.0447"/>
+      </segment>
+      <segment id="49" name="Seg49_axon_0">
+        <parent segment="48"/>
+        <distal diameter="0.463218577348" x="14.38538" y="353.52659" z="-1.5604"/>
+      </segment>
+      <segment id="50" name="Seg50_axon_0">
+        <parent segment="49"/>
+        <distal diameter="0.474546147387" x="9.71152" y="390.76225" z="6.60287"/>
+      </segment>
+      <segment id="51" name="Seg51_axon_0">
+        <parent segment="50"/>
+        <distal diameter="0.494228908098" x="9.72863" y="391.76517" z="6.90004"/>
+      </segment>
+      <segment id="20" name="Seg0_dendrit_2">
+        <parent segment="0"/>
+        <proximal diameter="0.40171840386" x="0.96407" y="-269.12824" z="45.80804"/>
+        <distal diameter="0.40171840386" x="4.35595" y="-271.1726" z="48.19353"/>
+      </segment>
+      <segment id="21" name="Seg21_dendrite_0">
+        <parent segment="20"/>
+        <distal diameter="0.401727623148" x="4.35595" y="-274.0089" z="48.79806"/>
+      </segment>
+      <segment id="22" name="Seg22_dendrite_0">
+        <parent segment="21"/>
+        <distal diameter="0.434374935741" x="2.82125" y="-274.99757" z="51.09635"/>
+      </segment>
+      <segment id="23" name="Seg23_dendrite_0">
+        <parent segment="22"/>
+        <distal diameter="0.4342851478" x="0.51405" y="-275.29987" z="52.8135"/>
+      </segment>
+      <segment id="1" name="Seg0_dendrit_3">
+        <parent segment="0"/>
+        <proximal diameter="0.512463593634" x="0.96407" y="-269.12824" z="45.80804"/>
+        <distal diameter="0.512463593634" x="-5.9109" y="-267.72391" z="38.1542"/>
+      </segment>
+      <segment id="2" name="Seg2_dendrite_0">
+        <parent segment="1"/>
+        <distal diameter="0.355053447808" x="-6.29079" y="-266.91165" z="36.49641"/>
+      </segment>
+      <segment id="3" name="Seg3_dendrite_0">
+        <parent segment="2"/>
+        <distal diameter="0.354945580618" x="-7.3626" y="-265.82118" z="33.13448"/>
+      </segment>
+      <segment id="4" name="Seg4_dendrite_0">
+        <parent segment="3"/>
+        <distal diameter="0.35514257475" x="-8.11341" y="-265.58362" z="30.2044"/>
+      </segment>
+      <segment id="5" name="Seg5_dendrite_0">
+        <parent segment="4"/>
+        <distal diameter="0.354957684239" x="-7.2714" y="-265.90868" z="29.18588"/>
+      </segment>
+      <segment id="6" name="Seg6_dendrite_0">
+        <parent segment="5"/>
+        <distal diameter="0.354909426756" x="-3.32078" y="-267.43205" z="26.35827"/>
+      </segment>
+      <segment id="7" name="Seg7_dendrite_0">
+        <parent segment="6"/>
+        <distal diameter="0.354913297018" x="-2.73134" y="-267.99896" z="26.35833"/>
+      </segment>
+      <segment id="8" name="Seg8_dendrite_0">
+        <parent segment="7"/>
+        <distal diameter="0.310092511357" x="-2.36108" y="-268.63778" z="27.02491"/>
+      </segment>
+      <segment id="9" name="Seg9_dendrite_0">
+        <parent segment="8"/>
+        <distal diameter="0.310242213117" x="-2.36108" y="-271.25985" z="30.43361"/>
+      </segment>
+      <segment id="10" name="Seg10_dendrite_0">
+        <parent segment="9"/>
+        <distal diameter="0.310275796671" x="-2.36102" y="-272.74567" z="35.93987"/>
+      </segment>
+      <segment id="11" name="Seg11_dendrite_0">
+        <parent segment="10"/>
+        <distal diameter="0.310343676591" x="-3.23504" y="-272.97287" z="37.37331"/>
+      </segment>
+      <segment id="12" name="Seg12_dendrite_0">
+        <parent segment="11"/>
+        <distal diameter="0.354820677526" x="-4.88786" y="-273.15983" z="38.09185"/>
+      </segment>
+      <segment id="13" name="Seg13_dendrite_0">
+        <parent segment="12"/>
+        <distal diameter="0.401784234136" x="-7.20171" y="-273.40694" z="39.83917"/>
+      </segment>
+      <segment id="14" name="Seg14_dendrite_0">
+        <parent segment="13"/>
+        <distal diameter="0.401845605177" x="-8.77064" y="-273.78289" z="42.46652"/>
+      </segment>
+      <segment id="15" name="Seg15_dendrite_0">
+        <parent segment="14"/>
+        <distal diameter="0.401806901384" x="-9.28367" y="-274.20453" z="45.48174"/>
+      </segment>
+      <segment id="16" name="Seg16_dendrite_0">
+        <parent segment="15"/>
+        <distal diameter="0.401758499101" x="-8.73748" y="-274.66009" z="48.51907"/>
+      </segment>
+      <segment id="17" name="Seg17_dendrite_0">
+        <parent segment="16"/>
+        <distal diameter="0.434322261" x="-7.20278" y="-274.99774" z="51.09638"/>
+      </segment>
+      <segment id="18" name="Seg18_dendrite_0">
+        <parent segment="17"/>
+        <distal diameter="0.434149623517" x="-4.89541" y="-275.29996" z="52.81352"/>
+      </segment>
+      <segment id="19" name="Seg19_dendrite_0">
+        <parent segment="18"/>
+        <distal diameter="0.44888649122" x="-2.19068" y="-275.36855" z="53.40514"/>
+      </segment>
+      <segmentGroup id="Soma">
+        <member segment="0"/>
+      </segmentGroup>
+      <segmentGroup id="all">
+        <include segmentGroup="Soma"/>
+        <include segmentGroup="Axon"/>
+        <include segmentGroup="Dendrite2"/>
+        <include segmentGroup="Dendrite3"/>
+      </segmentGroup>
+      <segmentGroup id="soma_group">
+        <include segmentGroup="Soma"/>
+      </segmentGroup>
+      <segmentGroup id="Axon">
+        <member segment="24"/>
+        <member segment="25"/>
+        <member segment="26"/>
+        <member segment="27"/>
+        <member segment="28"/>
+        <member segment="29"/>
+        <member segment="30"/>
+        <member segment="31"/>
+        <member segment="32"/>
+        <member segment="33"/>
+        <member segment="34"/>
+        <member segment="35"/>
+        <member segment="36"/>
+        <member segment="37"/>
+        <member segment="38"/>
+        <member segment="39"/>
+        <member segment="40"/>
+        <member segment="41"/>
+        <member segment="42"/>
+        <member segment="43"/>
+        <member segment="44"/>
+        <member segment="45"/>
+        <member segment="46"/>
+        <member segment="47"/>
+        <member segment="48"/>
+        <member segment="49"/>
+        <member segment="50"/>
+        <member segment="51"/>
+      </segmentGroup>
+      <segmentGroup id="axon_group">
+        <include segmentGroup="Axon"/>
+      </segmentGroup>
+      <segmentGroup id="Dendrite2">
+        <member segment="20"/>
+        <member segment="21"/>
+        <member segment="22"/>
+        <member segment="23"/>
+      </segmentGroup>
+      <segmentGroup id="Dendrite3">
+        <member segment="1"/>
+        <member segment="2"/>
+        <member segment="3"/>
+        <member segment="4"/>
+        <member segment="5"/>
+        <member segment="6"/>
+        <member segment="7"/>
+        <member segment="8"/>
+        <member segment="9"/>
+        <member segment="10"/>
+        <member segment="11"/>
+        <member segment="12"/>
+        <member segment="13"/>
+        <member segment="14"/>
+        <member segment="15"/>
+        <member segment="16"/>
+        <member segment="17"/>
+        <member segment="18"/>
+        <member segment="19"/>
+      </segmentGroup>
+      <segmentGroup id="dendrite_group">
+        <include segmentGroup="Dendrite2"/>
+        <include segmentGroup="Dendrite3"/>
+      </segmentGroup>
+    </morphology>
+  </cell>
+</neuroml>

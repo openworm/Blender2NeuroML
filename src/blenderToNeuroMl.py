@@ -3,6 +3,9 @@ Created on 20.07.2011
 
 @author: Sergey Khayrulin
 
+This doesn't run as a standalone script; run it in blender after loading
+the appropriate .blend file
+
 For Run you need do next:
 "Run->External Tools->External Tools..." with the following settings: 
 Main-Tab: 
@@ -14,9 +17,33 @@ Variable: PYTHONPATH
 Value: ${container_loc} 
 and choose "Append environment to native environment"
 '''
-import Blender
-from Blender import Object, Mesh, NMesh, Lamp, Draw, BGL, Image, Text, sys, Mathutils
-import sys
+load_from_dump = False
+if 1:
+    load_from_dump = True
+else:
+    import bpy
+import sys, os, pprint
+
+# Load modules in the script's directory
+scriptPath = os.path.dirname(os.path.realpath(__file__))
+print("scriptPath %s" % scriptPath)
+scriptPath = '/home/pcm/src/BlenderToNeuroMLConverter/src/'
+sys.path.append(scriptPath)
+
+#import Blender
+#from Blender import Object, Mesh, NMesh, Lamp, Draw, BGL, Image, Text, sys, Mathutils
+
+try:
+    from neuroml import Cell as neuroml_Cell
+    from neuroml import Segment
+    from neuroml import SegmentParent
+    from neuroml import Point3DWithDiam
+    from neuroml import Morphology
+    from neuroml import NeuroMLDocument
+    import neuroml.writers as writers
+except ImportError:
+    pass
+
 from NeuroMlEntity.Cell import Cell
 from Entity.Entity import Entity
 from Entity.Vertex import Vertex 
@@ -31,13 +58,13 @@ import xml.dom.minidom
 """
 this is optional if you wanna debug you should add path with pydev debuger to python path
 """
-pathTopyDevDebuger = r"C:\eclips\eclipse\plugins\org.python.pydev.debug_1.5.4.2010011921\pysrc"
-sys.path.append(pathTopyDevDebuger)
- 
-import pydevd
+#pathTopyDevDebuger = r"C:\eclips\eclipse\plugins\org.python.pydev.debug_1.5.4.2010011921\pysrc"
+#sys.path.append(pathTopyDevDebuger)
+# 
+#import pydevd
 
-fileWithNeuron = './.blender/neurons.txt'
-odsFileWithNeurons = './.blender/302.ods'
+fileWithNeuron = scriptPath + '/Data/neurons.txt'
+odsFileWithNeurons = scriptPath + '/Data/302.ods'
 
 neuron = 'ADAL'
 outFileName = 'C.elegans_%s'
@@ -45,6 +72,21 @@ neurons = []
 neurons_name = []
 badNeurons = []
 neuroNameFromOds = []
+
+dump_only = not load_from_dump
+dump_filename = 'blender.dump'
+neuron_dict = {}
+muscle_dict = {}
+
+log_fd = None
+def write_log(*args):
+    global log_fd
+    if log_fd is None:
+        log_fd = open('blender.log', 'w')
+    for (count, s) in enumerate(args):
+        log_fd.write(str(s) + ' ')
+    log_fd.write('\n')
+    log_fd.flush()
 
 def getNeuronsNameFromOdsFile(fileName):
     '''
@@ -63,9 +105,9 @@ def getNeuronsNameFromOdsFile(fileName):
         if len(neuroNameFromOds) != 302:
             raise Exception("file %s doesn't contains all neurons name"%fileName)
     except IOError as ex:
-        print ex
+        write_log(ex)
     except Exception as ex:
-        print ex
+        write_log(ex)
 
 def loadNeuronsName(fileName):
     '''
@@ -76,47 +118,99 @@ def loadNeuronsName(fileName):
         s = str(line).strip('\n')
         if not neurons_name.__contains__(s):
             neurons_name.append(s)
+            #neuron_dict[s] = None
 
-def export(scene, neuronName):
+def export(theObjects, neuronName):
     '''
     Run export motto neurons from blender file 
     '''
-    theObjects = scene.objects
-    i = 0
     for object in theObjects:
-        try:
-            objType=object.getType()
-            if objType == "Mesh":
-                if len(object.getData().materials) > 1:
-                    if( neuroNameFromOds.__contains__(object.name) and 
-                        object.name == "PVDR"):# or object.name == "URBL"):#object.getData().materials[0].name != "Motor Neuron"
-                        mm=object.getMatrix()
-                        #pydevd.settrace()
-                        print object.name
-                        entity = Entity()
+        # Make sure the object vertices correspond to true location
+        bpy.context.scene.objects.active = object
+        object.select = True
+        bpy.ops.object.transform_apply(scale=True, rotation=True)
+        object.select = False
+
+        #try:
+        if 1:
+            if object.type == "MESH":
+                mesh = object.data
+                # Create tesselation faces
+                mesh.calc_tessface()
+                if len(mesh.materials) > 1:
+                    if( neuroNameFromOds.__contains__(object.name)
+                        or object.name[:7] == 'mu_bod_'):
+                        #and object.name == "PVDR"):# or object.name == "URBL"):#object.getData().materials[0].name != "Motor Neuron"
+                        import mathutils
+                        write_log(object.name)
+                        write_log("%d vertices, %d faces" % (len(mesh.vertices),
+                                                             len(mesh.tessfaces)))
+                        write_log("matrix %s" % object.matrix_world)
                         neuronName = object.name
-                        mesh = object.getData()
-                        for vertex in mesh.verts:
-                            ob_matrix = Mathutils.Matrix(object.getMatrix('worldspace'))
-                            mm = ob_matrix
-                            blenvert = Mathutils.Vector(vertex.co)
-                            v = blenvert * mm
-                            entity.add_vertex([round(v[0],3),round(v[1],3),round(v[2],3)])
-                        for face in mesh.faces:
-                            cordArr = []
-                            for i in range(len(face)):
-                                indx = mesh.verts.index(face[i])
-                                cordArr.append(indx)                            
-                            entity.add_face(cordArr)
-                        entity.neuronInfo = object.getData().materials[0].name
-                        entity.findCenterOfSoma()
-                        entity.find_point()
-                        create_cell(neuronName,entity)
-        except Exception:
-            print "Error: object named %s has problem with accessing an attribute" % object.name
-            badNeurons.append(object.name)
+                        if dump_only:
+                            v_list = []
+                            f_list = []
+                            for vertex in mesh.vertices:
+                                v = vertex.co
+                                v_list.append([v[0], v[1], v[2]])
+                            for face in mesh.tessfaces:
+                                cordArr = []
+                                for v in face.vertices:
+                                    cordArr.append(v)
+                                if len(cordArr) == 3:
+                                    cordArr.append(cordArr[0])
+                                f_list.append(cordArr)
+                            neuron_dict[str(neuronName)] = [v_list, f_list]
+                            write_log(neuronName, '=')
+                            write_log(pprint.PrettyPrinter().pformat(mesh))
+                            continue
+                        entity = mesh_to_entity(mesh)
+                        entity_to_cell(entity, neuronName)
+        #except Exception:
+        #    write_log "Error: object named %s has problem with accessing an attribute" % object.name
+        #    badNeurons.append(object.name)
+        #    continue
+    write_log(list(badNeurons))
+
+def mesh_to_entity(mesh):
+    entity = Entity()
+    for vertex in mesh.vertices:
+        v = vertex.co
+        entity.add_vertex([round(v[0],3),round(v[1],3),round(v[2],3)])
+    for face in mesh.tessfaces:
+        cordArr = []
+        for v in face.vertices:
+            write_log('+', v)
+            cordArr.append(v)
+        if len(cordArr) == 3:
+            cordArr.append(cordArr[0])
+        write_log('=', cordArr)
+        entity.add_face(cordArr)
+    entity.neuronInfo = mesh.materials[0].name
+    return entity
+
+def entity_to_cell(entity, neuronName):
+    entity.findCenterOfSoma()
+    write_log('found center of soma')
+    entity.find_point()
+    create_cell(neuronName,entity)
+
+def export2():
+    for (neuronName, v) in neuron_dict.items():
+        print('start %s' % neuronName)
+        if neuronName[:7] == 'mu_bod_' or neuronName != 'VA10': # or neuronName in ('M1', 'RMED', 'PVDR', 'PVDL', 'IL1DL', 'IL1DR', 'I5', ):
             continue
-    print list(badNeurons)
+        (v_list, f_list) = v
+        entity = Entity()
+        for vertex in v_list:
+            v = vertex
+            entity.add_vertex([round(v[0],3),round(v[1],3),round(v[2],3)])
+        for face in f_list:
+            entity.add_face(face)
+        entity.neuronInfo = neuronName
+        entity_to_cell(entity, neuronName)
+
+
 def create_cell(cell_name, wrlEntity):
     '''
     Create Cell from received data in wrlEntity 
@@ -223,22 +317,77 @@ def create_cell(cell_name, wrlEntity):
                 cell.add_segment(dendrite_segment_name,id,cell.numOfNeurite,dendrite_segment_distal_point, parent, proximal_point=dendrite_segment_proximal_point)
     neurons.append(cell)
     return
-def createMorphoMlFile(fileName):
+
+def cvt_pt(p):
+    return Point3DWithDiam(x=p.x, y=p.y, z=p.z, diameter = p.diameter)
+
+def createMorphoMlFile(fileName, cell):
     '''
-    Create MorphoMl File with all cells from neurons
+    Convert to new neuroml structures and write
     '''
-    neuroMlwriter = NeuroMlWriter(fileName)
-    for cell in neurons:
-        neuroMlwriter.addCell(cell)
-    neuroMlwriter.writeDocumentToFile()
-    print "%s neurons was successful imported"%len(neurons)
+
+    seg0 = cell.segments[0].position
+    soma = Segment(proximal=cvt_pt(seg0.proximal_point),
+                   distal=cvt_pt(seg0.distal_point))
+    soma.name = 'Soma'
+    soma.id = 0
+
+    axon_segments = []
+    for seg1 in cell.segments[1:]:
+
+        parent = SegmentParent(segments=seg1.parent)
+        if seg1.position.distal_point is None:
+            p = None
+        else:
+            p = cvt_pt(seg1.position.distal_point)
+        axon_segment = Segment(proximal = p,
+                               distal = cvt_pt(seg1.position.distal_point),
+                               parent = parent)
+        axon_segment.id = seg1.id
+        axon_segment.name = seg1.name
+        axon_segments.append(axon_segment)
+
+    morphology = Morphology()
+    morphology.segments.append(soma)
+    morphology.segments += axon_segments
+    morphology.id = 'morphology_' + cell.name
+
+    nml_cell = neuroml_Cell()
+    nml_cell.id = cell.name
+    nml_cell.morphology = morphology
+
+    doc = NeuroMLDocument()
+    #doc.name = "Test neuroML document"
+    doc.cells.append(nml_cell)
+    doc.id = fileName
+    writers.NeuroMLWriter.write(doc, "Output/%s.nml" % fileName)
     
 if __name__ == '__main__':
+    if not load_from_dump:
+        bpy.ops.object.mode_set(mode='OBJECT')
     #loadNeuronsName(fileWithNeuron)
     getNeuronsNameFromOdsFile(odsFileWithNeurons)
-    print 'Create Neurons'
-    scene = Blender.Scene.GetCurrent()
-    export(scene, '')
-    print 'WriteResult To File'
-    createMorphoMlFile(outFileName%'I6')
-    print '\tFinish'
+    write_log('Create Neurons')
+    if load_from_dump:
+        fd = open(dump_filename, 'r')
+        neuron_dict = eval(fd.readline())
+        #write_log(pprint.PrettyPrinter().pformat(neuron_dict))
+        export2()
+        for cell in neurons:
+            neuron_dict[cell.name] = cell
+    else:
+        export(bpy.data.objects, '')
+    if dump_only:
+        try:
+            fd = open(dump_filename, 'w')
+            fd.write(str(neuron_dict))
+            fd.close()
+        except (IOError, OSError, TypeError) as msg:
+            raise
+    write_log('WriteResult To File')
+    for neuronName in sorted(neuron_dict.keys()):
+        if type(neuron_dict[neuronName]) != type([]):
+            createMorphoMlFile(outFileName % neuronName, neuron_dict[neuronName])
+
+    #createMorphoMlFile(outFileName%'I6')
+    write_log('\tFinish')

@@ -25,4 +25,4 @@ class Face(object):
         for p in slice:
             str_t += str(p.point) + ', '
         str_t += ' -1,'
-        print str_t
+        print(str_t)

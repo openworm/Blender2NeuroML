@@ -1,0 +1,60 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema" id="TestNeuroMLDocument">
+    <cell id="dBWML1">
+        <morphology id="morphology_dBWML1">
+            <segment id="0" name="Soma">
+                <proximal y="-3.352408e+04" x="1.894420e+02" z="6.169510e+03" diameter="1.000000e+00"/>
+                <distal y="-3.351764e+04" x="7.516700e+01" z="6.108207e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="1" name="Seg1_muscle_1">
+                <parent fractionAlong="1" segment="0"/>
+                <proximal y="-3.304497e+04" x="2.366360e+02" z="6.172132e+03" diameter="1.000000e+00"/>
+                <distal y="-3.303837e+04" x="1.177840e+02" z="6.094326e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="2" name="Seg2_muscle_2">
+                <parent fractionAlong="1" segment="1"/>
+                <proximal y="-3.304497e+04" x="2.366360e+02" z="6.172132e+03" diameter="1.000000e+00"/>
+                <distal y="-3.303837e+04" x="1.177840e+02" z="6.094326e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="3" name="Seg3_muscle_3">
+                <parent fractionAlong="1" segment="2"/>
+                <proximal y="-3.140911e+04" x="3.779550e+02" z="6.137486e+03" diameter="1.000000e+00"/>
+                <distal y="-3.140268e+04" x="2.632340e+02" z="6.046950e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="4" name="Seg4_muscle_4">
+                <parent fractionAlong="1" segment="3"/>
+                <proximal y="-3.194737e+04" x="3.371530e+02" z="6.150054e+03" diameter="1.000000e+00"/>
+                <distal y="-3.194086e+04" x="2.153780e+02" z="6.062537e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="5" name="Seg5_muscle_5">
+                <parent fractionAlong="1" segment="4"/>
+                <proximal y="-3.194737e+04" x="3.371530e+02" z="6.150054e+03" diameter="1.000000e+00"/>
+                <distal y="-3.194086e+04" x="2.153780e+02" z="6.062537e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="6" name="Seg6_muscle_6">
+                <parent fractionAlong="1" segment="5"/>
+                <proximal y="-3.225662e+04" x="3.104910e+02" z="6.162392e+03" diameter="1.000000e+00"/>
+                <distal y="-3.224997e+04" x="1.878910e+02" z="6.071490e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="7" name="Seg7_muscle_7">
+                <parent fractionAlong="1" segment="6"/>
+                <proximal y="-3.225662e+04" x="3.104910e+02" z="6.162392e+03" diameter="1.000000e+00"/>
+                <distal y="-3.224997e+04" x="1.878910e+02" z="6.071490e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="8" name="Seg8_muscle_8">
+                <parent fractionAlong="1" segment="7"/>
+                <proximal y="-3.256586e+04" x="2.838290e+02" z="6.174729e+03" diameter="1.000000e+00"/>
+                <distal y="-3.255908e+04" x="1.604040e+02" z="6.080443e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="9" name="Seg9_muscle_9">
+                <parent fractionAlong="1" segment="8"/>
+                <proximal y="-3.256586e+04" x="2.838290e+02" z="6.174729e+03" diameter="1.000000e+00"/>
+                <distal y="-3.255908e+04" x="1.604040e+02" z="6.080443e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="10" name="Seg10_muscle_10">
+                <parent fractionAlong="1" segment="9"/>
+                <proximal y="-3.087639e+04" x="5.063700e+02" z="6.045635e+03" diameter="1.000000e+00"/>
+                <distal y="-3.085888e+04" x="3.210250e+02" z="6.031656e+03" diameter="1.000000e+00"/>
+            </segment>
+        </morphology>
+    </cell>
+</neuroml>
