@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<neuroml id="VA11" xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/master/Schemas/NeuroML2/NeuroML_v2beta.xsd">
+  <include href="LeakConductance.nml"/>
+  <cell id="VA11">
+    <notes>Motor_Neuron</notes>
+    <morphology id="morphology_VA11">
+      <segment id="0" name="Seg0_soma_0">
+        <proximal diameter="4.09327151643" x="-1.5568" y="312.38671" z="-26.24633"/>
+        <distal diameter="4.09327151643" x="-1.5568" y="312.38671" z="-26.246329"/>
+      </segment>
+      <segment id="5" name="Seg0_axon_0">
+        <parent segment="0"/>
+        <proximal diameter="0.81747231366" x="-1.5568" y="312.38671" z="-26.24633"/>
+        <distal diameter="0.81747231366" x="-1.5568" y="310.93973" z="-26.24663"/>
+      </segment>
+      <segment id="6" name="Seg6_axon_0">
+        <parent segment="5"/>
+        <distal diameter="0.633002079933" x="-1.5568" y="305.86898" z="-26.10628"/>
+      </segment>
+      <segment id="7" name="Seg7_axon_0">
+        <parent segment="6"/>
+        <distal diameter="0.554843394482" x="-1.51052" y="289.21567" z="-25.46994"/>
+      </segment>
+      <segment id="8" name="Seg8_axon_0">
+        <parent segment="7"/>
+        <distal diameter="0.479415892102" x="-1.46362" y="283.30473" z="-25.01783"/>
+      </segment>
+      <segment id="9" name="Seg9_axon_0">
+        <parent segment="8"/>
+        <distal diameter="0.478464260734" x="-1.46362" y="256.25629" z="-21.50986"/>
+      </segment>
+      <segment id="10" name="Seg10_axon_0">
+        <parent segment="9"/>
+        <distal diameter="0.479202048827" x="-1.46362" y="253.39969" z="-21.06231"/>
+      </segment>
+      <segment id="1" name="Seg0_dendrit_2">
+        <parent segment="0"/>
+        <proximal diameter="0.771340382192" x="-1.5568" y="312.38671" z="-26.24633"/>
+        <distal diameter="0.771340382192" x="-1.5568" y="313.8337" z="-26.24603"/>
+      </segment>
+      <segment id="2" name="Seg2_dendrite_0">
+        <parent segment="1"/>
+        <distal diameter="0.495473632396" x="-1.51052" y="322.5529" z="-26.04494"/>
+      </segment>
+      <segment id="3" name="Seg3_dendrite_0">
+        <parent segment="2"/>
+        <distal diameter="0.478672297506" x="-1.46362" y="348.88678" z="-23.13643"/>
+      </segment>
+      <segment id="4" name="Seg4_dendrite_0">
+        <parent segment="3"/>
+        <distal diameter="0.478672297506" x="-1.46362" y="350.82997" z="-22.76664"/>
+      </segment>
+      <segmentGroup id="Soma">
+        <member segment="0"/>
+      </segmentGroup>
+      <segmentGroup id="all">
+        <include segmentGroup="Soma"/>
+        <include segmentGroup="Axon"/>
+        <include segmentGroup="Dendrite2"/>
+      </segmentGroup>
+      <segmentGroup id="soma_group">
+        <include segmentGroup="Soma"/>
+      </segmentGroup>
+      <segmentGroup id="Axon">
+        <member segment="5"/>
+        <member segment="6"/>
+        <member segment="7"/>
+        <member segment="8"/>
+        <member segment="9"/>
+        <member segment="10"/>
+      </segmentGroup>
+      <segmentGroup id="axon_group">
+        <include segmentGroup="Axon"/>
+      </segmentGroup>
+      <segmentGroup id="Dendrite2">
+        <member segment="1"/>
+        <member segment="2"/>
+        <member segment="3"/>
+        <member segment="4"/>
+      </segmentGroup>
+      <segmentGroup id="dendrite_group">
+        <include segmentGroup="Dendrite2"/>
+      </segmentGroup>
+    </morphology>
+  </cell>
+</neuroml>

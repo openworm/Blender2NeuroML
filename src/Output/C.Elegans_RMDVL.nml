@@ -1,0 +1,109 @@
+<?xml version="1.0" ?>
+<neuroml id="RMDVL" xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/master/Schemas/NeuroML2/NeuroML_v2beta.xsd">
+  <include href="LeakConductance.nml"/>
+  <cell id="RMDVL">
+    <notes>Motor_Neuron</notes>
+    <morphology id="morphology_RMDVL">
+      <segment id="0" name="Seg0_soma_0">
+        <proximal diameter="2.34694397692" x="4.8282" y="-271.17031" z="44.38742"/>
+        <distal diameter="2.34694397692" x="4.8282" y="-271.17031" z="44.387421"/>
+      </segment>
+      <segment id="1" name="Seg0_axon_0">
+        <parent segment="0"/>
+        <proximal diameter="0.428619847417" x="4.8282" y="-271.17031" z="44.38742"/>
+        <distal diameter="0.428619847417" x="4.8292" y="-271.17031" z="44.38742"/>
+      </segment>
+      <segment id="2" name="Seg2_axon_0">
+        <parent segment="1"/>
+        <distal diameter="0.428605395206" x="4.8292" y="-271.82676" z="44.65965"/>
+      </segment>
+      <segment id="3" name="Seg3_axon_0">
+        <parent segment="2"/>
+        <distal diameter="0.428584980605" x="4.8292" y="-274.03625" z="45.89264"/>
+      </segment>
+      <segment id="4" name="Seg4_axon_0">
+        <parent segment="3"/>
+        <distal diameter="0.414620925666" x="4.45765" y="-274.65221" z="48.48697"/>
+      </segment>
+      <segment id="5" name="Seg5_axon_0">
+        <parent segment="4"/>
+        <distal diameter="0.434281161001" x="2.90371" y="-274.99742" z="51.09668"/>
+      </segment>
+      <segment id="6" name="Seg6_axon_0">
+        <parent segment="5"/>
+        <distal diameter="0.434281824165" x="0.59657" y="-275.29968" z="52.81392"/>
+      </segment>
+      <segment id="7" name="Seg7_axon_0">
+        <parent segment="6"/>
+        <distal diameter="0.448770228068" x="-2.10806" y="-275.36826" z="53.40556"/>
+      </segment>
+      <segment id="8" name="Seg8_axon_0">
+        <parent segment="7"/>
+        <distal diameter="0.434281824165" x="-4.81269" y="-275.29968" z="52.81392"/>
+      </segment>
+      <segment id="9" name="Seg9_axon_0">
+        <parent segment="8"/>
+        <distal diameter="0.43428984515" x="-7.11983" y="-274.99741" z="51.09668"/>
+      </segment>
+      <segment id="10" name="Seg10_axon_0">
+        <parent segment="9"/>
+        <distal diameter="0.401754041174" x="-8.65448" y="-274.65974" z="48.51928"/>
+      </segment>
+      <segment id="11" name="Seg11_axon_0">
+        <parent segment="10"/>
+        <distal diameter="0.40176403622" x="-9.2006" y="-274.2042" z="45.48187"/>
+      </segment>
+      <segment id="12" name="Seg12_axon_0">
+        <parent segment="11"/>
+        <distal diameter="0.401777234298" x="-8.68761" y="-273.78251" z="42.4665"/>
+      </segment>
+      <segment id="13" name="Seg13_axon_0">
+        <parent segment="12"/>
+        <distal diameter="0.401781051818" x="-7.11881" y="-273.40662" z="39.83901"/>
+      </segment>
+      <segment id="14" name="Seg14_axon_0">
+        <parent segment="13"/>
+        <distal diameter="0.401767183329" x="-4.8497" y="-273.1542" z="38.11095"/>
+      </segment>
+      <segment id="15" name="Seg15_axon_0">
+        <parent segment="14"/>
+        <distal diameter="0.401768941557" x="-2.51544" y="-273.0749" z="37.45473"/>
+      </segment>
+      <segment id="16" name="Seg16_axon_0">
+        <parent segment="15"/>
+        <distal diameter="0.401768262559" x="-2.35662" y="-273.07488" z="36.18234"/>
+      </segment>
+      <segmentGroup id="Soma">
+        <member segment="0"/>
+      </segmentGroup>
+      <segmentGroup id="all">
+        <include segmentGroup="Soma"/>
+        <include segmentGroup="Axon"/>
+      </segmentGroup>
+      <segmentGroup id="soma_group">
+        <include segmentGroup="Soma"/>
+      </segmentGroup>
+      <segmentGroup id="Axon">
+        <member segment="1"/>
+        <member segment="2"/>
+        <member segment="3"/>
+        <member segment="4"/>
+        <member segment="5"/>
+        <member segment="6"/>
+        <member segment="7"/>
+        <member segment="8"/>
+        <member segment="9"/>
+        <member segment="10"/>
+        <member segment="11"/>
+        <member segment="12"/>
+        <member segment="13"/>
+        <member segment="14"/>
+        <member segment="15"/>
+        <member segment="16"/>
+      </segmentGroup>
+      <segmentGroup id="axon_group">
+        <include segmentGroup="Axon"/>
+      </segmentGroup>
+    </morphology>
+  </cell>
+</neuroml>

@@ -1,0 +1,1325 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema" id="TestNeuroMLDocument">
+    <cell id="vBWML3">
+        <morphology id="morphology_vBWML3">
+            <segment id="0" name="Soma">
+                <proximal y="-3.023757e+04" x="8.916640e+02" z="4.396846e+03" diameter="1.000000e+00"/>
+                <distal y="-3.024515e+04" x="7.976570e+02" z="4.291884e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="1" name="Seg1_muscle_1">
+                <parent fractionAlong="1" segment="0"/>
+                <proximal y="-3.107783e+04" x="6.148720e+02" z="4.536233e+03" diameter="1.000000e+00"/>
+                <distal y="-3.023757e+04" x="8.916640e+02" z="4.396846e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="2" name="Seg2_muscle_2">
+                <parent fractionAlong="1" segment="1"/>
+                <proximal y="-3.022855e+04" x="9.673500e+02" z="4.521121e+03" diameter="1.000000e+00"/>
+                <distal y="-3.107783e+04" x="6.148720e+02" z="4.536233e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="3" name="Seg3_muscle_3">
+                <parent fractionAlong="1" segment="2"/>
+                <proximal y="-3.023757e+04" x="8.916640e+02" z="4.396846e+03" diameter="1.000000e+00"/>
+                <distal y="-3.022855e+04" x="9.673500e+02" z="4.521121e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="4" name="Seg4_muscle_4">
+                <parent fractionAlong="1" segment="3"/>
+                <proximal y="-2.941191e+04" x="1.019153e+03" z="4.058880e+03" diameter="1.000000e+00"/>
+                <distal y="-3.023757e+04" x="8.916640e+02" z="4.396846e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="5" name="Seg5_muscle_5">
+                <parent fractionAlong="1" segment="4"/>
+                <proximal y="-3.022855e+04" x="9.673500e+02" z="4.521121e+03" diameter="1.000000e+00"/>
+                <distal y="-2.941191e+04" x="1.019153e+03" z="4.058880e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="6" name="Seg6_muscle_6">
+                <parent fractionAlong="1" segment="5"/>
+                <proximal y="-2.940215e+04" x="1.113992e+03" z="4.194177e+03" diameter="1.000000e+00"/>
+                <distal y="-3.022855e+04" x="9.673500e+02" z="4.521121e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="7" name="Seg7_muscle_7">
+                <parent fractionAlong="1" segment="6"/>
+                <proximal y="-2.941191e+04" x="1.019153e+03" z="4.058880e+03" diameter="1.000000e+00"/>
+                <distal y="-2.940215e+04" x="1.113992e+03" z="4.194177e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="8" name="Seg8_muscle_8">
+                <parent fractionAlong="1" segment="7"/>
+                <proximal y="-2.857511e+04" x="1.212609e+03" z="3.888762e+03" diameter="1.000000e+00"/>
+                <distal y="-2.940215e+04" x="1.113992e+03" z="4.194177e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="9" name="Seg9_muscle_9">
+                <parent fractionAlong="1" segment="8"/>
+                <proximal y="-2.939241e+04" x="1.208830e+03" z="4.329452e+03" diameter="1.000000e+00"/>
+                <distal y="-2.857511e+04" x="1.212609e+03" z="3.888762e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="10" name="Seg10_muscle_10">
+                <parent fractionAlong="1" segment="9"/>
+                <proximal y="-2.856444e+04" x="1.317261e+03" z="4.036834e+03" diameter="1.000000e+00"/>
+                <distal y="-2.939241e+04" x="1.208830e+03" z="4.329452e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="11" name="Seg11_muscle_11">
+                <parent fractionAlong="1" segment="10"/>
+                <proximal y="-2.857511e+04" x="1.212609e+03" z="3.888762e+03" diameter="1.000000e+00"/>
+                <distal y="-2.856444e+04" x="1.317261e+03" z="4.036834e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="12" name="Seg12_muscle_12">
+                <parent fractionAlong="1" segment="11"/>
+                <proximal y="-2.773885e+04" x="1.075567e+03" z="3.688611e+03" diameter="1.000000e+00"/>
+                <distal y="-2.772724e+04" x="1.190057e+03" z="3.849599e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="13" name="Seg13_muscle_13">
+                <parent fractionAlong="1" segment="12"/>
+                <proximal y="-2.855431e+04" x="1.091464e+03" z="4.154969e+03" diameter="1.000000e+00"/>
+                <distal y="-2.773885e+04" x="1.075567e+03" z="3.688611e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="14" name="Seg14_muscle_14">
+                <parent fractionAlong="1" segment="13"/>
+                <proximal y="-2.856498e+04" x="9.867880e+02" z="4.006849e+03" diameter="1.000000e+00"/>
+                <distal y="-2.855431e+04" x="1.091464e+03" z="4.154969e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="15" name="Seg15_muscle_15">
+                <parent fractionAlong="1" segment="14"/>
+                <proximal y="-2.773885e+04" x="1.075567e+03" z="3.688611e+03" diameter="1.000000e+00"/>
+                <distal y="-2.856498e+04" x="9.867880e+02" z="4.006849e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="16" name="Seg16_muscle_16">
+                <parent fractionAlong="1" segment="15"/>
+                <proximal y="-2.943355e+04" x="6.746590e+02" z="3.756375e+03" diameter="1.000000e+00"/>
+                <distal y="-3.025871e+04" x="6.000670e+02" z="4.105808e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="17" name="Seg17_muscle_17">
+                <parent fractionAlong="1" segment="16"/>
+                <proximal y="-3.025274e+04" x="7.036500e+02" z="4.186899e+03" diameter="1.000000e+00"/>
+                <distal y="-2.943355e+04" x="6.746590e+02" z="3.756375e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="18" name="Seg18_muscle_18">
+                <parent fractionAlong="1" segment="17"/>
+                <proximal y="-2.942764e+04" x="7.924060e+02" z="3.837588e+03" diameter="1.000000e+00"/>
+                <distal y="-3.025274e+04" x="7.036500e+02" z="4.186899e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="19" name="Seg19_muscle_19">
+                <parent fractionAlong="1" segment="18"/>
+                <proximal y="-2.943355e+04" x="6.746590e+02" z="3.756375e+03" diameter="1.000000e+00"/>
+                <distal y="-2.942764e+04" x="7.924060e+02" z="3.837588e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="20" name="Seg20_muscle_20">
+                <parent fractionAlong="1" segment="19"/>
+                <proximal y="-2.942764e+04" x="7.924060e+02" z="3.837588e+03" diameter="1.000000e+00"/>
+                <distal y="-3.025274e+04" x="7.036500e+02" z="4.186899e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="21" name="Seg21_muscle_21">
+                <parent fractionAlong="1" segment="20"/>
+                <proximal y="-3.024515e+04" x="7.976570e+02" z="4.291884e+03" diameter="1.000000e+00"/>
+                <distal y="-2.942764e+04" x="7.924060e+02" z="3.837588e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="22" name="Seg22_muscle_22">
+                <parent fractionAlong="1" segment="21"/>
+                <proximal y="-2.941978e+04" x="9.057790e+02" z="3.948222e+03" diameter="1.000000e+00"/>
+                <distal y="-3.024515e+04" x="7.976570e+02" z="4.291884e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="23" name="Seg23_muscle_23">
+                <parent fractionAlong="1" segment="22"/>
+                <proximal y="-2.942764e+04" x="7.924060e+02" z="3.837588e+03" diameter="1.000000e+00"/>
+                <distal y="-2.941978e+04" x="9.057790e+02" z="3.948222e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="24" name="Seg24_muscle_24">
+                <parent fractionAlong="1" segment="23"/>
+                <proximal y="-2.690540e+04" x="1.374982e+03" z="3.733748e+03" diameter="1.000000e+00"/>
+                <distal y="-2.691580e+04" x="1.435578e+03" z="3.600537e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="25" name="Seg25_muscle_25">
+                <parent fractionAlong="1" segment="24"/>
+                <proximal y="-2.772605e+04" x="1.365120e+03" z="3.877401e+03" diameter="1.000000e+00"/>
+                <distal y="-2.690540e+04" x="1.374982e+03" z="3.733748e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="26" name="Seg26_muscle_26">
+                <parent fractionAlong="1" segment="25"/>
+                <proximal y="-2.771563e+04" x="1.304572e+03" z="4.010610e+03" diameter="1.000000e+00"/>
+                <distal y="-2.772605e+04" x="1.365120e+03" z="3.877401e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="27" name="Seg27_muscle_27">
+                <parent fractionAlong="1" segment="26"/>
+                <proximal y="-2.690540e+04" x="1.374982e+03" z="3.733748e+03" diameter="1.000000e+00"/>
+                <distal y="-2.771563e+04" x="1.304572e+03" z="4.010610e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="28" name="Seg28_muscle_28">
+                <parent fractionAlong="1" segment="27"/>
+                <proximal y="-3.158132e+04" x="3.703020e+02" z="4.915553e+03" diameter="1.000000e+00"/>
+                <distal y="-3.160211e+04" x="4.914700e+02" z="4.649488e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="29" name="Seg29_muscle_29">
+                <parent fractionAlong="1" segment="28"/>
+                <proximal y="-3.108387e+04" x="5.254510e+02" z="4.455218e+03" diameter="1.000000e+00"/>
+                <distal y="-3.158132e+04" x="3.703020e+02" z="4.915553e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="30" name="Seg30_muscle_30">
+                <parent fractionAlong="1" segment="29"/>
+                <proximal y="-3.106310e+04" x="4.044020e+02" z="4.721260e+03" diameter="1.000000e+00"/>
+                <distal y="-3.108387e+04" x="5.254510e+02" z="4.455218e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="31" name="Seg31_muscle_31">
+                <parent fractionAlong="1" segment="30"/>
+                <proximal y="-3.158132e+04" x="3.703020e+02" z="4.915553e+03" diameter="1.000000e+00"/>
+                <distal y="-3.106310e+04" x="4.044020e+02" z="4.721260e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="32" name="Seg32_muscle_32">
+                <parent fractionAlong="1" segment="31"/>
+                <proximal y="-2.774724e+04" x="9.392140e+02" z="3.572464e+03" diameter="1.000000e+00"/>
+                <distal y="-2.773885e+04" x="1.075567e+03" z="3.688611e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="33" name="Seg33_muscle_33">
+                <parent fractionAlong="1" segment="32"/>
+                <proximal y="-2.856498e+04" x="9.867880e+02" z="4.006849e+03" diameter="1.000000e+00"/>
+                <distal y="-2.774724e+04" x="9.392140e+02" z="3.572464e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="34" name="Seg34_muscle_34">
+                <parent fractionAlong="1" segment="33"/>
+                <proximal y="-2.857311e+04" x="8.619600e+02" z="3.893423e+03" diameter="1.000000e+00"/>
+                <distal y="-2.856498e+04" x="9.867880e+02" z="4.006849e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="35" name="Seg35_muscle_35">
+                <parent fractionAlong="1" segment="34"/>
+                <proximal y="-2.774724e+04" x="9.392140e+02" z="3.572464e+03" diameter="1.000000e+00"/>
+                <distal y="-2.857311e+04" x="8.619600e+02" z="3.893423e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="36" name="Seg36_muscle_36">
+                <parent fractionAlong="1" segment="35"/>
+                <proximal y="-2.855431e+04" x="1.091464e+03" z="4.154969e+03" diameter="1.000000e+00"/>
+                <distal y="-2.854363e+04" x="1.196164e+03" z="4.303088e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="37" name="Seg37_muscle_37">
+                <parent fractionAlong="1" segment="36"/>
+                <proximal y="-2.937161e+04" x="1.087733e+03" z="4.595565e+03" diameter="1.000000e+00"/>
+                <distal y="-2.855431e+04" x="1.091464e+03" z="4.154969e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="38" name="Seg38_muscle_38">
+                <parent fractionAlong="1" segment="37"/>
+                <proximal y="-2.938137e+04" x="9.928950e+02" z="4.460315e+03" diameter="1.000000e+00"/>
+                <distal y="-2.937161e+04" x="1.087733e+03" z="4.595565e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="39" name="Seg39_muscle_39">
+                <parent fractionAlong="1" segment="38"/>
+                <proximal y="-2.855431e+04" x="1.091464e+03" z="4.154969e+03" diameter="1.000000e+00"/>
+                <distal y="-2.938137e+04" x="9.928950e+02" z="4.460315e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="40" name="Seg40_muscle_40">
+                <parent fractionAlong="1" segment="39"/>
+                <proximal y="-2.941275e+04" x="5.535630e+02" z="4.022464e+03" diameter="1.000000e+00"/>
+                <distal y="-2.940684e+04" x="6.713330e+02" z="4.103748e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="41" name="Seg41_muscle_41">
+                <parent fractionAlong="1" segment="40"/>
+                <proximal y="-3.023194e+04" x="5.825770e+02" z="4.452987e+03" diameter="1.000000e+00"/>
+                <distal y="-2.941275e+04" x="5.535630e+02" z="4.022464e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="42" name="Seg42_muscle_42">
+                <parent fractionAlong="1" segment="41"/>
+                <proximal y="-3.023791e+04" x="4.789700e+02" z="4.371849e+03" diameter="1.000000e+00"/>
+                <distal y="-3.023194e+04" x="5.825770e+02" z="4.452987e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="43" name="Seg43_muscle_43">
+                <parent fractionAlong="1" segment="42"/>
+                <proximal y="-2.941275e+04" x="5.535630e+02" z="4.022464e+03" diameter="1.000000e+00"/>
+                <distal y="-3.023791e+04" x="4.789700e+02" z="4.371849e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="44" name="Seg44_muscle_44">
+                <parent fractionAlong="1" segment="43"/>
+                <proximal y="-2.610692e+04" x="1.337935e+03" z="3.287766e+03" diameter="1.000000e+00"/>
+                <distal y="-2.692878e+04" x="1.153011e+03" z="3.403642e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="45" name="Seg45_muscle_45">
+                <parent fractionAlong="1" segment="44"/>
+                <proximal y="-2.693755e+04" x="1.017917e+03" z="3.281042e+03" diameter="1.000000e+00"/>
+                <distal y="-2.610692e+04" x="1.337935e+03" z="3.287766e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="46" name="Seg46_muscle_46">
+                <parent fractionAlong="1" segment="45"/>
+                <proximal y="-2.694629e+04" x="8.828000e+02" z="3.158441e+03" diameter="1.000000e+00"/>
+                <distal y="-2.693755e+04" x="1.017917e+03" z="3.281042e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="47" name="Seg47_muscle_47">
+                <parent fractionAlong="1" segment="46"/>
+                <proximal y="-2.610692e+04" x="1.337935e+03" z="3.287766e+03" diameter="1.000000e+00"/>
+                <distal y="-2.694629e+04" x="8.828000e+02" z="3.158441e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="48" name="Seg48_muscle_48">
+                <parent fractionAlong="1" segment="47"/>
+                <proximal y="-3.022855e+04" x="9.673500e+02" z="4.521121e+03" diameter="1.000000e+00"/>
+                <distal y="-3.107783e+04" x="6.148720e+02" z="4.536233e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="49" name="Seg49_muscle_49">
+                <parent fractionAlong="1" segment="48"/>
+                <proximal y="-3.105706e+04" x="4.937990e+02" z="4.802252e+03" diameter="1.000000e+00"/>
+                <distal y="-3.022855e+04" x="9.673500e+02" z="4.521121e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="50" name="Seg50_muscle_50">
+                <parent fractionAlong="1" segment="49"/>
+                <proximal y="-3.020777e+04" x="8.462050e+02" z="4.787282e+03" diameter="1.000000e+00"/>
+                <distal y="-3.105706e+04" x="4.937990e+02" z="4.802252e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="51" name="Seg51_muscle_51">
+                <parent fractionAlong="1" segment="50"/>
+                <proximal y="-3.022855e+04" x="9.673500e+02" z="4.521121e+03" diameter="1.000000e+00"/>
+                <distal y="-3.020777e+04" x="8.462050e+02" z="4.787282e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="52" name="Seg52_muscle_52">
+                <parent fractionAlong="1" segment="51"/>
+                <proximal y="-2.776804e+04" x="1.060477e+03" z="3.306328e+03" diameter="1.000000e+00"/>
+                <distal y="-2.859391e+04" x="9.831280e+02" z="3.627287e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="53" name="Seg53_muscle_53">
+                <parent fractionAlong="1" segment="52"/>
+                <proximal y="-2.858578e+04" x="1.107956e+03" z="3.740690e+03" diameter="1.000000e+00"/>
+                <distal y="-2.776804e+04" x="1.060477e+03" z="3.306328e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="54" name="Seg54_muscle_54">
+                <parent fractionAlong="1" segment="53"/>
+                <proximal y="-2.775965e+04" x="1.196759e+03" z="3.422475e+03" diameter="1.000000e+00"/>
+                <distal y="-2.858578e+04" x="1.107956e+03" z="3.740690e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="55" name="Seg55_muscle_55">
+                <parent fractionAlong="1" segment="54"/>
+                <proximal y="-2.776804e+04" x="1.060477e+03" z="3.306328e+03" diameter="1.000000e+00"/>
+                <distal y="-2.775965e+04" x="1.196759e+03" z="3.422475e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="56" name="Seg56_muscle_56">
+                <parent fractionAlong="1" segment="55"/>
+                <proximal y="-2.940684e+04" x="6.713330e+02" z="4.103748e+03" diameter="1.000000e+00"/>
+                <distal y="-2.939897e+04" x="7.846830e+02" z="4.214406e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="57" name="Seg57_muscle_57">
+                <parent fractionAlong="1" segment="56"/>
+                <proximal y="-3.022435e+04" x="6.765610e+02" z="4.557997e+03" diameter="1.000000e+00"/>
+                <distal y="-2.940684e+04" x="6.713330e+02" z="4.103748e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="58" name="Seg58_muscle_58">
+                <parent fractionAlong="1" segment="57"/>
+                <proximal y="-3.023194e+04" x="5.825770e+02" z="4.452987e+03" diameter="1.000000e+00"/>
+                <distal y="-3.022435e+04" x="6.765610e+02" z="4.557997e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="59" name="Seg59_muscle_59">
+                <parent fractionAlong="1" segment="58"/>
+                <proximal y="-2.940684e+04" x="6.713330e+02" z="4.103748e+03" diameter="1.000000e+00"/>
+                <distal y="-3.023194e+04" x="5.825770e+02" z="4.452987e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="60" name="Seg60_muscle_60">
+                <parent fractionAlong="1" segment="59"/>
+                <proximal y="-2.858578e+04" x="1.107956e+03" z="3.740690e+03" diameter="1.000000e+00"/>
+                <distal y="-2.941191e+04" x="1.019153e+03" z="4.058880e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="61" name="Seg61_muscle_61">
+                <parent fractionAlong="1" segment="60"/>
+                <proximal y="-2.940215e+04" x="1.113992e+03" z="4.194177e+03" diameter="1.000000e+00"/>
+                <distal y="-2.858578e+04" x="1.107956e+03" z="3.740690e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="62" name="Seg62_muscle_62">
+                <parent fractionAlong="1" segment="61"/>
+                <proximal y="-2.857511e+04" x="1.212609e+03" z="3.888762e+03" diameter="1.000000e+00"/>
+                <distal y="-2.940215e+04" x="1.113992e+03" z="4.194177e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="63" name="Seg63_muscle_63">
+                <parent fractionAlong="1" segment="62"/>
+                <proximal y="-2.858578e+04" x="1.107956e+03" z="3.740690e+03" diameter="1.000000e+00"/>
+                <distal y="-2.857511e+04" x="1.212609e+03" z="3.888762e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="64" name="Seg64_muscle_64">
+                <parent fractionAlong="1" segment="63"/>
+                <proximal y="-2.776169e+04" x="6.669840e+02" z="3.373445e+03" diameter="1.000000e+00"/>
+                <distal y="-2.775563e+04" x="8.028850e+02" z="3.456316e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="65" name="Seg65_muscle_65">
+                <parent fractionAlong="1" segment="64"/>
+                <proximal y="-2.858124e+04" x="7.371090e+02" z="3.780020e+03" diameter="1.000000e+00"/>
+                <distal y="-2.776169e+04" x="6.669840e+02" z="3.373445e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="66" name="Seg66_muscle_66">
+                <parent fractionAlong="1" segment="65"/>
+                <proximal y="-2.858722e+04" x="6.102610e+02" z="3.697954e+03" diameter="1.000000e+00"/>
+                <distal y="-2.858124e+04" x="7.371090e+02" z="3.780020e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="67" name="Seg67_muscle_67">
+                <parent fractionAlong="1" segment="66"/>
+                <proximal y="-2.776169e+04" x="6.669840e+02" z="3.373445e+03" diameter="1.000000e+00"/>
+                <distal y="-2.858722e+04" x="6.102610e+02" z="3.697954e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="68" name="Seg68_muscle_68">
+                <parent fractionAlong="1" segment="67"/>
+                <proximal y="-2.610555e+04" x="1.506035e+03" z="3.323673e+03" diameter="1.000000e+00"/>
+                <distal y="-2.611597e+04" x="1.566679e+03" z="3.190463e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="69" name="Seg69_muscle_69">
+                <parent fractionAlong="1" segment="68"/>
+                <proximal y="-2.692619e+04" x="1.496174e+03" z="3.467326e+03" diameter="1.000000e+00"/>
+                <distal y="-2.610555e+04" x="1.506035e+03" z="3.323673e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="70" name="Seg70_muscle_70">
+                <parent fractionAlong="1" segment="69"/>
+                <proximal y="-2.691580e+04" x="1.435578e+03" z="3.600537e+03" diameter="1.000000e+00"/>
+                <distal y="-2.692619e+04" x="1.496174e+03" z="3.467326e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="71" name="Seg71_muscle_71">
+                <parent fractionAlong="1" segment="70"/>
+                <proximal y="-2.610555e+04" x="1.506035e+03" z="3.323673e+03" diameter="1.000000e+00"/>
+                <distal y="-2.691580e+04" x="1.435578e+03" z="3.600537e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="72" name="Seg72_muscle_72">
+                <parent fractionAlong="1" segment="71"/>
+                <proximal y="-2.941978e+04" x="9.057790e+02" z="3.948222e+03" diameter="1.000000e+00"/>
+                <distal y="-3.024515e+04" x="7.976570e+02" z="4.291884e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="73" name="Seg73_muscle_73">
+                <parent fractionAlong="1" segment="72"/>
+                <proximal y="-3.023757e+04" x="8.916640e+02" z="4.396846e+03" diameter="1.000000e+00"/>
+                <distal y="-2.941978e+04" x="9.057790e+02" z="3.948222e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="74" name="Seg74_muscle_74">
+                <parent fractionAlong="1" segment="73"/>
+                <proximal y="-2.941191e+04" x="1.019153e+03" z="4.058880e+03" diameter="1.000000e+00"/>
+                <distal y="-3.023757e+04" x="8.916640e+02" z="4.396846e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="75" name="Seg75_muscle_75">
+                <parent fractionAlong="1" segment="74"/>
+                <proximal y="-2.941978e+04" x="9.057790e+02" z="3.948222e+03" diameter="1.000000e+00"/>
+                <distal y="-2.941191e+04" x="1.019153e+03" z="4.058880e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="76" name="Seg76_muscle_76">
+                <parent fractionAlong="1" segment="75"/>
+                <proximal y="-2.856444e+04" x="1.317261e+03" z="4.036834e+03" diameter="1.000000e+00"/>
+                <distal y="-2.773645e+04" x="1.425692e+03" z="3.744189e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="77" name="Seg77_muscle_77">
+                <parent fractionAlong="1" segment="76"/>
+                <proximal y="-2.774805e+04" x="1.311225e+03" z="3.583344e+03" diameter="1.000000e+00"/>
+                <distal y="-2.856444e+04" x="1.317261e+03" z="4.036834e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="78" name="Seg78_muscle_78">
+                <parent fractionAlong="1" segment="77"/>
+                <proximal y="-2.857511e+04" x="1.212609e+03" z="3.888762e+03" diameter="1.000000e+00"/>
+                <distal y="-2.774805e+04" x="1.311225e+03" z="3.583344e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="79" name="Seg79_muscle_79">
+                <parent fractionAlong="1" segment="78"/>
+                <proximal y="-2.856444e+04" x="1.317261e+03" z="4.036834e+03" diameter="1.000000e+00"/>
+                <distal y="-2.857511e+04" x="1.212609e+03" z="3.888762e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="80" name="Seg80_muscle_80">
+                <parent fractionAlong="1" segment="79"/>
+                <proximal y="-2.610692e+04" x="1.337935e+03" z="3.287766e+03" diameter="1.000000e+00"/>
+                <distal y="-2.612774e+04" x="1.459198e+03" z="3.021345e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="81" name="Seg81_muscle_81">
+                <parent fractionAlong="1" segment="80"/>
+                <proximal y="-2.530947e+04" x="1.624898e+03" z="2.882456e+03" diameter="1.000000e+00"/>
+                <distal y="-2.610692e+04" x="1.337935e+03" z="3.287766e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="82" name="Seg82_muscle_82">
+                <parent fractionAlong="1" segment="81"/>
+                <proximal y="-2.529905e+04" x="1.564255e+03" z="3.015666e+03" diameter="1.000000e+00"/>
+                <distal y="-2.530947e+04" x="1.624898e+03" z="2.882456e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="83" name="Seg83_muscle_83">
+                <parent fractionAlong="1" segment="82"/>
+                <proximal y="-2.610692e+04" x="1.337935e+03" z="3.287766e+03" diameter="1.000000e+00"/>
+                <distal y="-2.529905e+04" x="1.564255e+03" z="3.015666e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="84" name="Seg84_muscle_84">
+                <parent fractionAlong="1" segment="83"/>
+                <proximal y="-2.529905e+04" x="1.564255e+03" z="3.015666e+03" diameter="1.000000e+00"/>
+                <distal y="-2.530947e+04" x="1.624898e+03" z="2.882456e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="85" name="Seg85_muscle_85">
+                <parent fractionAlong="1" segment="84"/>
+                <proximal y="-2.611597e+04" x="1.566679e+03" z="3.190463e+03" diameter="1.000000e+00"/>
+                <distal y="-2.529905e+04" x="1.564255e+03" z="3.015666e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="86" name="Seg86_muscle_86">
+                <parent fractionAlong="1" segment="85"/>
+                <proximal y="-2.610555e+04" x="1.506035e+03" z="3.323673e+03" diameter="1.000000e+00"/>
+                <distal y="-2.611597e+04" x="1.566679e+03" z="3.190463e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="87" name="Seg87_muscle_87">
+                <parent fractionAlong="1" segment="86"/>
+                <proximal y="-2.529905e+04" x="1.564255e+03" z="3.015666e+03" diameter="1.000000e+00"/>
+                <distal y="-2.610555e+04" x="1.506035e+03" z="3.323673e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="88" name="Seg88_muscle_88">
+                <parent fractionAlong="1" segment="87"/>
+                <proximal y="-2.856498e+04" x="9.867880e+02" z="4.006849e+03" diameter="1.000000e+00"/>
+                <distal y="-2.855431e+04" x="1.091464e+03" z="4.154969e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="89" name="Seg89_muscle_89">
+                <parent fractionAlong="1" segment="88"/>
+                <proximal y="-2.938137e+04" x="9.928950e+02" z="4.460315e+03" diameter="1.000000e+00"/>
+                <distal y="-2.856498e+04" x="9.867880e+02" z="4.006849e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="90" name="Seg90_muscle_90">
+                <parent fractionAlong="1" segment="89"/>
+                <proximal y="-2.939111e+04" x="8.980330e+02" z="4.325064e+03" diameter="1.000000e+00"/>
+                <distal y="-2.938137e+04" x="9.928950e+02" z="4.460315e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="91" name="Seg91_muscle_91">
+                <parent fractionAlong="1" segment="90"/>
+                <proximal y="-2.856498e+04" x="9.867880e+02" z="4.006849e+03" diameter="1.000000e+00"/>
+                <distal y="-2.939111e+04" x="8.980330e+02" z="4.325064e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="92" name="Seg92_muscle_92">
+                <parent fractionAlong="1" segment="91"/>
+                <proximal y="-2.941275e+04" x="5.535630e+02" z="4.022464e+03" diameter="1.000000e+00"/>
+                <distal y="-2.943355e+04" x="6.746590e+02" z="3.756375e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="93" name="Seg93_muscle_93">
+                <parent fractionAlong="1" segment="92"/>
+                <proximal y="-2.860802e+04" x="7.314770e+02" z="3.431866e+03" diameter="1.000000e+00"/>
+                <distal y="-2.941275e+04" x="5.535630e+02" z="4.022464e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="94" name="Seg94_muscle_94">
+                <parent fractionAlong="1" segment="93"/>
+                <proximal y="-2.858722e+04" x="6.102610e+02" z="3.697954e+03" diameter="1.000000e+00"/>
+                <distal y="-2.860802e+04" x="7.314770e+02" z="3.431866e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="95" name="Seg95_muscle_95">
+                <parent fractionAlong="1" segment="94"/>
+                <proximal y="-2.941275e+04" x="5.535630e+02" z="4.022464e+03" diameter="1.000000e+00"/>
+                <distal y="-2.858722e+04" x="6.102610e+02" z="3.697954e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="96" name="Seg96_muscle_96">
+                <parent fractionAlong="1" segment="95"/>
+                <proximal y="-2.858722e+04" x="6.102610e+02" z="3.697954e+03" diameter="1.000000e+00"/>
+                <distal y="-2.858124e+04" x="7.371090e+02" z="3.780020e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="97" name="Seg97_muscle_97">
+                <parent fractionAlong="1" segment="96"/>
+                <proximal y="-2.940684e+04" x="6.713330e+02" z="4.103748e+03" diameter="1.000000e+00"/>
+                <distal y="-2.858722e+04" x="6.102610e+02" z="3.697954e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="98" name="Seg98_muscle_98">
+                <parent fractionAlong="1" segment="97"/>
+                <proximal y="-2.941275e+04" x="5.535630e+02" z="4.022464e+03" diameter="1.000000e+00"/>
+                <distal y="-2.940684e+04" x="6.713330e+02" z="4.103748e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="99" name="Seg99_muscle_99">
+                <parent fractionAlong="1" segment="98"/>
+                <proximal y="-2.858722e+04" x="6.102610e+02" z="3.697954e+03" diameter="1.000000e+00"/>
+                <distal y="-2.941275e+04" x="5.535630e+02" z="4.022464e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="100" name="Seg100_muscle_100">
+                <parent fractionAlong="1" segment="99"/>
+                <proximal y="-2.693755e+04" x="1.017917e+03" z="3.281042e+03" diameter="1.000000e+00"/>
+                <distal y="-2.692878e+04" x="1.153011e+03" z="3.403642e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="101" name="Seg101_muscle_101">
+                <parent fractionAlong="1" segment="100"/>
+                <proximal y="-2.773885e+04" x="1.075567e+03" z="3.688611e+03" diameter="1.000000e+00"/>
+                <distal y="-2.693755e+04" x="1.017917e+03" z="3.281042e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="102" name="Seg102_muscle_102">
+                <parent fractionAlong="1" segment="101"/>
+                <proximal y="-2.774724e+04" x="9.392140e+02" z="3.572464e+03" diameter="1.000000e+00"/>
+                <distal y="-2.773885e+04" x="1.075567e+03" z="3.688611e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="103" name="Seg103_muscle_103">
+                <parent fractionAlong="1" segment="102"/>
+                <proximal y="-2.693755e+04" x="1.017917e+03" z="3.281042e+03" diameter="1.000000e+00"/>
+                <distal y="-2.774724e+04" x="9.392140e+02" z="3.572464e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="104" name="Seg104_muscle_104">
+                <parent fractionAlong="1" segment="103"/>
+                <proximal y="-2.695833e+04" x="1.139181e+03" z="3.014857e+03" diameter="1.000000e+00"/>
+                <distal y="-2.694959e+04" x="1.274250e+03" z="3.137364e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="105" name="Seg105_muscle_105">
+                <parent fractionAlong="1" segment="104"/>
+                <proximal y="-2.612774e+04" x="1.459198e+03" z="3.021345e+03" diameter="1.000000e+00"/>
+                <distal y="-2.695833e+04" x="1.139181e+03" z="3.014857e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="106" name="Seg106_muscle_106">
+                <parent fractionAlong="1" segment="105"/>
+                <proximal y="-2.696709e+04" x="1.004111e+03" z="2.892353e+03" diameter="1.000000e+00"/>
+                <distal y="-2.612774e+04" x="1.459198e+03" z="3.021345e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="107" name="Seg107_muscle_107">
+                <parent fractionAlong="1" segment="106"/>
+                <proximal y="-2.695833e+04" x="1.139181e+03" z="3.014857e+03" diameter="1.000000e+00"/>
+                <distal y="-2.696709e+04" x="1.004111e+03" z="2.892353e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="108" name="Seg108_muscle_108">
+                <parent fractionAlong="1" segment="107"/>
+                <proximal y="-2.857311e+04" x="8.619600e+02" z="3.893423e+03" diameter="1.000000e+00"/>
+                <distal y="-2.856498e+04" x="9.867880e+02" z="4.006849e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="109" name="Seg109_muscle_109">
+                <parent fractionAlong="1" segment="108"/>
+                <proximal y="-2.939111e+04" x="8.980330e+02" z="4.325064e+03" diameter="1.000000e+00"/>
+                <distal y="-2.857311e+04" x="8.619600e+02" z="3.893423e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="110" name="Seg110_muscle_110">
+                <parent fractionAlong="1" segment="109"/>
+                <proximal y="-2.939897e+04" x="7.846830e+02" z="4.214406e+03" diameter="1.000000e+00"/>
+                <distal y="-2.939111e+04" x="8.980330e+02" z="4.325064e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="111" name="Seg111_muscle_111">
+                <parent fractionAlong="1" segment="110"/>
+                <proximal y="-2.857311e+04" x="8.619600e+02" z="3.893423e+03" diameter="1.000000e+00"/>
+                <distal y="-2.939897e+04" x="7.846830e+02" z="4.214406e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="112" name="Seg112_muscle_112">
+                <parent fractionAlong="1" segment="111"/>
+                <proximal y="-2.528865e+04" x="1.503635e+03" z="3.148877e+03" diameter="1.000000e+00"/>
+                <distal y="-2.609515e+04" x="1.445416e+03" z="3.456884e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="113" name="Seg113_muscle_113">
+                <parent fractionAlong="1" segment="112"/>
+                <proximal y="-2.610692e+04" x="1.337935e+03" z="3.287766e+03" diameter="1.000000e+00"/>
+                <distal y="-2.528865e+04" x="1.503635e+03" z="3.148877e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="114" name="Seg114_muscle_114">
+                <parent fractionAlong="1" segment="113"/>
+                <proximal y="-2.529905e+04" x="1.564255e+03" z="3.015666e+03" diameter="1.000000e+00"/>
+                <distal y="-2.610692e+04" x="1.337935e+03" z="3.287766e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="115" name="Seg115_muscle_115">
+                <parent fractionAlong="1" segment="114"/>
+                <proximal y="-2.528865e+04" x="1.503635e+03" z="3.148877e+03" diameter="1.000000e+00"/>
+                <distal y="-2.529905e+04" x="1.564255e+03" z="3.015666e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="116" name="Seg116_muscle_116">
+                <parent fractionAlong="1" segment="115"/>
+                <proximal y="-3.106310e+04" x="4.044020e+02" z="4.721260e+03" diameter="1.000000e+00"/>
+                <distal y="-3.108387e+04" x="5.254510e+02" z="4.455218e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="117" name="Seg117_muscle_117">
+                <parent fractionAlong="1" segment="116"/>
+                <proximal y="-3.025871e+04" x="6.000670e+02" z="4.105808e+03" diameter="1.000000e+00"/>
+                <distal y="-3.106310e+04" x="4.044020e+02" z="4.721260e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="118" name="Seg118_muscle_118">
+                <parent fractionAlong="1" segment="117"/>
+                <proximal y="-3.023791e+04" x="4.789700e+02" z="4.371849e+03" diameter="1.000000e+00"/>
+                <distal y="-3.025871e+04" x="6.000670e+02" z="4.105808e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="119" name="Seg119_muscle_119">
+                <parent fractionAlong="1" segment="118"/>
+                <proximal y="-3.106310e+04" x="4.044020e+02" z="4.721260e+03" diameter="1.000000e+00"/>
+                <distal y="-3.023791e+04" x="4.789700e+02" z="4.371849e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="120" name="Seg120_muscle_120">
+                <parent fractionAlong="1" segment="119"/>
+                <proximal y="-2.772724e+04" x="1.190057e+03" z="3.849599e+03" diameter="1.000000e+00"/>
+                <distal y="-2.771563e+04" x="1.304572e+03" z="4.010610e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="121" name="Seg121_muscle_121">
+                <parent fractionAlong="1" segment="120"/>
+                <proximal y="-2.854363e+04" x="1.196164e+03" z="4.303088e+03" diameter="1.000000e+00"/>
+                <distal y="-2.772724e+04" x="1.190057e+03" z="3.849599e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="122" name="Seg122_muscle_122">
+                <parent fractionAlong="1" segment="121"/>
+                <proximal y="-2.855431e+04" x="1.091464e+03" z="4.154969e+03" diameter="1.000000e+00"/>
+                <distal y="-2.854363e+04" x="1.196164e+03" z="4.303088e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="123" name="Seg123_muscle_123">
+                <parent fractionAlong="1" segment="122"/>
+                <proximal y="-2.772724e+04" x="1.190057e+03" z="3.849599e+03" diameter="1.000000e+00"/>
+                <distal y="-2.855431e+04" x="1.091464e+03" z="4.154969e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="124" name="Seg124_muscle_124">
+                <parent fractionAlong="1" segment="123"/>
+                <proximal y="-2.939241e+04" x="1.208830e+03" z="4.329452e+03" diameter="1.000000e+00"/>
+                <distal y="-3.022855e+04" x="9.673500e+02" z="4.521121e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="125" name="Seg125_muscle_125">
+                <parent fractionAlong="1" segment="124"/>
+                <proximal y="-3.020777e+04" x="8.462050e+02" z="4.787282e+03" diameter="1.000000e+00"/>
+                <distal y="-2.939241e+04" x="1.208830e+03" z="4.329452e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="126" name="Seg126_muscle_126">
+                <parent fractionAlong="1" segment="125"/>
+                <proximal y="-2.937161e+04" x="1.087733e+03" z="4.595565e+03" diameter="1.000000e+00"/>
+                <distal y="-3.020777e+04" x="8.462050e+02" z="4.787282e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="127" name="Seg127_muscle_127">
+                <parent fractionAlong="1" segment="126"/>
+                <proximal y="-2.939241e+04" x="1.208830e+03" z="4.329452e+03" diameter="1.000000e+00"/>
+                <distal y="-2.937161e+04" x="1.087733e+03" z="4.595565e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="128" name="Seg128_muscle_128">
+                <parent fractionAlong="1" segment="127"/>
+                <proximal y="-2.773645e+04" x="1.425692e+03" z="3.744189e+03" diameter="1.000000e+00"/>
+                <distal y="-2.772605e+04" x="1.365120e+03" z="3.877401e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="129" name="Seg129_muscle_129">
+                <parent fractionAlong="1" segment="128"/>
+                <proximal y="-2.691580e+04" x="1.435578e+03" z="3.600537e+03" diameter="1.000000e+00"/>
+                <distal y="-2.773645e+04" x="1.425692e+03" z="3.744189e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="130" name="Seg130_muscle_130">
+                <parent fractionAlong="1" segment="129"/>
+                <proximal y="-2.692619e+04" x="1.496174e+03" z="3.467326e+03" diameter="1.000000e+00"/>
+                <distal y="-2.691580e+04" x="1.435578e+03" z="3.600537e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="131" name="Seg131_muscle_131">
+                <parent fractionAlong="1" segment="130"/>
+                <proximal y="-2.773645e+04" x="1.425692e+03" z="3.744189e+03" diameter="1.000000e+00"/>
+                <distal y="-2.692619e+04" x="1.496174e+03" z="3.467326e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="132" name="Seg132_muscle_132">
+                <parent fractionAlong="1" segment="131"/>
+                <proximal y="-2.776169e+04" x="6.669840e+02" z="3.373445e+03" diameter="1.000000e+00"/>
+                <distal y="-2.778249e+04" x="7.882950e+02" z="3.107333e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="133" name="Seg133_muscle_133">
+                <parent fractionAlong="1" segment="132"/>
+                <proximal y="-2.696709e+04" x="1.004111e+03" z="2.892353e+03" diameter="1.000000e+00"/>
+                <distal y="-2.776169e+04" x="6.669840e+02" z="3.373445e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="134" name="Seg134_muscle_134">
+                <parent fractionAlong="1" segment="133"/>
+                <proximal y="-2.694629e+04" x="8.828000e+02" z="3.158441e+03" diameter="1.000000e+00"/>
+                <distal y="-2.696709e+04" x="1.004111e+03" z="2.892353e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="135" name="Seg135_muscle_135">
+                <parent fractionAlong="1" segment="134"/>
+                <proximal y="-2.776169e+04" x="6.669840e+02" z="3.373445e+03" diameter="1.000000e+00"/>
+                <distal y="-2.694629e+04" x="8.828000e+02" z="3.158441e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="136" name="Seg136_muscle_136">
+                <parent fractionAlong="1" segment="135"/>
+                <proximal y="-2.694629e+04" x="8.828000e+02" z="3.158441e+03" diameter="1.000000e+00"/>
+                <distal y="-2.693755e+04" x="1.017917e+03" z="3.281042e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="137" name="Seg137_muscle_137">
+                <parent fractionAlong="1" segment="136"/>
+                <proximal y="-2.774724e+04" x="9.392140e+02" z="3.572464e+03" diameter="1.000000e+00"/>
+                <distal y="-2.694629e+04" x="8.828000e+02" z="3.158441e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="138" name="Seg138_muscle_138">
+                <parent fractionAlong="1" segment="137"/>
+                <proximal y="-2.775563e+04" x="8.028850e+02" z="3.456316e+03" diameter="1.000000e+00"/>
+                <distal y="-2.774724e+04" x="9.392140e+02" z="3.572464e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="139" name="Seg139_muscle_139">
+                <parent fractionAlong="1" segment="138"/>
+                <proximal y="-2.694629e+04" x="8.828000e+02" z="3.158441e+03" diameter="1.000000e+00"/>
+                <distal y="-2.775563e+04" x="8.028850e+02" z="3.456316e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="140" name="Seg140_muscle_140">
+                <parent fractionAlong="1" segment="139"/>
+                <proximal y="-2.860204e+04" x="8.583010e+02" z="3.513884e+03" diameter="1.000000e+00"/>
+                <distal y="-2.942764e+04" x="7.924060e+02" z="3.837588e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="141" name="Seg141_muscle_141">
+                <parent fractionAlong="1" segment="140"/>
+                <proximal y="-2.941978e+04" x="9.057790e+02" z="3.948222e+03" diameter="1.000000e+00"/>
+                <distal y="-2.860204e+04" x="8.583010e+02" z="3.513884e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="142" name="Seg142_muscle_142">
+                <parent fractionAlong="1" segment="141"/>
+                <proximal y="-2.859391e+04" x="9.831280e+02" z="3.627287e+03" diameter="1.000000e+00"/>
+                <distal y="-2.941978e+04" x="9.057790e+02" z="3.948222e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="143" name="Seg143_muscle_143">
+                <parent fractionAlong="1" segment="142"/>
+                <proximal y="-2.860204e+04" x="8.583010e+02" z="3.513884e+03" diameter="1.000000e+00"/>
+                <distal y="-2.859391e+04" x="9.831280e+02" z="3.627287e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="144" name="Seg144_muscle_144">
+                <parent fractionAlong="1" segment="143"/>
+                <proximal y="-2.775965e+04" x="1.196759e+03" z="3.422475e+03" diameter="1.000000e+00"/>
+                <distal y="-2.858578e+04" x="1.107956e+03" z="3.740690e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="145" name="Seg145_muscle_145">
+                <parent fractionAlong="1" segment="144"/>
+                <proximal y="-2.857511e+04" x="1.212609e+03" z="3.888762e+03" diameter="1.000000e+00"/>
+                <distal y="-2.775965e+04" x="1.196759e+03" z="3.422475e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="146" name="Seg146_muscle_146">
+                <parent fractionAlong="1" segment="145"/>
+                <proximal y="-2.774805e+04" x="1.311225e+03" z="3.583344e+03" diameter="1.000000e+00"/>
+                <distal y="-2.857511e+04" x="1.212609e+03" z="3.888762e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="147" name="Seg147_muscle_147">
+                <parent fractionAlong="1" segment="146"/>
+                <proximal y="-2.775965e+04" x="1.196759e+03" z="3.422475e+03" diameter="1.000000e+00"/>
+                <distal y="-2.774805e+04" x="1.311225e+03" z="3.583344e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="148" name="Seg148_muscle_148">
+                <parent fractionAlong="1" segment="147"/>
+                <proximal y="-2.773645e+04" x="1.425692e+03" z="3.744189e+03" diameter="1.000000e+00"/>
+                <distal y="-2.692619e+04" x="1.496174e+03" z="3.467326e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="149" name="Seg149_muscle_149">
+                <parent fractionAlong="1" segment="148"/>
+                <proximal y="-2.693790e+04" x="1.385200e+03" z="3.302345e+03" diameter="1.000000e+00"/>
+                <distal y="-2.773645e+04" x="1.425692e+03" z="3.744189e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="150" name="Seg150_muscle_150">
+                <parent fractionAlong="1" segment="149"/>
+                <proximal y="-2.774805e+04" x="1.311225e+03" z="3.583344e+03" diameter="1.000000e+00"/>
+                <distal y="-2.693790e+04" x="1.385200e+03" z="3.302345e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="151" name="Seg151_muscle_151">
+                <parent fractionAlong="1" segment="150"/>
+                <proximal y="-2.773645e+04" x="1.425692e+03" z="3.744189e+03" diameter="1.000000e+00"/>
+                <distal y="-2.774805e+04" x="1.311225e+03" z="3.583344e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="152" name="Seg152_muscle_152">
+                <parent fractionAlong="1" segment="151"/>
+                <proximal y="-2.610692e+04" x="1.337935e+03" z="3.287766e+03" diameter="1.000000e+00"/>
+                <distal y="-2.609515e+04" x="1.445416e+03" z="3.456884e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="153" name="Seg153_muscle_153">
+                <parent fractionAlong="1" segment="152"/>
+                <proximal y="-2.690540e+04" x="1.374982e+03" z="3.733748e+03" diameter="1.000000e+00"/>
+                <distal y="-2.610692e+04" x="1.337935e+03" z="3.287766e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="154" name="Seg154_muscle_154">
+                <parent fractionAlong="1" segment="153"/>
+                <proximal y="-2.691709e+04" x="1.264008e+03" z="3.568695e+03" diameter="1.000000e+00"/>
+                <distal y="-2.690540e+04" x="1.374982e+03" z="3.733748e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="155" name="Seg155_muscle_155">
+                <parent fractionAlong="1" segment="154"/>
+                <proximal y="-2.610692e+04" x="1.337935e+03" z="3.287766e+03" diameter="1.000000e+00"/>
+                <distal y="-2.691709e+04" x="1.264008e+03" z="3.568695e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="156" name="Seg156_muscle_156">
+                <parent fractionAlong="1" segment="155"/>
+                <proximal y="-3.025871e+04" x="6.000670e+02" z="4.105808e+03" diameter="1.000000e+00"/>
+                <distal y="-3.108387e+04" x="5.254510e+02" z="4.455218e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="157" name="Seg157_muscle_157">
+                <parent fractionAlong="1" segment="156"/>
+                <proximal y="-3.107783e+04" x="6.148720e+02" z="4.536233e+03" diameter="1.000000e+00"/>
+                <distal y="-3.025871e+04" x="6.000670e+02" z="4.105808e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="158" name="Seg158_muscle_158">
+                <parent fractionAlong="1" segment="157"/>
+                <proximal y="-3.025274e+04" x="7.036500e+02" z="4.186899e+03" diameter="1.000000e+00"/>
+                <distal y="-3.107783e+04" x="6.148720e+02" z="4.536233e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="159" name="Seg159_muscle_159">
+                <parent fractionAlong="1" segment="158"/>
+                <proximal y="-3.025871e+04" x="6.000670e+02" z="4.105808e+03" diameter="1.000000e+00"/>
+                <distal y="-3.025274e+04" x="7.036500e+02" z="4.186899e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="160" name="Seg160_muscle_160">
+                <parent fractionAlong="1" segment="159"/>
+                <proximal y="-3.105706e+04" x="4.937990e+02" z="4.802252e+03" diameter="1.000000e+00"/>
+                <distal y="-3.023194e+04" x="5.825770e+02" z="4.452987e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="161" name="Seg161_muscle_161">
+                <parent fractionAlong="1" segment="160"/>
+                <proximal y="-3.022435e+04" x="6.765610e+02" z="4.557997e+03" diameter="1.000000e+00"/>
+                <distal y="-3.105706e+04" x="4.937990e+02" z="4.802252e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="162" name="Seg162_muscle_162">
+                <parent fractionAlong="1" segment="161"/>
+                <proximal y="-3.021676e+04" x="7.705440e+02" z="4.663030e+03" diameter="1.000000e+00"/>
+                <distal y="-3.022435e+04" x="6.765610e+02" z="4.557997e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="163" name="Seg163_muscle_163">
+                <parent fractionAlong="1" segment="162"/>
+                <proximal y="-3.105706e+04" x="4.937990e+02" z="4.802252e+03" diameter="1.000000e+00"/>
+                <distal y="-3.021676e+04" x="7.705440e+02" z="4.663030e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="164" name="Seg164_muscle_164">
+                <parent fractionAlong="1" segment="163"/>
+                <proximal y="-2.771563e+04" x="1.304572e+03" z="4.010610e+03" diameter="1.000000e+00"/>
+                <distal y="-2.772605e+04" x="1.365120e+03" z="3.877401e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="165" name="Seg165_muscle_165">
+                <parent fractionAlong="1" segment="164"/>
+                <proximal y="-2.855403e+04" x="1.256713e+03" z="4.169948e+03" diameter="1.000000e+00"/>
+                <distal y="-2.771563e+04" x="1.304572e+03" z="4.010610e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="166" name="Seg166_muscle_166">
+                <parent fractionAlong="1" segment="165"/>
+                <proximal y="-2.854363e+04" x="1.196164e+03" z="4.303088e+03" diameter="1.000000e+00"/>
+                <distal y="-2.855403e+04" x="1.256713e+03" z="4.169948e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="167" name="Seg167_muscle_167">
+                <parent fractionAlong="1" segment="166"/>
+                <proximal y="-2.771563e+04" x="1.304572e+03" z="4.010610e+03" diameter="1.000000e+00"/>
+                <distal y="-2.854363e+04" x="1.196164e+03" z="4.303088e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="168" name="Seg168_muscle_168">
+                <parent fractionAlong="1" segment="167"/>
+                <proximal y="-2.528865e+04" x="1.503635e+03" z="3.148877e+03" diameter="1.000000e+00"/>
+                <distal y="-2.529905e+04" x="1.564255e+03" z="3.015666e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="169" name="Seg169_muscle_169">
+                <parent fractionAlong="1" segment="168"/>
+                <proximal y="-2.610555e+04" x="1.506035e+03" z="3.323673e+03" diameter="1.000000e+00"/>
+                <distal y="-2.528865e+04" x="1.503635e+03" z="3.148877e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="170" name="Seg170_muscle_170">
+                <parent fractionAlong="1" segment="169"/>
+                <proximal y="-2.609515e+04" x="1.445416e+03" z="3.456884e+03" diameter="1.000000e+00"/>
+                <distal y="-2.610555e+04" x="1.506035e+03" z="3.323673e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="171" name="Seg171_muscle_171">
+                <parent fractionAlong="1" segment="170"/>
+                <proximal y="-2.528865e+04" x="1.503635e+03" z="3.148877e+03" diameter="1.000000e+00"/>
+                <distal y="-2.609515e+04" x="1.445416e+03" z="3.456884e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="172" name="Seg172_muscle_172">
+                <parent fractionAlong="1" segment="171"/>
+                <proximal y="-2.778249e+04" x="7.882950e+02" z="3.107333e+03" diameter="1.000000e+00"/>
+                <distal y="-2.860802e+04" x="7.314770e+02" z="3.431866e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="173" name="Seg173_muscle_173">
+                <parent fractionAlong="1" segment="172"/>
+                <proximal y="-2.860204e+04" x="8.583010e+02" z="3.513884e+03" diameter="1.000000e+00"/>
+                <distal y="-2.778249e+04" x="7.882950e+02" z="3.107333e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="174" name="Seg174_muscle_174">
+                <parent fractionAlong="1" segment="173"/>
+                <proximal y="-2.777643e+04" x="9.241960e+02" z="3.190203e+03" diameter="1.000000e+00"/>
+                <distal y="-2.860204e+04" x="8.583010e+02" z="3.513884e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="175" name="Seg175_muscle_175">
+                <parent fractionAlong="1" segment="174"/>
+                <proximal y="-2.778249e+04" x="7.882950e+02" z="3.107333e+03" diameter="1.000000e+00"/>
+                <distal y="-2.777643e+04" x="9.241960e+02" z="3.190203e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="176" name="Seg176_muscle_176">
+                <parent fractionAlong="1" segment="175"/>
+                <proximal y="-2.612774e+04" x="1.459198e+03" z="3.021345e+03" diameter="1.000000e+00"/>
+                <distal y="-2.693790e+04" x="1.385200e+03" z="3.302345e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="177" name="Seg177_muscle_177">
+                <parent fractionAlong="1" segment="176"/>
+                <proximal y="-2.692619e+04" x="1.496174e+03" z="3.467326e+03" diameter="1.000000e+00"/>
+                <distal y="-2.612774e+04" x="1.459198e+03" z="3.021345e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="178" name="Seg178_muscle_178">
+                <parent fractionAlong="1" segment="177"/>
+                <proximal y="-2.611597e+04" x="1.566679e+03" z="3.190463e+03" diameter="1.000000e+00"/>
+                <distal y="-2.692619e+04" x="1.496174e+03" z="3.467326e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="179" name="Seg179_muscle_179">
+                <parent fractionAlong="1" segment="178"/>
+                <proximal y="-2.612774e+04" x="1.459198e+03" z="3.021345e+03" diameter="1.000000e+00"/>
+                <distal y="-2.611597e+04" x="1.566679e+03" z="3.190463e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="180" name="Seg180_muscle_180">
+                <parent fractionAlong="1" segment="179"/>
+                <proximal y="-2.939111e+04" x="8.980330e+02" z="4.325064e+03" diameter="1.000000e+00"/>
+                <distal y="-2.938137e+04" x="9.928950e+02" z="4.460315e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="181" name="Seg181_muscle_181">
+                <parent fractionAlong="1" segment="180"/>
+                <proximal y="-3.020777e+04" x="8.462050e+02" z="4.787282e+03" diameter="1.000000e+00"/>
+                <distal y="-2.939111e+04" x="8.980330e+02" z="4.325064e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="182" name="Seg182_muscle_182">
+                <parent fractionAlong="1" segment="181"/>
+                <proximal y="-3.021676e+04" x="7.705440e+02" z="4.663030e+03" diameter="1.000000e+00"/>
+                <distal y="-3.020777e+04" x="8.462050e+02" z="4.787282e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="183" name="Seg183_muscle_183">
+                <parent fractionAlong="1" segment="182"/>
+                <proximal y="-2.939111e+04" x="8.980330e+02" z="4.325064e+03" diameter="1.000000e+00"/>
+                <distal y="-3.021676e+04" x="7.705440e+02" z="4.663030e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="184" name="Seg184_muscle_184">
+                <parent fractionAlong="1" segment="183"/>
+                <proximal y="-2.691709e+04" x="1.264008e+03" z="3.568695e+03" diameter="1.000000e+00"/>
+                <distal y="-2.690540e+04" x="1.374982e+03" z="3.733748e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="185" name="Seg185_muscle_185">
+                <parent fractionAlong="1" segment="184"/>
+                <proximal y="-2.771563e+04" x="1.304572e+03" z="4.010610e+03" diameter="1.000000e+00"/>
+                <distal y="-2.691709e+04" x="1.264008e+03" z="3.568695e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="186" name="Seg186_muscle_186">
+                <parent fractionAlong="1" segment="185"/>
+                <proximal y="-2.772724e+04" x="1.190057e+03" z="3.849599e+03" diameter="1.000000e+00"/>
+                <distal y="-2.771563e+04" x="1.304572e+03" z="4.010610e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="187" name="Seg187_muscle_187">
+                <parent fractionAlong="1" segment="186"/>
+                <proximal y="-2.691709e+04" x="1.264008e+03" z="3.568695e+03" diameter="1.000000e+00"/>
+                <distal y="-2.772724e+04" x="1.190057e+03" z="3.849599e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="188" name="Seg188_muscle_188">
+                <parent fractionAlong="1" segment="187"/>
+                <proximal y="-2.855403e+04" x="1.256713e+03" z="4.169948e+03" diameter="1.000000e+00"/>
+                <distal y="-2.856444e+04" x="1.317261e+03" z="4.036834e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="189" name="Seg189_muscle_189">
+                <parent fractionAlong="1" segment="188"/>
+                <proximal y="-2.939241e+04" x="1.208830e+03" z="4.329452e+03" diameter="1.000000e+00"/>
+                <distal y="-2.855403e+04" x="1.256713e+03" z="4.169948e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="190" name="Seg190_muscle_190">
+                <parent fractionAlong="1" segment="189"/>
+                <proximal y="-2.938202e+04" x="1.148282e+03" z="4.462497e+03" diameter="1.000000e+00"/>
+                <distal y="-2.939241e+04" x="1.208830e+03" z="4.329452e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="191" name="Seg191_muscle_191">
+                <parent fractionAlong="1" segment="190"/>
+                <proximal y="-2.855403e+04" x="1.256713e+03" z="4.169948e+03" diameter="1.000000e+00"/>
+                <distal y="-2.938202e+04" x="1.148282e+03" z="4.462497e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="192" name="Seg192_muscle_192">
+                <parent fractionAlong="1" segment="191"/>
+                <proximal y="-2.609515e+04" x="1.445416e+03" z="3.456884e+03" diameter="1.000000e+00"/>
+                <distal y="-2.610555e+04" x="1.506035e+03" z="3.323673e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="193" name="Seg193_muscle_193">
+                <parent fractionAlong="1" segment="192"/>
+                <proximal y="-2.691580e+04" x="1.435578e+03" z="3.600537e+03" diameter="1.000000e+00"/>
+                <distal y="-2.609515e+04" x="1.445416e+03" z="3.456884e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="194" name="Seg194_muscle_194">
+                <parent fractionAlong="1" segment="193"/>
+                <proximal y="-2.690540e+04" x="1.374982e+03" z="3.733748e+03" diameter="1.000000e+00"/>
+                <distal y="-2.691580e+04" x="1.435578e+03" z="3.600537e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="195" name="Seg195_muscle_195">
+                <parent fractionAlong="1" segment="194"/>
+                <proximal y="-2.609515e+04" x="1.445416e+03" z="3.456884e+03" diameter="1.000000e+00"/>
+                <distal y="-2.690540e+04" x="1.374982e+03" z="3.733748e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="196" name="Seg196_muscle_196">
+                <parent fractionAlong="1" segment="195"/>
+                <proximal y="-2.859391e+04" x="9.831280e+02" z="3.627287e+03" diameter="1.000000e+00"/>
+                <distal y="-2.941978e+04" x="9.057790e+02" z="3.948222e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="197" name="Seg197_muscle_197">
+                <parent fractionAlong="1" segment="196"/>
+                <proximal y="-2.941191e+04" x="1.019153e+03" z="4.058880e+03" diameter="1.000000e+00"/>
+                <distal y="-2.859391e+04" x="9.831280e+02" z="3.627287e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="198" name="Seg198_muscle_198">
+                <parent fractionAlong="1" segment="197"/>
+                <proximal y="-2.858578e+04" x="1.107956e+03" z="3.740690e+03" diameter="1.000000e+00"/>
+                <distal y="-2.941191e+04" x="1.019153e+03" z="4.058880e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="199" name="Seg199_muscle_199">
+                <parent fractionAlong="1" segment="198"/>
+                <proximal y="-2.859391e+04" x="9.831280e+02" z="3.627287e+03" diameter="1.000000e+00"/>
+                <distal y="-2.858578e+04" x="1.107956e+03" z="3.740690e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="200" name="Seg200_muscle_200">
+                <parent fractionAlong="1" segment="199"/>
+                <proximal y="-3.023791e+04" x="4.789700e+02" z="4.371849e+03" diameter="1.000000e+00"/>
+                <distal y="-3.023194e+04" x="5.825770e+02" z="4.452987e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="201" name="Seg201_muscle_201">
+                <parent fractionAlong="1" segment="200"/>
+                <proximal y="-3.105706e+04" x="4.937990e+02" z="4.802252e+03" diameter="1.000000e+00"/>
+                <distal y="-3.023791e+04" x="4.789700e+02" z="4.371849e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="202" name="Seg202_muscle_202">
+                <parent fractionAlong="1" segment="201"/>
+                <proximal y="-3.106310e+04" x="4.044020e+02" z="4.721260e+03" diameter="1.000000e+00"/>
+                <distal y="-3.105706e+04" x="4.937990e+02" z="4.802252e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="203" name="Seg203_muscle_203">
+                <parent fractionAlong="1" segment="202"/>
+                <proximal y="-3.023791e+04" x="4.789700e+02" z="4.371849e+03" diameter="1.000000e+00"/>
+                <distal y="-3.106310e+04" x="4.044020e+02" z="4.721260e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="204" name="Seg204_muscle_204">
+                <parent fractionAlong="1" segment="203"/>
+                <proximal y="-2.694959e+04" x="1.274250e+03" z="3.137364e+03" diameter="1.000000e+00"/>
+                <distal y="-2.775965e+04" x="1.196759e+03" z="3.422475e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="205" name="Seg205_muscle_205">
+                <parent fractionAlong="1" segment="204"/>
+                <proximal y="-2.774805e+04" x="1.311225e+03" z="3.583344e+03" diameter="1.000000e+00"/>
+                <distal y="-2.694959e+04" x="1.274250e+03" z="3.137364e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="206" name="Seg206_muscle_206">
+                <parent fractionAlong="1" segment="205"/>
+                <proximal y="-2.693790e+04" x="1.385200e+03" z="3.302345e+03" diameter="1.000000e+00"/>
+                <distal y="-2.774805e+04" x="1.311225e+03" z="3.583344e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="207" name="Seg207_muscle_207">
+                <parent fractionAlong="1" segment="206"/>
+                <proximal y="-2.694959e+04" x="1.274250e+03" z="3.137364e+03" diameter="1.000000e+00"/>
+                <distal y="-2.693790e+04" x="1.385200e+03" z="3.302345e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="208" name="Seg208_muscle_208">
+                <parent fractionAlong="1" segment="207"/>
+                <proximal y="-3.023791e+04" x="4.789700e+02" z="4.371849e+03" diameter="1.000000e+00"/>
+                <distal y="-3.025871e+04" x="6.000670e+02" z="4.105808e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="209" name="Seg209_muscle_209">
+                <parent fractionAlong="1" segment="208"/>
+                <proximal y="-2.943355e+04" x="6.746590e+02" z="3.756375e+03" diameter="1.000000e+00"/>
+                <distal y="-3.023791e+04" x="4.789700e+02" z="4.371849e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="210" name="Seg210_muscle_210">
+                <parent fractionAlong="1" segment="209"/>
+                <proximal y="-2.941275e+04" x="5.535630e+02" z="4.022464e+03" diameter="1.000000e+00"/>
+                <distal y="-2.943355e+04" x="6.746590e+02" z="3.756375e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="211" name="Seg211_muscle_211">
+                <parent fractionAlong="1" segment="210"/>
+                <proximal y="-3.023791e+04" x="4.789700e+02" z="4.371849e+03" diameter="1.000000e+00"/>
+                <distal y="-2.941275e+04" x="5.535630e+02" z="4.022464e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="212" name="Seg212_muscle_212">
+                <parent fractionAlong="1" segment="211"/>
+                <proximal y="-2.695833e+04" x="1.139181e+03" z="3.014857e+03" diameter="1.000000e+00"/>
+                <distal y="-2.776804e+04" x="1.060477e+03" z="3.306328e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="213" name="Seg213_muscle_213">
+                <parent fractionAlong="1" segment="212"/>
+                <proximal y="-2.775965e+04" x="1.196759e+03" z="3.422475e+03" diameter="1.000000e+00"/>
+                <distal y="-2.695833e+04" x="1.139181e+03" z="3.014857e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="214" name="Seg214_muscle_214">
+                <parent fractionAlong="1" segment="213"/>
+                <proximal y="-2.694959e+04" x="1.274250e+03" z="3.137364e+03" diameter="1.000000e+00"/>
+                <distal y="-2.775965e+04" x="1.196759e+03" z="3.422475e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="215" name="Seg215_muscle_215">
+                <parent fractionAlong="1" segment="214"/>
+                <proximal y="-2.695833e+04" x="1.139181e+03" z="3.014857e+03" diameter="1.000000e+00"/>
+                <distal y="-2.694959e+04" x="1.274250e+03" z="3.137364e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="216" name="Seg216_muscle_216">
+                <parent fractionAlong="1" segment="215"/>
+                <proximal y="-2.772605e+04" x="1.365120e+03" z="3.877401e+03" diameter="1.000000e+00"/>
+                <distal y="-2.773645e+04" x="1.425692e+03" z="3.744189e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="217" name="Seg217_muscle_217">
+                <parent fractionAlong="1" segment="216"/>
+                <proximal y="-2.856444e+04" x="1.317261e+03" z="4.036834e+03" diameter="1.000000e+00"/>
+                <distal y="-2.772605e+04" x="1.365120e+03" z="3.877401e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="218" name="Seg218_muscle_218">
+                <parent fractionAlong="1" segment="217"/>
+                <proximal y="-2.855403e+04" x="1.256713e+03" z="4.169948e+03" diameter="1.000000e+00"/>
+                <distal y="-2.856444e+04" x="1.317261e+03" z="4.036834e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="219" name="Seg219_muscle_219">
+                <parent fractionAlong="1" segment="218"/>
+                <proximal y="-2.772605e+04" x="1.365120e+03" z="3.877401e+03" diameter="1.000000e+00"/>
+                <distal y="-2.855403e+04" x="1.256713e+03" z="4.169948e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="220" name="Seg220_muscle_220">
+                <parent fractionAlong="1" segment="219"/>
+                <proximal y="-2.939897e+04" x="7.846830e+02" z="4.214406e+03" diameter="1.000000e+00"/>
+                <distal y="-2.939111e+04" x="8.980330e+02" z="4.325064e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="221" name="Seg221_muscle_221">
+                <parent fractionAlong="1" segment="220"/>
+                <proximal y="-3.021676e+04" x="7.705440e+02" z="4.663030e+03" diameter="1.000000e+00"/>
+                <distal y="-2.939897e+04" x="7.846830e+02" z="4.214406e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="222" name="Seg222_muscle_222">
+                <parent fractionAlong="1" segment="221"/>
+                <proximal y="-3.022435e+04" x="6.765610e+02" z="4.557997e+03" diameter="1.000000e+00"/>
+                <distal y="-3.021676e+04" x="7.705440e+02" z="4.663030e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="223" name="Seg223_muscle_223">
+                <parent fractionAlong="1" segment="222"/>
+                <proximal y="-2.939897e+04" x="7.846830e+02" z="4.214406e+03" diameter="1.000000e+00"/>
+                <distal y="-3.022435e+04" x="6.765610e+02" z="4.557997e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="224" name="Seg224_muscle_224">
+                <parent fractionAlong="1" segment="223"/>
+                <proximal y="-2.860802e+04" x="7.314770e+02" z="3.431866e+03" diameter="1.000000e+00"/>
+                <distal y="-2.943355e+04" x="6.746590e+02" z="3.756375e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="225" name="Seg225_muscle_225">
+                <parent fractionAlong="1" segment="224"/>
+                <proximal y="-2.942764e+04" x="7.924060e+02" z="3.837588e+03" diameter="1.000000e+00"/>
+                <distal y="-2.860802e+04" x="7.314770e+02" z="3.431866e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="226" name="Seg226_muscle_226">
+                <parent fractionAlong="1" segment="225"/>
+                <proximal y="-2.860204e+04" x="8.583010e+02" z="3.513884e+03" diameter="1.000000e+00"/>
+                <distal y="-2.942764e+04" x="7.924060e+02" z="3.837588e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="227" name="Seg227_muscle_227">
+                <parent fractionAlong="1" segment="226"/>
+                <proximal y="-2.860802e+04" x="7.314770e+02" z="3.431866e+03" diameter="1.000000e+00"/>
+                <distal y="-2.860204e+04" x="8.583010e+02" z="3.513884e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="228" name="Seg228_muscle_228">
+                <parent fractionAlong="1" segment="227"/>
+                <proximal y="-2.692878e+04" x="1.153011e+03" z="3.403642e+03" diameter="1.000000e+00"/>
+                <distal y="-2.691709e+04" x="1.264008e+03" z="3.568695e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="229" name="Seg229_muscle_229">
+                <parent fractionAlong="1" segment="228"/>
+                <proximal y="-2.772724e+04" x="1.190057e+03" z="3.849599e+03" diameter="1.000000e+00"/>
+                <distal y="-2.692878e+04" x="1.153011e+03" z="3.403642e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="230" name="Seg230_muscle_230">
+                <parent fractionAlong="1" segment="229"/>
+                <proximal y="-2.773885e+04" x="1.075567e+03" z="3.688611e+03" diameter="1.000000e+00"/>
+                <distal y="-2.772724e+04" x="1.190057e+03" z="3.849599e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="231" name="Seg231_muscle_231">
+                <parent fractionAlong="1" segment="230"/>
+                <proximal y="-2.692878e+04" x="1.153011e+03" z="3.403642e+03" diameter="1.000000e+00"/>
+                <distal y="-2.773885e+04" x="1.075567e+03" z="3.688611e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="232" name="Seg232_muscle_232">
+                <parent fractionAlong="1" segment="231"/>
+                <proximal y="-2.775563e+04" x="8.028850e+02" z="3.456316e+03" diameter="1.000000e+00"/>
+                <distal y="-2.774724e+04" x="9.392140e+02" z="3.572464e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="233" name="Seg233_muscle_233">
+                <parent fractionAlong="1" segment="232"/>
+                <proximal y="-2.857311e+04" x="8.619600e+02" z="3.893423e+03" diameter="1.000000e+00"/>
+                <distal y="-2.775563e+04" x="8.028850e+02" z="3.456316e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="234" name="Seg234_muscle_234">
+                <parent fractionAlong="1" segment="233"/>
+                <proximal y="-2.858124e+04" x="7.371090e+02" z="3.780020e+03" diameter="1.000000e+00"/>
+                <distal y="-2.857311e+04" x="8.619600e+02" z="3.893423e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="235" name="Seg235_muscle_235">
+                <parent fractionAlong="1" segment="234"/>
+                <proximal y="-2.775563e+04" x="8.028850e+02" z="3.456316e+03" diameter="1.000000e+00"/>
+                <distal y="-2.858124e+04" x="7.371090e+02" z="3.780020e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="236" name="Seg236_muscle_236">
+                <parent fractionAlong="1" segment="235"/>
+                <proximal y="-3.107783e+04" x="6.148720e+02" z="4.536233e+03" diameter="1.000000e+00"/>
+                <distal y="-3.160211e+04" x="4.914700e+02" z="4.649488e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="237" name="Seg237_muscle_237">
+                <parent fractionAlong="1" segment="236"/>
+                <proximal y="-3.158132e+04" x="3.703020e+02" z="4.915553e+03" diameter="1.000000e+00"/>
+                <distal y="-3.107783e+04" x="6.148720e+02" z="4.536233e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="238" name="Seg238_muscle_238">
+                <parent fractionAlong="1" segment="237"/>
+                <proximal y="-3.105706e+04" x="4.937990e+02" z="4.802252e+03" diameter="1.000000e+00"/>
+                <distal y="-3.158132e+04" x="3.703020e+02" z="4.915553e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="239" name="Seg239_muscle_239">
+                <parent fractionAlong="1" segment="238"/>
+                <proximal y="-3.107783e+04" x="6.148720e+02" z="4.536233e+03" diameter="1.000000e+00"/>
+                <distal y="-3.105706e+04" x="4.937990e+02" z="4.802252e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="240" name="Seg240_muscle_240">
+                <parent fractionAlong="1" segment="239"/>
+                <proximal y="-2.696709e+04" x="1.004111e+03" z="2.892353e+03" diameter="1.000000e+00"/>
+                <distal y="-2.777643e+04" x="9.241960e+02" z="3.190203e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="241" name="Seg241_muscle_241">
+                <parent fractionAlong="1" segment="240"/>
+                <proximal y="-2.776804e+04" x="1.060477e+03" z="3.306328e+03" diameter="1.000000e+00"/>
+                <distal y="-2.696709e+04" x="1.004111e+03" z="2.892353e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="242" name="Seg242_muscle_242">
+                <parent fractionAlong="1" segment="241"/>
+                <proximal y="-2.695833e+04" x="1.139181e+03" z="3.014857e+03" diameter="1.000000e+00"/>
+                <distal y="-2.776804e+04" x="1.060477e+03" z="3.306328e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="243" name="Seg243_muscle_243">
+                <parent fractionAlong="1" segment="242"/>
+                <proximal y="-2.696709e+04" x="1.004111e+03" z="2.892353e+03" diameter="1.000000e+00"/>
+                <distal y="-2.695833e+04" x="1.139181e+03" z="3.014857e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="244" name="Seg244_muscle_244">
+                <parent fractionAlong="1" segment="243"/>
+                <proximal y="-2.694629e+04" x="8.828000e+02" z="3.158441e+03" diameter="1.000000e+00"/>
+                <distal y="-2.696709e+04" x="1.004111e+03" z="2.892353e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="245" name="Seg245_muscle_245">
+                <parent fractionAlong="1" segment="244"/>
+                <proximal y="-2.612774e+04" x="1.459198e+03" z="3.021345e+03" diameter="1.000000e+00"/>
+                <distal y="-2.694629e+04" x="8.828000e+02" z="3.158441e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="246" name="Seg246_muscle_246">
+                <parent fractionAlong="1" segment="245"/>
+                <proximal y="-2.610692e+04" x="1.337935e+03" z="3.287766e+03" diameter="1.000000e+00"/>
+                <distal y="-2.612774e+04" x="1.459198e+03" z="3.021345e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="247" name="Seg247_muscle_247">
+                <parent fractionAlong="1" segment="246"/>
+                <proximal y="-2.694629e+04" x="8.828000e+02" z="3.158441e+03" diameter="1.000000e+00"/>
+                <distal y="-2.610692e+04" x="1.337935e+03" z="3.287766e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="248" name="Seg248_muscle_248">
+                <parent fractionAlong="1" segment="247"/>
+                <proximal y="-2.858124e+04" x="7.371090e+02" z="3.780020e+03" diameter="1.000000e+00"/>
+                <distal y="-2.857311e+04" x="8.619600e+02" z="3.893423e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="249" name="Seg249_muscle_249">
+                <parent fractionAlong="1" segment="248"/>
+                <proximal y="-2.939897e+04" x="7.846830e+02" z="4.214406e+03" diameter="1.000000e+00"/>
+                <distal y="-2.858124e+04" x="7.371090e+02" z="3.780020e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="250" name="Seg250_muscle_250">
+                <parent fractionAlong="1" segment="249"/>
+                <proximal y="-2.940684e+04" x="6.713330e+02" z="4.103748e+03" diameter="1.000000e+00"/>
+                <distal y="-2.939897e+04" x="7.846830e+02" z="4.214406e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="251" name="Seg251_muscle_251">
+                <parent fractionAlong="1" segment="250"/>
+                <proximal y="-2.858124e+04" x="7.371090e+02" z="3.780020e+03" diameter="1.000000e+00"/>
+                <distal y="-2.940684e+04" x="6.713330e+02" z="4.103748e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="252" name="Seg252_muscle_252">
+                <parent fractionAlong="1" segment="251"/>
+                <proximal y="-2.854363e+04" x="1.196164e+03" z="4.303088e+03" diameter="1.000000e+00"/>
+                <distal y="-2.855403e+04" x="1.256713e+03" z="4.169948e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="253" name="Seg253_muscle_253">
+                <parent fractionAlong="1" segment="252"/>
+                <proximal y="-2.938202e+04" x="1.148282e+03" z="4.462497e+03" diameter="1.000000e+00"/>
+                <distal y="-2.854363e+04" x="1.196164e+03" z="4.303088e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="254" name="Seg254_muscle_254">
+                <parent fractionAlong="1" segment="253"/>
+                <proximal y="-2.937161e+04" x="1.087733e+03" z="4.595565e+03" diameter="1.000000e+00"/>
+                <distal y="-2.938202e+04" x="1.148282e+03" z="4.462497e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="255" name="Seg255_muscle_255">
+                <parent fractionAlong="1" segment="254"/>
+                <proximal y="-2.854363e+04" x="1.196164e+03" z="4.303088e+03" diameter="1.000000e+00"/>
+                <distal y="-2.937161e+04" x="1.087733e+03" z="4.595565e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="256" name="Seg256_muscle_256">
+                <parent fractionAlong="1" segment="255"/>
+                <proximal y="-2.858722e+04" x="6.102610e+02" z="3.697954e+03" diameter="1.000000e+00"/>
+                <distal y="-2.860802e+04" x="7.314770e+02" z="3.431866e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="257" name="Seg257_muscle_257">
+                <parent fractionAlong="1" segment="256"/>
+                <proximal y="-2.778249e+04" x="7.882950e+02" z="3.107333e+03" diameter="1.000000e+00"/>
+                <distal y="-2.858722e+04" x="6.102610e+02" z="3.697954e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="258" name="Seg258_muscle_258">
+                <parent fractionAlong="1" segment="257"/>
+                <proximal y="-2.776169e+04" x="6.669840e+02" z="3.373445e+03" diameter="1.000000e+00"/>
+                <distal y="-2.778249e+04" x="7.882950e+02" z="3.107333e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="259" name="Seg259_muscle_259">
+                <parent fractionAlong="1" segment="258"/>
+                <proximal y="-2.858722e+04" x="6.102610e+02" z="3.697954e+03" diameter="1.000000e+00"/>
+                <distal y="-2.776169e+04" x="6.669840e+02" z="3.373445e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="260" name="Seg260_muscle_260">
+                <parent fractionAlong="1" segment="259"/>
+                <proximal y="-2.777643e+04" x="9.241960e+02" z="3.190203e+03" diameter="1.000000e+00"/>
+                <distal y="-2.860204e+04" x="8.583010e+02" z="3.513884e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="261" name="Seg261_muscle_261">
+                <parent fractionAlong="1" segment="260"/>
+                <proximal y="-2.859391e+04" x="9.831280e+02" z="3.627287e+03" diameter="1.000000e+00"/>
+                <distal y="-2.777643e+04" x="9.241960e+02" z="3.190203e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="262" name="Seg262_muscle_262">
+                <parent fractionAlong="1" segment="261"/>
+                <proximal y="-2.776804e+04" x="1.060477e+03" z="3.306328e+03" diameter="1.000000e+00"/>
+                <distal y="-2.859391e+04" x="9.831280e+02" z="3.627287e+03" diameter="1.000000e+00"/>
+            </segment>
+            <segment id="263" name="Seg263_muscle_263">
+                <parent fractionAlong="1" segment="262"/>
+                <proximal y="-2.777643e+04" x="9.241960e+02" z="3.190203e+03" diameter="1.000000e+00"/>
+                <distal y="-2.776804e+04" x="1.060477e+03" z="3.306328e+03" diameter="1.000000e+00"/>
+            </segment>
+        </morphology>
+    </cell>
+</neuroml>

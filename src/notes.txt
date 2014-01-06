@@ -1,0 +1,73 @@
+Changes made by Peter McCluskey, November 2013
+
+==========================
+ Code to convert neurons
+==========================
+
+For most neurons it produces an nml file that has the same structure
+as the ones in CElegansNeuroML/CElegans/generatedNeuroML2.
+The coordinates are not identical, but generally within 0.1 microns
+of the other version.
+
+IL1DL is an example of a neuron for which it produces an nml file with
+a somewhat different structure. The old code that I started with did not
+come close to handling this neuron because the coordinates were not
+arranged in patterns consistent with what the code to create Slice objects
+expected. I wrote a mostly new approach to creating Slice objects under
+conditions where the original Slice code fails to find any Slice.
+Most of the new code is in Entity/Slice.py, function construct_method2
+and class AlternateSlice.
+
+A few neurons that are not connected to muscles cannot be concerted to
+nml by this code. PVDR is one case that raises an exception after an hour
+on my system, probably due to problems with finding a Slice. The problem
+involves this statement producing an empty Slice:
+first_slice = self.create_slice(sortedadjacentPoints)
+
+The original code took much longer before giving up on PVDR - I made changes
+to the Slice and Faces classes to cache some info so that it takes O(N^2)
+time instead of O(N^3) time.
+
+I made some changes to NeuroMlParser/NeuroMlWriter.py to output .nml
+that are very similar to those in CElegansNeuroML/CElegans/generatedNeuroML2.
+
+
+
+==========================
+Code to find neuron-muscle connections
+==========================
+Most of the code for this is in Entity/Muscle.py.
+
+It's main function is to generate connections between coordinates on
+various neurons and coordinates on various muscles.
+
+It uses the line segments produced by the faces in the .wrl file from
+blender. For the muscles, it also adds a diagonal line segment across
+each face. For the neuron-muscle pairs that are reported to have
+connections, it finds the shortest line segments between each pair of
+[neuron segment, muscle segment]. It selects some of these, starting
+with the shortest, and constraining additional selections to be some
+minimum distance away from ones that have already been selected.
+
+Sometimes the first attempt fails to find as many connections as expected,
+in which case it makes up to 5 more attempts with changes to some parameters
+(accepting longer connections, accepting connections that are closer to
+each other, and breaking some of the longer line segments into smaller
+pieces).
+
+Some connections are implausibly long (PVWR-vBWMR12 is 413.2 microns).
+I presume these are data errors?
+
+It saves a representation of the muscles in nml files, but I've given
+up for now on making that very useful. It provides a somewhat small
+subset of the muscle that is involved in the connections to the
+neurons.
+
+An alternate representation of the muscles could be created by calling
+createMorphoMlFile before segments_from_connections rather than after it.
+That representation is fairly close to the representation in the blender
+file, and has a rather arbitrary order which loops back on itself in ways
+that might confuse code that tries to use it.
+
+
+I added a file Entity/plot.py for use in visualizing what the code does.
