@@ -1,0 +1,17 @@
+repo: openworm/Blender2NeuroML
+shortDescription: "Interface between Sibernetic and NEURON simulator"
+coordinator: skhayrulin@openworm.org
+documentation: "https://github.com/openworm/Blender2NeuroML/blob/master/README.md"
+keywords: 
+  - 3D
+  - Blender
+  - NeuroML
+  - neurons
+languages: 
+  - python
+members: 
+  - skhayrulin@openworm.org
+outputs: 
+  - openworm/CElegansNeuroML
+parent: 
+  - openworm/CElegansNeuroML
