@@ -1,6 +1,6 @@
 # This workflow will test all of the Python scripts in this package in the correct sequence
 
-name: Python application
+name: Test Python scripts
 
 on:
   push:
@@ -32,4 +32,5 @@ jobs:
     - name: Test all
       run: |
         cd src
+        python CheckWrlFile.py
         
