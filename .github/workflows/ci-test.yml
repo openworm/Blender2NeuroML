@@ -27,10 +27,12 @@ jobs:
         
     - name: Install dependencies
       run: |
-        # TODO...
+        pip install xlrd
+        
         
     - name: Test all
       run: |
         cd src
-        python CheckWrlFile.py
+        python WrlToNeuroML.py
+        ls -alt
         
