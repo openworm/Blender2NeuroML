@@ -1,0 +1,35 @@
+# This workflow will test all of the Python scripts in this package in the correct sequence
+
+name: Python application
+
+on:
+  push:
+    branches: [ master, development ]
+  pull_request:
+    branches: [ master, development ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ 2.7, 3.7 ]
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Python  ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version:  ${{ matrix.python-version }}
+        
+    - name: Install dependencies
+      run: |
+        # TODO...
+        
+    - name: Test all
+      run: |
+        cd src
+        
