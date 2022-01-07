@@ -4,9 +4,9 @@ name: Test Python scripts
 
 on:
   push:
-    branches: [ master, development ]
+    branches: [ master, development,  tyson_changes  ]
   pull_request:
-    branches: [ master, development ]
+    branches: [ master, development,  tyson_changes  ]
 
 jobs:
   build:
