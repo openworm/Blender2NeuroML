@@ -7,6 +7,7 @@ Created on 03.06.2011
 import re, sys, os
 
 import numpy
+import neuroml
 from NeuroMlEntity.Point import Point
 from NeuroMlEntity.Constants import *
 from NeuroMlParser.NeuroMlWriter import NeuroMlWriter
