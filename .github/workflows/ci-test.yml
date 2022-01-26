@@ -28,6 +28,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install xlrd numpy
+        pip install neuroml
         
         
     - name: Test all
