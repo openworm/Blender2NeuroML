@@ -32,7 +32,6 @@ jobs:
         
     - name: Test all
       run: |
-        cd src
         python WrlToNeuroML.py
         ls -alt
         
