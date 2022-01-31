@@ -29,6 +29,11 @@ from neuroml import Connection
 from neuroml import Morphology
 import neuroml.writers as writers
 import neuroml.loaders as loaders
+import matplotlib
+
+#.use('Agg') allows matplotlib to point in the correct location on windows for my WSL env
+#I'm leaving it commented out in case it ruins the standard usecase
+#matplotlib.use('Agg')
 
 wrlFileName = './Data/Virtual_Worm_March_2011.wrl'
 neuronsFileName = './Data/neurons.txt'
