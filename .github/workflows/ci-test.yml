@@ -4,9 +4,9 @@ name: Test Python scripts
 
 on:
   push:
-    branches: [ master, development ]
+    branches: [ master, development,  tyson_changes  ]
   pull_request:
-    branches: [ master, development ]
+    branches: [ master, development,  tyson_changes  ]
 
 jobs:
   build:
@@ -27,12 +27,14 @@ jobs:
         
     - name: Install dependencies
       run: |
-        pip install xlrd
+        pip install xlrd numpy
+        pip install libneuroml
         
         
     - name: Test all
       run: |
         cd src
+        ls -a
         python WrlToNeuroML.py
         ls -alt
         
