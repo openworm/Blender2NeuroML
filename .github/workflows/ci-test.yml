@@ -35,6 +35,6 @@ jobs:
       run: |
         cd src
         ls -a
-        python WrlToNeuroML.py
+        python CheckWrlFile.py
         ls -alt
         
