@@ -103,37 +103,44 @@ def readFormWrlFile_new(fileName):
     Read data from WrlFile format 2.0
     '''
     wrlFile =open(fileName,'r')
+    lines = 0 
+    all_neuron_names = []
     for line in wrlFile:
-        s = str(line)
+        s = str(line).strip()
+        lines+=1
         if(s.startswith('DEF ')):
-            neuronName = s[4:s[4:].index(' ')+4]
+            neuronName = s.split(' ')[1]
+            #print('%s => %s'%(s,neuronName))
+            all_neuron_names.append(neuronName)
             if s == 'DEF SAADL Shape {\n':
                 pass
             if(neuroNameFromExcel.__contains__(neuronName)):
                 checkedNeuronWithExcel.append(neuronName)
             if(neuroNameFromOds.__contains__(neuronName)):
                 checkedNeuronWithOds.append(neuronName) 
+
+    print('Checked WRL file %s, %i lines total, potential names: %s'%(fileName, lines,all_neuron_names))
                 
     wrlFile.close()
     
 if __name__ == '__main__':
-    print '===================== Program Start ====================='
+    print('===================== Program Start =====================')
     
     readDataFromOdsFile(odsFileName)
-    print 'In Ods File(' + odsFileName + ') Was find:' + str(len(neuroNameFromOds)) + ' Neuron name'
+    print('In ODS File(' + odsFileName + ') found: ' + str(len(neuroNameFromOds)) + ' Neuron names')
     readFromXlsFile(xlsFileName)
-    print 'In Excel File(' + xlsFileName + ') Was find:' + str(len(neuroNameFromExcel)) + ' Neuron name'
+    print('In Excel File(' + xlsFileName + ') found: ' + str(len(neuroNameFromExcel)) + ' Neuron name')
     
-    readFormWrlFile_new(wrlFileName_test)
-    print '===================== Comparing with Excel File ' + xlsFileName + '======================='
+    readFormWrlFile_new(wrlFileName)
+    print('===================== Comparing with Excel File ' + xlsFileName + '=======================')
     for neuron in neuroNameFromExcel:
         if not checkedNeuronWithExcel.__contains__(neuron):
-            print 'Neuron with name ' +neuron+ ' was find in ' + xlsFileName + ' file, but was not find in ' + wrlFileName + 'file'
-    print '===================== Comparing with Ods File ' + odsFileName + '========================='
+            print('Neuron with name ' +neuron+ ' was found in ' + xlsFileName + ' file, but was not found in ' + wrlFileName + 'file')
+    print('===================== Comparing with Ods File ' + odsFileName + '=========================')
     for neuron in neuroNameFromOds:
         if not checkedNeuronWithOds.__contains__(neuron):
-            print 'Neuron with name ' +neuron+ ' was find in ' + odsFileName + ' file, but was not find in ' + wrlFileName + ' file'
+            print('Neuron with name ' +neuron+ ' was found in ' + odsFileName + ' file, but was not found in ' + wrlFileName + ' file')
     
-    print '===================== Exit ================================'
-    print list(neuroNameFromOds)
-    print list(checkedNeuronWithOds)
+    print('===================== Exit ================================')
+    print(list(neuroNameFromOds))
+    print(list(checkedNeuronWithOds))
