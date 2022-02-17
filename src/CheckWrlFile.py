@@ -124,23 +124,23 @@ def readFormWrlFile_new(fileName):
     wrlFile.close()
     
 if __name__ == '__main__':
-    print '===================== Program Start ====================='
+    print('===================== Program Start =====================')
     
     readDataFromOdsFile(odsFileName)
-    print 'In ODS File(' + odsFileName + ') found: ' + str(len(neuroNameFromOds)) + ' Neuron names'
+    print('In ODS File(' + odsFileName + ') found: ' + str(len(neuroNameFromOds)) + ' Neuron names')
     readFromXlsFile(xlsFileName)
-    print 'In Excel File(' + xlsFileName + ') found: ' + str(len(neuroNameFromExcel)) + ' Neuron name'
+    print('In Excel File(' + xlsFileName + ') found: ' + str(len(neuroNameFromExcel)) + ' Neuron name')
     
     readFormWrlFile_new(wrlFileName)
-    print '===================== Comparing with Excel File ' + xlsFileName + '======================='
+    print('===================== Comparing with Excel File ' + xlsFileName + '=======================')
     for neuron in neuroNameFromExcel:
         if not checkedNeuronWithExcel.__contains__(neuron):
-            print 'Neuron with name ' +neuron+ ' was found in ' + xlsFileName + ' file, but was not found in ' + wrlFileName + 'file'
-    print '===================== Comparing with Ods File ' + odsFileName + '========================='
+            print('Neuron with name ' +neuron+ ' was found in ' + xlsFileName + ' file, but was not found in ' + wrlFileName + 'file')
+    print('===================== Comparing with Ods File ' + odsFileName + '=========================')
     for neuron in neuroNameFromOds:
         if not checkedNeuronWithOds.__contains__(neuron):
-            print 'Neuron with name ' +neuron+ ' was found in ' + odsFileName + ' file, but was not found in ' + wrlFileName + ' file'
+            print('Neuron with name ' +neuron+ ' was found in ' + odsFileName + ' file, but was not found in ' + wrlFileName + ' file')
     
-    print '===================== Exit ================================'
-    print list(neuroNameFromOds)
-    print list(checkedNeuronWithOds)
+    print('===================== Exit ================================')
+    print(list(neuroNameFromOds))
+    print(list(checkedNeuronWithOds))
