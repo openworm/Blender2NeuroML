@@ -29,6 +29,7 @@ jobs:
       run: |
         pip install xlrd numpy
         pip install libneuroml
+        pip install matplotlib
         
         
     - name: Test all
