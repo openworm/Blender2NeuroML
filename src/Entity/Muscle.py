@@ -1,4 +1,4 @@
-
+from __future__ import absolute_import
 import numpy
 from neuroml import Connection
 from NeuroMlEntity.Point import Point
@@ -131,11 +131,11 @@ def connect_with_muscles(neuron_dict, muscle_dict):
     for ((pre_cell, post_cell), num_sects) in substitute_connect_dict.items():
         if muscle_dict.has_key(pre_cell):
             (pre_cell, post_cell) = (post_cell, pre_cell)
-                    print("warn = missing neuron %s" % pre_cell)
+            print("warn = missing neuron %s" % pre_cell)
         if post_cell in muscle_dict:
             if pre_cell not in neuron_dict:
                 if pre_cell not in muscle_dict:
-                continue
+                    continue
             print("pair %6s %6s %d sects" % (pre_cell, post_cell, num_sects))
 
             i = 0
