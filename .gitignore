@@ -1,2 +1,5 @@
 *.pyc
 *.bak
+#add your virtual environments here
+py27venv/*
+py310venv/*

@@ -3,6 +3,7 @@ Created on 10.05.2011
 
 @author: Sergey Khayrulin
 '''
+from __future__ import absolute_import
 import xlrd
 import zipfile
 import xml.parsers.expat

@@ -4,7 +4,7 @@ import numpy
 import matplotlib.pyplot as plotter
 from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
-from Muscle import select_conn_points
+from .Muscle import select_conn_points
 
 def plot_connect(connect_list, neuron_dict, muscle_dict):
 

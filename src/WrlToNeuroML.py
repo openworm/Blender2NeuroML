@@ -352,7 +352,7 @@ def createMorphoMlFile(fileName, cell):
     Convert to new neuroml structures and write
     '''
 
-    if not muscle_dict.has_key(cell.name):
+    if cell.name not in muscle_dict:
         neuroMlwriter = NeuroMlWriter(fileName, cell.name)
         neuroMlwriter.addCell(cell)
         neuroMlwriter.writeDocumentToFile()
