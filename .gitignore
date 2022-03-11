@@ -1,5 +1,9 @@
+#avoid compiled python files
 *.pyc
+#avoid 2to3 script backup files
 *.bak
+#avoid Mac Finder config files
+.DS_Store
 #add your virtual environments here
 py27venv/*
 py310venv/*

@@ -352,7 +352,7 @@ class Entity(object):
             for branch_center_point,branch in list(center_points.items()):
                 old_num_r_points = len(self.resulting_points)
                 print("start branch %d %d %d %d size %d %3d resulting_points"
-                      % (branch[0].point, branch[1].point, branch[2].point, branch[3].point, len(branch), len(self.resulting_points))))
+                      % (branch[0].point, branch[1].point, branch[2].point, branch[3].point, len(branch), len(self.resulting_points)))
                 self.find_point(branch_center_point,iteration,current_point,True,True, _slice=branch)
                 print("finish branch %d %3d resulting_points" % (branch[0].point, len(self.resulting_points)))
                 if self.use_alt_slice() and len(self.resulting_points) == old_num_r_points + 1:
