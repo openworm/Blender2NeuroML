@@ -132,8 +132,8 @@ class Entity(object):
                     brunches_temp[root].append(self.resulting_points.index(p))
         # the first of these two lines works with python3, the second with python2:
         print('>>> %s' % brunches_temp)
-        for k1, value in sorted(brunches_temp.iteritems(),key=lambda k,v:(len(v),k),reverse=True): # we try to determine  
-        #for k1, value in sorted(brunches_temp.iteritems(),key=lambda (k,v):(len(v),k),reverse=True): # we try to determine  
+        #for k1, value in sorted(brunches_temp.iteritems(),key=lambda k,v:(len(v),k),reverse=True): # we try to determine  
+        for k1, value in sorted(brunches_temp.iteritems(),key=lambda (k,v):(len(v),k),reverse=True): # we try to determine  
             if i == 0:
                 for j in value:
                     self.resulting_points[j].isAxon = True
