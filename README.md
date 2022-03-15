@@ -3,7 +3,7 @@ Blender2NeuroML
 
 Conversion script to bring neuron models created in Blender into NeuroML format.
 
-In the [src folder](/tree/master/src) there are two Python files which can be run in the console and blenderToNeuroMl.py which can be run in Eclipse.
+In the [src folder](src) there are two Python files which can be run in the console and blenderToNeuroMl.py which can be run in Eclipse.
 
 
 **Update 2022: the scripts below have been rechecked and tested in Python 3**
@@ -11,7 +11,7 @@ In the [src folder](/tree/master/src) there are two Python files which can be ru
   1. [CheckWrlFile.py](src/CheckWrlFile.py) - compare WRL file [Virtual_Worm_March_2011.wrl](src/Data/Virtual_Worm_March_2011.wrl) with [302.ods](src/Data/302.ods) and [NeuronConnect.xls](src/Data/NeuronConnect.xls).
      It finds neurons which are in 302.ods and NeuronConnect.xls but aren't in [Virtual_Worm_March_2011.wrl](src/Data/Virtual_Worm_March_2011.wrl). Output of scripts prints
      to console. Before you run it you'll need to install xlrd. Type: `pip install xlrd`
-  2. [WrlToNeuroML.py](src/WrlToNeuroML.py) - create NeuroML files from WRL file [Virtual_Worm_March_2011.wrl](src/Data/Virtual_Worm_March_2011.wrl) for neurons listed in the [neurons.txt](/src/Data/neurons.txt) file. This script takes data from the [Data folder](/tree/master/src/Data) and creates one NeuroML file in folder [Output](/tree/master/src/Output).
+  2. [WrlToNeuroML.py](src/WrlToNeuroML.py) - create NeuroML files from WRL file [Virtual_Worm_March_2011.wrl](src/Data/Virtual_Worm_March_2011.wrl) for neurons listed in the [neurons.txt](/src/Data/neurons.txt) file. This script takes data from the [Data folder](src/Data) and creates one NeuroML file in folder [Output](src/Output).
 
 **Update 2022: the following is still being updated/tested**
 
