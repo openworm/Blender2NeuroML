@@ -130,9 +130,7 @@ class Entity(object):
                 parent = p.getRoot(self.resulting_points)
                 if parent == root:
                     brunches_temp[root].append(self.resulting_points.index(p))
-        # the first of these two lines works with python3, the second with python2:
-        print('>>> %s' % brunches_temp)
-        #for k1, value in sorted(brunches_temp.iteritems(),key=lambda k,v:(len(v),k),reverse=True): # we try to determine
+        # Line below has been updated to work in python 2 and 3 
         for k1, value in sorted(brunches_temp.items(),key=lambda k_v:(len(k_v[1]),k_v[0]),reverse=True): # we try to determine
             if i == 0:
                 for j in value:
