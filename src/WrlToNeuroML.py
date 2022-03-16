@@ -3,7 +3,7 @@ Created on 03.06.2011
 
 @author: Sergey Khayrulin
 '''
-
+from __future__ import absolute_import
 import re, sys, os
 
 import numpy
