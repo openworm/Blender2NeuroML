@@ -130,10 +130,10 @@ class Entity(object):
                 parent = p.getRoot(self.resulting_points)
                 if parent == root:
                     brunches_temp[root].append(self.resulting_points.index(p))
-        # the first of these two lines works with python3, the second with python2:
-        print('>>> %s' % brunches_temp)
-        for k1, value in sorted(brunches_temp.items(),key=lambda k,v:(len(v),k),reverse=True): # we try to determine  
-        #for k1, value in sorted(brunches_temp.iteritems(),key=lambda (k,v):(len(v),k),reverse=True): # we try to determine  
+        #for k1, value in sorted(brunches_temp.items(),key=lambda v:(len(v)),reverse=True): # edited 3.3 version - works on python 3.10
+        for k1, value in brunches_temp.items(): #removed sort version- works with 3.10 and 2.7 - same output for both in AVAR.nml
+        #for k1, value in sorted(brunches_temp.iteritems(),key=lambda k,v:(len(v),k),reverse=True): #python 3.3 version? - not working on 3.10
+        #for k1, value in sorted(brunches_temp.iteritems(),key=lambda (k,v):(len(v),k),reverse=True): #python 2 version - works with 2  
             if i == 0:
                 for j in value:
                     self.resulting_points[j].isAxon = True
