@@ -191,4 +191,4 @@ if __name__ == '__main__':
     #bpy.ops.wm.save_mainfile(check_existing = False)
 
     # Transform mesh coordinates by interpolation
-    transform_objects(pointset, newyset, filter(lambda o: o.type == "MESH", bpy.data.objects))
+    transform_objects(pointset, newyset, [o for o in bpy.data.objects if o.type == "MESH"])

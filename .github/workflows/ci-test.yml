@@ -4,9 +4,9 @@ name: Test Python scripts
 
 on:
   push:
-    branches: [ master, development,  tyson_changes, test*  ]
+    branches: [ master, development,  tyson_changes, test*, python3_update  ]
   pull_request:
-    branches: [ master, development,  tyson_changes, test*  ]
+    branches: [ master, development,  tyson_changes, test*, python3_update  ]
 
 jobs:
   build:
@@ -29,6 +29,7 @@ jobs:
       run: |
         pip install xlrd numpy
         pip install libneuroml
+        pip install matplotlib
         
         
     - name: Test all
@@ -36,5 +37,6 @@ jobs:
         cd src
         ls -a
         python CheckWrlFile.py
+        python WrlToNeuroML.py
         ls -alt
         

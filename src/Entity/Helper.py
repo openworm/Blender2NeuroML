@@ -139,7 +139,7 @@ class Faces(dict):
                 self.__Regen_Dict()
             faceWithpoints = []
             for p in (num_p1, num_p2):
-                if self.faces_with_points.has_key(p):
+                if p in self.faces_with_points:
                     for face in self.faces_with_points[p]:
                         if num_p1 in face.order and num_p2 in face.order:
                             faceWithpoints.append(face)

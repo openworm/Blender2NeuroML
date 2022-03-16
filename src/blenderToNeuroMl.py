@@ -138,7 +138,7 @@ def export(theObjects, neuronName):
                 # Create tesselation faces
                 mesh.calc_tessface()
                 if len(mesh.materials) > 1:
-                    if( neuroNameFromOds.__contains__(object.name)
+                    if ( neuroNameFromOds.__contains__(object.name)
                         or object.name[:7] == 'mu_bod_'):
                         #and object.name == "PVDR"):# or object.name == "URBL"):#object.getData().materials[0].name != "Motor Neuron"
                         import mathutils
