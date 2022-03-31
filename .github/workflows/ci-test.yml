@@ -19,19 +19,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
+
     - name: Set up Python  ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
         python-version:  ${{ matrix.python-version }}
-        
+
     - name: Install dependencies
       run: |
         pip install xlrd numpy
         pip install libneuroml
         pip install matplotlib
-        
-        
+
+
     - name: Test all
       run: |
         cd src
@@ -39,4 +39,8 @@ jobs:
         python CheckWrlFile.py
         python WrlToNeuroML.py
         ls -alt
-        
+
+    - name: Print info on generated files
+      run: |
+
+        ls -alt src/Output
