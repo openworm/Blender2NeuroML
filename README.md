@@ -33,3 +33,22 @@ In the [src folder](src) there are two Python files which can be run in the cons
 
 If you have any problem will be glad to help
 write s.khayrulin@gmail.com or openworm-discuss@googlegroups.com
+
+
+For some scripts (which?) you need to run them in the Blender Scripting console.
+To Run Python Scripts in the Blender Console:
+1. Install Blender
+2. Click on the Scripting Workspace Tab near the top right/middle
+3. Under the text editor, click the folder icon that says "Open"
+4. Navigate to your Python Script
+5. Push the play button to run the script
+There likely will be errors. 
+To view the Blender console click on "Window" near the top left and click "Toggle System Console"
+For 3rd party module import errors, remember that Blender uses its own install of Python-
+You will need to get Blender to install those modules to its own internal Python.
+To Install 3rd Party Modules to Blender's Internal Python:
+1. Navigate to the Scripting Workspace as described above
+2. In the Interactive Python Console near the bottom left type the following code:
+from pip._internal import main
+main(['install','pandas']) 
+3. Replace 'pandas' with whatever module import error you are getting and repeat
