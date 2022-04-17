@@ -27,8 +27,6 @@ import sys, os, pprint
 # Load modules in the script's directory
 scriptPath = os.path.dirname(os.path.realpath(__file__))
 print("scriptPath %s" % scriptPath)
-scriptPath = '/home/pcm/src/BlenderToNeuroMLConverter/src/'
-sys.path.append(scriptPath)
 
 #import Blender
 #from Blender import Object, Mesh, NMesh, Lamp, Draw, BGL, Image, Text, sys, Mathutils
