@@ -47,8 +47,9 @@ To view the Blender console click on "Window" near the top left and click "Toggl
 For 3rd party module import errors, remember that Blender uses its own install of Python-
 You will need to get Blender to install those modules to its own internal Python.
 To Install 3rd Party Modules to Blender's Internal Python:
-1. Navigate to the Scripting Workspace as described above
-2. In the Interactive Python Console near the bottom left type the following code:
+1. Open Blender as Admin (shift+rightclick "Run as administrator")
+2. Navigate to the Scripting Workspace as described above
+3. In the Interactive Python Console near the bottom left type the following code:
 from pip._internal import main
-main(['install','pandas']) 
-3. Replace 'pandas' with whatever module import error you are getting and repeat
+main(['install','libneuroml']) 
+4. Replace 'libneuroml' with whatever module import error you are getting and repeat
