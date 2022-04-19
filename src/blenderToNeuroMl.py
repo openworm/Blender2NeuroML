@@ -17,6 +17,8 @@ Variable: PYTHONPATH
 Value: ${container_loc} 
 and choose "Append environment to native environment"
 '''
+### the triple hash indicates that something may be wrong or poorly written in this file
+
 # Load modules in the script's directory
 scriptPath = os.path.dirname(os.path.realpath(__file__))
 print("scriptPath %s" % scriptPath)
@@ -106,9 +108,7 @@ def export(theObjects, neuronName):
         bpy.ops.object.transform_apply(scale=True, rotation=True)
         object.select = False
 
-        #try:
-        if 1: ###Why is this here? Either create a var or unindent. 
-            ###I can't believe this got committed to main made it through.
+        try:
             if object.type == "MESH":
                 mesh = object.data
                 # Create tesselation faces
@@ -119,35 +119,13 @@ def export(theObjects, neuronName):
                         #and object.name == "PVDR"):# or object.name == "URBL"):#object.getData().materials[0].name != "Motor Neuron"
                         print(object.name)
                         print("%d vertices, %d faces" % (len(mesh.vertices),
-                                                             len(mesh.tessfaces)))
+                                                                len(mesh.tessfaces)))
                         print("matrix %s" % object.matrix_world)
-                        neuronName = object.name
-                        if dump_only:
-                            v_list = []
-                            f_list = []
-                            for vertex in mesh.vertices:
-                                v = vertex.co
-                                v_list.append([v[0], v[1], v[2]])
-                            for face in mesh.tessfaces:
-                                cordArr = []
-                                for v in face.vertices:
-                                    cordArr.append(v)
-                                if len(cordArr) == 3:
-                                    cordArr.append(cordArr[0])
-                                f_list.append(cordArr)
-                            neuron_dict[str(neuronName)] = [v_list, f_list]
-                            print(neuronName, '=')
-                            print(pprint.PrettyPrinter().pformat(mesh))
-                            continue
-                        entity = mesh_to_entity(mesh)
-                        entity_to_cell(entity, neuronName)
-        #except Exception:
-        #    write_log "Error: object named %s has problem with accessing an attribute" % object.name
-        #    badNeurons.append(object.name)
-        #    continue 
-        ###Why are we ignoring the exceptions? WHY?!
-        ###Do I just need to take the code back to the initial committed version? 
-    print(list(badNeurons))
+        except Exception:
+           print("Error: object named %s has problem with accessing an attribute" % object.name)
+           badNeurons.append(object.name)
+           continue 
+    print("Bad Neurons: %s" % list(badNeurons))
 
 def mesh_to_entity(mesh):
     entity = Entity()
@@ -175,6 +153,8 @@ def entity_to_cell(entity, neuronName):
 def export2():
     for (neuronName, v) in neuron_dict.items():
         print('start %s' % neuronName)
+        ###what is this next line line even doing...? it seems sketchy to me 
+        ###once the script is working, take this out.
         if neuronName[:7] == 'mu_bod_' or neuronName != 'VA10': # or neuronName in ('M1', 'RMED', 'PVDR', 'PVDL', 'IL1DL', 'IL1DR', 'I5', ):
             continue
         (v_list, f_list) = v
@@ -340,31 +320,14 @@ def createMorphoMlFile(fileName, cell):
     writers.NeuroMLWriter.write(doc, "Output/%s.nml" % fileName)
     
 if __name__ == '__main__':
-    if not load_from_dump:
-        bpy.ops.object.mode_set(mode='OBJECT')
-    #loadNeuronsName(fileWithNeuron)
+    bpy.ops.object.mode_set(mode='OBJECT')
+    #loadNeuronsName(fileWithNeuron) ###why is this commented out? what is this doing here?
     getNeuronsNameFromOdsFile(odsFileWithNeurons)
     print('Create Neurons')
-    if load_from_dump:
-        fd = open(dump_filename, 'r')
-        neuron_dict = eval(fd.readline())
-        #write_log(pprint.PrettyPrinter().pformat(neuron_dict))
-        export2()
-        for cell in neurons:
-            neuron_dict[cell.name] = cell
-    else:
-        export(bpy.data.objects, '')
-    if dump_only:
-        try:
-            fd = open(dump_filename, 'w')
-            fd.write(str(neuron_dict))
-            fd.close()
-        except (IOError, OSError, TypeError) as msg:
-            raise
+    export(bpy.data.objects, '')
     print('WriteResult To File')
     for neuronName in sorted(neuron_dict.keys()):
         if type(neuron_dict[neuronName]) != type([]):
             createMorphoMlFile(outFileName % neuronName, neuron_dict[neuronName])
-
-    #createMorphoMlFile(outFileName%'I6') ### Why is this uncommented?
+    #createMorphoMlFile(outFileName%'I6') ### Why is this uncommented? if you replaced it, why not remove this line?
     print('\tFinish')
