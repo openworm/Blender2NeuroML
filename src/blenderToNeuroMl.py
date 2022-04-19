@@ -24,11 +24,11 @@ scriptPath = os.path.dirname(os.path.realpath(__file__))
 print("scriptPath %s" % scriptPath)
 
 #import main modules
-import sys
+import sys ###should we remove the 3 modules that aren't being used?
 import os 
-import pprint 
+import pprint ###
 import zipfile 
-import mathutils
+import mathutils ###
 import xml.parsers.expat
 import xml.dom.minidom
 import bpy #bpy is the Blender Python Module that is necessary for Blender functionality
