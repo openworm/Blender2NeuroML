@@ -19,9 +19,7 @@ and choose "Append environment to native environment"
 '''
 ### the triple hash indicates that something may be wrong or poorly written in this file
 
-# Load modules in the script's directory
-scriptPath = os.path.dirname(os.path.realpath(__file__))
-print("scriptPath %s" % scriptPath)
+
 
 #import main modules
 import sys ###should we remove the 3 modules that aren't being used?
@@ -32,6 +30,10 @@ import mathutils ###
 import xml.parsers.expat
 import xml.dom.minidom
 import bpy #bpy is the Blender Python Module that is necessary for Blender functionality
+
+# Load modules in the script's directory
+scriptPath = os.path.dirname(os.path.realpath(__file__))
+print("scriptPath %s" % scriptPath)
 
 ###Why are these statements commented out...? Does anyone know how this script actually works?
 #import Blender
