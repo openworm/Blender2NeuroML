@@ -150,11 +150,10 @@ def entity_to_cell(entity, neuronName):
     entity.find_point()
     create_cell(neuronName,entity)
 
-def export2():
+def export2(): ###This function isn't even being used... Why is it here?
     for (neuronName, v) in neuron_dict.items():
         print('start %s' % neuronName)
-        ###what is this next line line even doing...? it seems sketchy to me 
-        ###once the script is working, take this out.
+        ###So we're avoiding certain neurons with this line? I suppose it's too much?
         if neuronName[:7] == 'mu_bod_' or neuronName != 'VA10': # or neuronName in ('M1', 'RMED', 'PVDR', 'PVDL', 'IL1DL', 'IL1DR', 'I5', ):
             continue
         (v_list, f_list) = v
