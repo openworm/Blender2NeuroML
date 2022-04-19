@@ -64,16 +64,6 @@ neuroNameFromOds = []
 neuron_dict = {}
 muscle_dict = {}
 
-log_fd = None
-def write_log(*args):
-    global log_fd
-    if log_fd is None:
-        log_fd = open('blender.log', 'w')
-    for (count, s) in enumerate(args):
-        log_fd.write(str(s) + ' ')
-    log_fd.write('\n')
-    log_fd.flush()
-
 def getNeuronsNameFromOdsFile(fileName):
     '''
     Read data from Ods file 
@@ -91,9 +81,9 @@ def getNeuronsNameFromOdsFile(fileName):
         if len(neuroNameFromOds) != 302:
             raise Exception("file %s doesn't contains all neurons name"%fileName)
     except IOError as ex:
-        write_log(ex)
+        print(ex)
     except Exception as ex:
-        write_log(ex)
+        print(ex)
 
 def loadNeuronsName(fileName):
     '''
@@ -127,10 +117,10 @@ def export(theObjects, neuronName):
                     if ( neuroNameFromOds.__contains__(object.name)
                         or object.name[:7] == 'mu_bod_'):
                         #and object.name == "PVDR"):# or object.name == "URBL"):#object.getData().materials[0].name != "Motor Neuron"
-                        write_log(object.name)
-                        write_log("%d vertices, %d faces" % (len(mesh.vertices),
+                        print(object.name)
+                        print("%d vertices, %d faces" % (len(mesh.vertices),
                                                              len(mesh.tessfaces)))
-                        write_log("matrix %s" % object.matrix_world)
+                        print("matrix %s" % object.matrix_world)
                         neuronName = object.name
                         if dump_only:
                             v_list = []
@@ -146,8 +136,8 @@ def export(theObjects, neuronName):
                                     cordArr.append(cordArr[0])
                                 f_list.append(cordArr)
                             neuron_dict[str(neuronName)] = [v_list, f_list]
-                            write_log(neuronName, '=')
-                            write_log(pprint.PrettyPrinter().pformat(mesh))
+                            print(neuronName, '=')
+                            print(pprint.PrettyPrinter().pformat(mesh))
                             continue
                         entity = mesh_to_entity(mesh)
                         entity_to_cell(entity, neuronName)
@@ -157,7 +147,7 @@ def export(theObjects, neuronName):
         #    continue 
         ###Why are we ignoring the exceptions? WHY?!
         ###Do I just need to take the code back to the initial committed version? 
-    write_log(list(badNeurons))
+    print(list(badNeurons))
 
 def mesh_to_entity(mesh):
     entity = Entity()
@@ -167,18 +157,18 @@ def mesh_to_entity(mesh):
     for face in mesh.tessfaces:
         cordArr = []
         for v in face.vertices:
-            write_log('+', v)
+            print('+', v)
             cordArr.append(v)
         if len(cordArr) == 3:
             cordArr.append(cordArr[0])
-        write_log('=', cordArr)
+        print('=', cordArr)
         entity.add_face(cordArr)
     entity.neuronInfo = mesh.materials[0].name
     return entity
 
 def entity_to_cell(entity, neuronName):
     entity.findCenterOfSoma()
-    write_log('found center of soma')
+    print('found center of soma')
     entity.find_point()
     create_cell(neuronName,entity)
 
@@ -354,7 +344,7 @@ if __name__ == '__main__':
         bpy.ops.object.mode_set(mode='OBJECT')
     #loadNeuronsName(fileWithNeuron)
     getNeuronsNameFromOdsFile(odsFileWithNeurons)
-    write_log('Create Neurons')
+    print('Create Neurons')
     if load_from_dump:
         fd = open(dump_filename, 'r')
         neuron_dict = eval(fd.readline())
@@ -371,10 +361,10 @@ if __name__ == '__main__':
             fd.close()
         except (IOError, OSError, TypeError) as msg:
             raise
-    write_log('WriteResult To File')
+    print('WriteResult To File')
     for neuronName in sorted(neuron_dict.keys()):
         if type(neuron_dict[neuronName]) != type([]):
             createMorphoMlFile(outFileName % neuronName, neuron_dict[neuronName])
 
     #createMorphoMlFile(outFileName%'I6') ### Why is this uncommented?
-    write_log('\tFinish')
+    print('\tFinish')
