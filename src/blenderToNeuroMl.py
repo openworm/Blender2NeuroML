@@ -17,22 +17,26 @@ Variable: PYTHONPATH
 Value: ${container_loc} 
 and choose "Append environment to native environment"
 '''
+
+#Why in the world are we loading from dump when we:
+#1. Don't have the dump
+#2. This file's purpose is to create the dump
 load_from_dump = False
 if 1:
     load_from_dump = True
 else:
-    import bpy
+    import bpy #bpy is the Blender Python Module that is included with Blender
 import sys, os, pprint
 
 # Load modules in the script's directory
 scriptPath = os.path.dirname(os.path.realpath(__file__))
 print("scriptPath %s" % scriptPath)
-scriptPath = '/home/pcm/src/BlenderToNeuroMLConverter/src/'
-sys.path.append(scriptPath)
 
+###Why are these statements commented out...? Does anyone know how this script actually works?
 #import Blender
 #from Blender import Object, Mesh, NMesh, Lamp, Draw, BGL, Image, Text, sys, Mathutils
 
+###these import statements are disgusting.
 try:
     from neuroml import Cell as neuroml_Cell
     from neuroml import Segment
@@ -41,8 +45,8 @@ try:
     from neuroml import Morphology
     from neuroml import NeuroMLDocument
     import neuroml.writers as writers
-except ImportError:
-    pass
+except ImportError: ###what is this? why even try import them if you don't need them?
+    pass ###just ignore the errors.. that's good practice. okay... 
 
 from NeuroMlEntity.Cell import Cell
 from Entity.Entity import Entity
@@ -132,7 +136,8 @@ def export(theObjects, neuronName):
         object.select = False
 
         #try:
-        if 1:
+        if 1: ###Why is this here? Either create a var or unindent. 
+            ###I can't believe this got committed to main made it through.
             if object.type == "MESH":
                 mesh = object.data
                 # Create tesselation faces
@@ -169,7 +174,9 @@ def export(theObjects, neuronName):
         #except Exception:
         #    write_log "Error: object named %s has problem with accessing an attribute" % object.name
         #    badNeurons.append(object.name)
-        #    continue
+        #    continue 
+        ###Why are we ignoring the exceptions? WHY?!
+        ###Do I just need to take the code back to the initial committed version? 
     write_log(list(badNeurons))
 
 def mesh_to_entity(mesh):
@@ -389,5 +396,5 @@ if __name__ == '__main__':
         if type(neuron_dict[neuronName]) != type([]):
             createMorphoMlFile(outFileName % neuronName, neuron_dict[neuronName])
 
-    #createMorphoMlFile(outFileName%'I6')
+    #createMorphoMlFile(outFileName%'I6') ### Why is this uncommented?
     write_log('\tFinish')
