@@ -17,68 +17,50 @@ Variable: PYTHONPATH
 Value: ${container_loc} 
 and choose "Append environment to native environment"
 '''
-
-#Why in the world are we loading from dump when we:
-#1. Don't have the dump
-#2. This file's purpose is to create the dump
-load_from_dump = False
-if 1:
-    load_from_dump = True
-else:
-    import bpy #bpy is the Blender Python Module that is included with Blender
-import sys, os, pprint
-
 # Load modules in the script's directory
 scriptPath = os.path.dirname(os.path.realpath(__file__))
 print("scriptPath %s" % scriptPath)
+
+#import main modules
+import sys
+import os 
+import pprint 
+import zipfile 
+import mathutils
+import xml.parsers.expat
+import xml.dom.minidom
+import bpy #bpy is the Blender Python Module that is necessary for Blender functionality
 
 ###Why are these statements commented out...? Does anyone know how this script actually works?
 #import Blender
 #from Blender import Object, Mesh, NMesh, Lamp, Draw, BGL, Image, Text, sys, Mathutils
 
-###these import statements are disgusting.
-try:
-    from neuroml import Cell as neuroml_Cell
-    from neuroml import Segment
-    from neuroml import SegmentParent
-    from neuroml import Point3DWithDiam
-    from neuroml import Morphology
-    from neuroml import NeuroMLDocument
-    import neuroml.writers as writers
-except ImportError: ###what is this? why even try import them if you don't need them?
-    pass ###just ignore the errors.. that's good practice. okay... 
+#import neuroml functions
+from neuroml import Cell as neuroml_Cell
+from neuroml import Segment
+from neuroml import SegmentParent
+from neuroml import Point3DWithDiam
+from neuroml import Morphology
+from neuroml import NeuroMLDocument
+import neuroml.writers as writers
 
+#import local modules
 from NeuroMlEntity.Cell import Cell
 from Entity.Entity import Entity
 from Entity.Vertex import Vertex 
 from NeuroMlEntity.Point import Point
 from NeuroMlEntity.Constants import *
 from NeuroMlParser.NeuroMlWriter import NeuroMlWriter
-import zipfile
-import xml.parsers.expat
-import xml.dom.minidom
 
-
-"""
-this is optional if you wanna debug you should add path with pydev debuger to python path
-"""
-#pathTopyDevDebuger = r"C:\eclips\eclipse\plugins\org.python.pydev.debug_1.5.4.2010011921\pysrc"
-#sys.path.append(pathTopyDevDebuger)
-# 
-#import pydevd
-
+#declare globals
 fileWithNeuron = scriptPath + '/Data/neurons.txt'
 odsFileWithNeurons = scriptPath + '/Data/302.ods'
-
 neuron = 'ADAL'
 outFileName = 'C.elegans_%s'
 neurons = []
 neurons_name = []
 badNeurons = []
 neuroNameFromOds = []
-
-dump_only = not load_from_dump
-dump_filename = 'blender.dump'
 neuron_dict = {}
 muscle_dict = {}
 
@@ -122,7 +104,6 @@ def loadNeuronsName(fileName):
         s = str(line).strip('\n')
         if not neurons_name.__contains__(s):
             neurons_name.append(s)
-            #neuron_dict[s] = None
 
 def export(theObjects, neuronName):
     '''
@@ -146,7 +127,6 @@ def export(theObjects, neuronName):
                     if ( neuroNameFromOds.__contains__(object.name)
                         or object.name[:7] == 'mu_bod_'):
                         #and object.name == "PVDR"):# or object.name == "URBL"):#object.getData().materials[0].name != "Motor Neuron"
-                        import mathutils
                         write_log(object.name)
                         write_log("%d vertices, %d faces" % (len(mesh.vertices),
                                                              len(mesh.tessfaces)))
