@@ -17,10 +17,12 @@
 
 import bpy
 import mathutils
+import sys
 
 # This is required in order for `import numpy` to succeed on Debian.
-import sys
-sys.path.append("/usr/lib/python3/dist-packages")
+stardard_os = {'win32', 'cygwin', 'darwin'}
+if sys.platform not in stardard_os:
+    sys.path.append("/usr/lib/python3/dist-packages")
 
 import math
 import numpy

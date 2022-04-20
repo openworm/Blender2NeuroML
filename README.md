@@ -51,5 +51,5 @@ To Install 3rd Party Modules to Blender's Internal Python:
 2. Navigate to the Scripting Workspace as described above
 3. In the Interactive Python Console near the bottom left type the following code:
 from pip._internal import main
-main(['install','libneuroml']) 
+main(['install','libneuroml'])
 4. Replace 'libneuroml' with whatever module import error you are getting and repeat
