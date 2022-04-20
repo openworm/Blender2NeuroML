@@ -5,5 +5,4 @@
 #avoid Mac Finder config files
 .DS_Store
 #add your virtual environments here
-py27venv/*
-py310venv/*
+*venv/*
