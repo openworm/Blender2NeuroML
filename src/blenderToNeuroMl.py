@@ -18,22 +18,26 @@ Value: ${container_loc}
 and choose "Append environment to native environment"
 '''
 ### the triple hash indicates that something may be wrong or poorly written in this file
+# Load modules in the script's directory
+import os, sys
 
-
+blendFileDir = os.path.dirname(os.path.realpath(__file__))
+blenderWorkingPath = os.getcwd()
+scriptPath = os.path.abspath(os.path.join(blendFileDir, ".."))
+print("scriptPath %s\nblenderPath %s" % (scriptPath, blenderPath))
+#add scriptPath to Blender's CWD
+#sys.path.insert(0, )
 
 #import main modules
-import sys ###should we remove the 3 modules that aren't being used?
-import os 
-import pprint ###
+import pprint ### not currently being used
 import zipfile 
-import mathutils ###
+import mathutils ### not currently being used
 import xml.parsers.expat
 import xml.dom.minidom
 import bpy #bpy is the Blender Python Module that is necessary for Blender functionality
 
-# Load modules in the script's directory
-scriptPath = os.path.dirname(os.path.realpath(__file__))
-print("scriptPath %s" % scriptPath)
+
+
 
 ###Why are these statements commented out...? Does anyone know how this script actually works?
 #import Blender
@@ -54,7 +58,7 @@ from Entity.Entity import Entity
 from Entity.Vertex import Vertex 
 from NeuroMlEntity.Point import Point
 from NeuroMlEntity.Constants import *
-from NeuroMlParser.NeuroMlWriter import NeuroMlWriter
+from NeuroMlParser.NeuroMlWriter import NeuroMlWriter ### not currently being used
 
 #declare globals
 fileWithNeuron = scriptPath + '/Data/neurons.txt'
