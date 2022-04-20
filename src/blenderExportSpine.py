@@ -20,7 +20,7 @@ import mathutils
 import sys
 
 # This is required in order for `import numpy` to succeed on Debian.
-stardard_os = {'win32', 'cygwin', 'darwin'}
+stardard_os = {'win32', 'cygwin', 'darwin', 'msys'}
 if sys.platform not in stardard_os:
     sys.path.append("/usr/lib/python3/dist-packages")
 

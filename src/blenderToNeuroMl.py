@@ -17,16 +17,28 @@ Variable: PYTHONPATH
 Value: ${container_loc} 
 and choose "Append environment to native environment"
 '''
+"""
+4.19.2022
+
+This script must be ran in Blender itself- instead of as a standalone script.
+The README.md has some instructions.
+The standard version of Blender must be ran as admin while loading the virtualworm.blend file
+or else the script cannot access the other blender modules (at least that's how it is on Windows).
+"""
+
+
 ### the triple hash indicates that something may be wrong or poorly written in this file
 # Load modules in the script's directory
 import os, sys
 
+#Print the three different paths blender uses...
+#Honestly, I wish Blender just allowed natively importing 3rd party modules.
 blendFileDir = os.path.dirname(os.path.realpath(__file__))
 blenderWorkingPath = os.getcwd()
-scriptPath = os.path.abspath(os.path.join(blendFileDir, ".."))
-print("scriptPath %s\nblenderPath %s" % (scriptPath, blenderPath))
-#add scriptPath to Blender's CWD
-#sys.path.insert(0, )
+scriptPath = os.path.abspath(os.path.join(blendFileDir, "..", ".."))
+print("blendFileDir %s\nblenderWorkingPath %s\n scriptPath %s" % (blendFileDir, blenderWorkingPath, scriptPath))
+#add scriptPath to Blender's CWD to allow importing of BLENDER2NEUROML/src modules in Blender 
+sys.path.insert(0, scriptPath)
 
 #import main modules
 import pprint ### not currently being used
