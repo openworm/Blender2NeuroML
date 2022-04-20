@@ -21,8 +21,7 @@ import numpy
 import sys
 
 # This is required in order for `import numpy` to succeed on Debian.
-stardard_os = {'win32', 'cygwin', 'darwin', 'msys'} #I hope this doesn't start an OS war.
-if sys.platform not in stardard_os:
+if sys.platform == "linux" or sys.platform == "linux2":
     sys.path.append("/usr/lib/python3/dist-packages")
 
 

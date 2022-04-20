@@ -132,7 +132,7 @@ def export(theObjects, neuronName):
                 # Create tesselation faces
                 mesh.calc_tessface()
                 if len(mesh.materials) > 1:
-                    if ( neuroNameFromOds.__contains__(object.name)
+                    if ( neuroNameFromOds.__contains__(object.name) ###Do we really need a nested triple 'if'?
                         or object.name[:7] == 'mu_bod_'):
                         #and object.name == "PVDR"):# or object.name == "URBL"):#object.getData().materials[0].name != "Motor Neuron"
                         print(object.name)
@@ -171,7 +171,7 @@ def entity_to_cell(entity, neuronName):
 def export2(): ###This function isn't even being used... Why is it here?
     for (neuronName, v) in neuron_dict.items():
         print('start %s' % neuronName)
-        ###So we're avoiding certain neurons with this line? I suppose it's too much?
+        ###So we're avoiding certain neurons with this line? I suppose the script can't convert them?
         if neuronName[:7] == 'mu_bod_' or neuronName != 'VA10': # or neuronName in ('M1', 'RMED', 'PVDR', 'PVDL', 'IL1DL', 'IL1DR', 'I5', ):
             continue
         (v_list, f_list) = v
