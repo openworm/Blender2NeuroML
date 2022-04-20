@@ -4,5 +4,5 @@
 *.bak
 #avoid Mac Finder config files
 .DS_Store
-#add your virtual environments here
+#avoid all venv folders
 *venv/*
