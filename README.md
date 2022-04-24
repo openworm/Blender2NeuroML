@@ -61,6 +61,8 @@ Editing a script:
 It can be kind of annoying. If you edit a script, in your IDE and save, Blender will not autoupdate the script.
 Even clicking reloading the script via (under the "text editor" window in Blender) the "text" tab, will not properly reload.
 I have to reopen the same script to get it to reload. (Hotkey: Alt+O)
+If you edit a dependency/module of the main script you're loading, then even reopening the script won't work.
+You need to completely close and reopen Blender for it to update. (If you find a workaround, delete this and write it.)
 
 Crashing:
 Sometimes it will just crash. 
