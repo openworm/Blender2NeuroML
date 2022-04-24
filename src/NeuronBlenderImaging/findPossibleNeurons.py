@@ -1,4 +1,3 @@
-#import difflib
 #To debug, run in your ide of choice as main. 
 #Because f-strings are the best string formatting (fight me) you should be running python 3.6 or above
 import openpyxl
@@ -37,6 +36,7 @@ def find_closest_unfound(all_blender_objs, debug=False):
     #This loose matching method isn't necessary if we just remove the two "*"" from the 302.xlsx file.... 
     #We find them all now. 
     #then we find the ones that sort of match in order to get more neurons from the virtual worm
+    #import difflib
     # for neuron in official_neurons:
     #     match = difflib.get_close_matches(neuron, all_blender_objs, n=1, cutoff=.8)
     #     if len(match) > 0:
@@ -54,11 +54,9 @@ def find_closest_unfound(all_blender_objs, debug=False):
         for match, neuron in matches.items():
             if neuron != match:
                 print(f"Is this a correct match? -- {neuron} : {match}")
-    print("matches: %s "% matches )
     return matches
 
 def find(all_blender_objs):
-    print("all blender objects: %s" % all_blender_objs)
     # official_neurons = read_files()
     matches = find_closest_unfound(all_blender_objs)
     return matches

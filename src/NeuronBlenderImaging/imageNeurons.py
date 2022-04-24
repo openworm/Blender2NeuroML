@@ -36,7 +36,13 @@ def read_neurons():
     for obj in bpy.data.objects:
         blender_objects.append(obj.name) #make a list of all blender objects
     blender_neurons = fpn.find(blender_objects) #find known neurons with the findPossibleNeurons.py script
-    return blender_neurons.keys()
+    neuron_objs = blender_neurons.keys()
+    print("Found %s neurons objects in Blender" % len(neuron_objs))
+    if len(neuron_objs) == 302:
+        print(neuron_objs)
+        return neuron_objs
+    else:
+        raise ValueError("Neuron list is incomplete.")
 
 def snapshot_neurons(blender_neurons):
     """selects valid neuron objects one by one
@@ -45,8 +51,11 @@ def snapshot_neurons(blender_neurons):
 
 
     for neuron_name in blender_neurons:
+        pass
+
+
         # #so ops will work, I'll set the context to the 3d viewport window in blender
-        view_layer = bpy.context.view_layer
+        # view_layer = bpy.context.view_layer
         #unhide all
         # print("unhiding all objects")
         # bpy.ops.object.hide_view_clear()
@@ -54,15 +63,15 @@ def snapshot_neurons(blender_neurons):
         # print("deselect all objects")
         # bpy.ops.object.select_all(action='DESELECT')
         #select object
-        print("selecting neuron named: %s" %neuron_name)
-        obj = bpy.context.scene.objects[neuron_name]
-        view_layer.objects.active = obj
-        # #hide all objs but selected
-        print("hiding all objects but %s" %neuron_name)
-        bpy.ops.obj.hide_videw_set(unselected=True)
-        # #center camera on object
-        print("centering camera on %s" %neuron_name)
-        bpy.ops.view3d.camera_to_view_selected() #possibly depriciated
+        # print("selecting neuron named: %s" %neuron_name)
+        # obj = bpy.context.scene.objects[neuron_name]
+
+        # # #hide all objs but selected
+        # print("hiding all objects but %s" %neuron_name)
+        # bpy.ops.obj.hide_videw_set(unselected=True)
+        # # #center camera on object
+        # print("centering camera on %s" %neuron_name)
+        # bpy.ops.view3d.camera_to_view_selected() #possibly depriciated
 
 
 
