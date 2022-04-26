@@ -59,9 +59,11 @@ def install_4macos():
 
 
 def main():
+    #sys.platform names for various os's
     win_systems = ["win32", "cygwin", "msys"]
     macos_systems = ["darwin", "os2", "os2emx"]
     linux_systems = ["linux", "linux2"]
+
     if sys.platform in win_systems:
         install_4win()
     elif sys.platform in linux_systems:
