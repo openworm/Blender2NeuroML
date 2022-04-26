@@ -59,10 +59,13 @@ main(['install','libneuroml'])
 TIPS ABOUT RUNNING SCRIPTS IN BLENDER(3.0.1?):
 Editing a script:
 It can be kind of annoying. If you edit a script, in your IDE and save, Blender will not autoupdate the script.
-Even clicking reloading the script via (under the "text editor" window in Blender) the "text" tab, will not properly reload.
-I have to reopen the same script to get it to reload. (Hotkey: Alt+O)
+Reload the script by clicking the "Text" tab (on the "Text Editor" workspace) and then click reload. (Hotkey: ALT+R) 
 If you edit a dependency/module of the main script you're loading, then even reopening the script won't work.
 You need to completely close and reopen Blender for it to update. (If you find a workaround, delete this and write it.)
+
+Making scripting less annoying:
+You can install a fake bpy module to make it so your linter (I use VScode) recognizes your bpy module.
+To install this module just call "pip install fake-bpy-module-2.82" 
 
 Crashing:
 Sometimes it will just crash. 
