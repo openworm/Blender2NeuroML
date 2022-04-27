@@ -16,15 +16,14 @@ How to use it:
 #I trust you can follow my windows pleb example and run the commands for your own OS
 
 
-#here are the dependencies that are required to run all of the scripts. 
-dependencies = ["numpy", "pandas", "pyinput", "libneuroml", "xlrd", "matplotlib"]
-#add any 3rd party dependencies that I missed
+dependencies = ["numpy", "pandas", "pynput", "libneuroml", "xlrd", "matplotlib"]
+#if you get an import error on the 3rd party module, add it to this list
 
 import os
 import sys
 import subprocess
 
-#add NueronBlenderImaging folder to path
+#add NueronBlenderImaging folder to Blender Python path
 blendFileDir = os.path.dirname(os.path.realpath(__file__))
 blenderWorkingPath = os.getcwd()
 scriptPath = os.path.abspath(os.path.join(blendFileDir, "..", "..", "NeuronBlenderImaging"))
@@ -33,7 +32,6 @@ print("""
 blendFileDir %s
 blenderWorkingPath %s
 scriptPath %s\n\n""" % (blendFileDir, blenderWorkingPath, scriptPath))
-#add scriptPath to Blender's CWD to allow install
 sys.path.insert(0, scriptPath)
 
 
