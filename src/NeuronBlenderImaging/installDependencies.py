@@ -16,7 +16,7 @@ How to use it:
 #I trust you can follow my windows pleb example and run the commands for your own OS
 
 
-dependencies = ["numpy", "pandas", "pynput", "libneuroml", "xlrd", "matplotlib"]
+dependencies = ["numpy", "pandas", "libneuroml", "xlrd", "matplotlib"]
 #if you get an import error on the 3rd party module, add it to this list
 
 import os

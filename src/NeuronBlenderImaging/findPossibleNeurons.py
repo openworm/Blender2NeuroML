@@ -3,11 +3,9 @@
 import openpyxl
 import os
 
-def find_xlsx_file():
-    current = os.getcwd()
-
 def read_files(debug=False):
-    xlsx_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), "302.xlsx")
+    #should find the file on all OS's
+    xlsx_path = os.path.join(os.path.dirname(__file__), "..", "Data", "302.xlsx")
     workbook = openpyxl.load_workbook(xlsx_path)
     sheet = workbook["Sheet1"]
     official_neurons = [] 
@@ -18,7 +16,6 @@ def read_files(debug=False):
         with open("blenderFileObjs.txt") as f:
             all_blender_objs = f.read().splitlines()
         return official_neurons, all_blender_objs
-
     return official_neurons
 
 def find_closest_unfound(all_blender_objs, debug=False):
@@ -31,22 +28,6 @@ def find_closest_unfound(all_blender_objs, debug=False):
             if neuron == obj:
                 matches[obj] = neuron
                 all_blender_objs.remove(obj)
-
-
-    #This loose matching method isn't necessary if we just remove the two "*"" from the 302.xlsx file.... 
-    #We find them all now. 
-    #then we find the ones that sort of match in order to get more neurons from the virtual worm
-    #import difflib
-    # for neuron in official_neurons:
-    #     match = difflib.get_close_matches(neuron, all_blender_objs, n=1, cutoff=.8)
-    #     if len(match) > 0:
-    #         matches[match[0]] = neuron
-    #     elif neuron not in matches:
-    #         still_unfound.append(neuron)
-    
-
-
-
     if debug == True:
         #this will show you what neurons it couldn't find
         print(f"\n{matches = }\n\n{still_unfound = }\n\n{len(still_unfound) = }\n\n{len(matches) = }\n")
@@ -64,6 +45,6 @@ def find(all_blender_objs):
 if __name__ == "__main__":
     official_neurons, all_blender_objs = read_files(debug=True)
     matches = find_closest_unfound(all_blender_objs, debug=True)
-    with open("neurons.more.complete.txt", "w") as w:
+    with open("neurons.complete.txt", "w") as w:
         for match in matches:
             w.write(match + "\n")
