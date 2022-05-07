@@ -4,7 +4,7 @@ import openpyxl
 import os
 
 def read_files(debug=False):
-    #should find the file on all OS's
+    #should find the file path on all OS's
     xlsx_path = os.path.join(os.path.dirname(__file__), "..", "Data", "302.xlsx")
     workbook = openpyxl.load_workbook(xlsx_path)
     sheet = workbook["Sheet1"]
