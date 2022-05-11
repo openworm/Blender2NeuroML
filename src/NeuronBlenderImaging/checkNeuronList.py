@@ -1,6 +1,6 @@
 """This script is intended to run in Directly in Blender"""
 
-
+from __future__ import absolute_import
 #we have to add script path to sys.path becuase 
 #blender's cwd is where its special python install is being run
 #there's certainly a better way to do this.
@@ -9,9 +9,8 @@ import sys
 import bpy #blender's module
 
 #add NueronBlenderImaging folder to path
-blendFileDir = os.path.dirname(os.path.realpath(__file__))
+blendFileDir = os.path.dirname(os.path.join(os.path.dirname(__file__)))
 blenderWorkingPath = os.getcwd()
-print(os.getcwd())
 scriptPath = os.path.abspath(os.path.join(blendFileDir, "..", "..", "NeuronBlenderImaging"))
 print("""
 ==============================PATH LOCATIONS==============================
@@ -19,8 +18,11 @@ blendFileDir %s
 blenderWorkingPath %s
 scriptPath %s\n\n""" % (blendFileDir, blenderWorkingPath, scriptPath))
 #add scriptPath to Blender's CWD to allow importing of BLENDER2NEUROML/src modules in Blender 
-sys.path.insert(0, blendFileDir) #adding this path lets us run code via the runExternalScript.py
-sys.path.insert(0, scriptPath)
+#sys.path.insert(0, blendFileDir) #adding this path lets us run code via the runExternalScript.py
+sys.path.insert(0, 'C:\\Users\\tyson\\Documents\\git\\Blender2NeuroML\\NeuronBlenderImaging\\')
+
+print("script path %s" % scriptPath)
+print("sys path %s" % sys.path[:])
 
 #import local modules
 import findPossibleNeurons as fpn
