@@ -1,5 +1,5 @@
-"""Blender's API isn't great for automating repeatative tasks like this. 
-It runs code asyncrously and even when trying to use the queue module,
+"""Blender's API isn't great for automating repetitive tasks like this. 
+It runs code asynchronously and even when trying to use the queue module,
 It just ignored my task ordering. (But maybe you could do it?)
 
 So this is a pyautogui script that simulates key presses on my 1080p display.
