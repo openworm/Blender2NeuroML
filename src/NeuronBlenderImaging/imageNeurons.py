@@ -22,12 +22,18 @@ from time import sleep
 #your own search box.  
 using_2012_worm = False
 search_box_location = (186, 814)
+cuticle_viewport_unhide = (353, 98)
 d = -40 #distance move up
 p = 0.012 #how long to pause between actions (slower for slower comps)
 if using_2012_worm:
     search_box_location = (184, 62)
     d = 250
-    
+
+x_start = 10
+y_start = 10
+ss_width = 500
+ss_height = 500
+screenshot_area = (x_start, y_start, ss_width, ss_height)
 
 #How cool would it be if I could get the program to collect the inputs while the script was running?
 #like: Click on the GUI workspace
@@ -74,9 +80,10 @@ def create_screenshot_folder():
         return
     os.mkdir("NeuronScreenshots")
 
-def select_neuron(neuron="Cuticle"):
+def select_neuron(neuron="AVAR", multi_select=False):
     """select neurons
     search needs to be set to "exact match" """
+
     #click to select search box
     gui.click(search_box_location, duration=p)
     #delete old entry
@@ -87,28 +94,62 @@ def select_neuron(neuron="Cuticle"):
     #move mouse just above search box to allow for search result selection
     gui.moveRel(0, d, duration=p)
     gui.click(duration=p)
-    gui.press("a")
+    if multi_select:
+        gui.hotkey("shift", "a")
+    else:
+        gui.press("a")
     gui.moveRel(0, d*-1, duration=p)
 
+def select_cuticle():
+    #click to select search box
+    gui.click(search_box_location, duration=p)
+    #delete old entry
+    gui.press("backspace") 
+    #type neuron name to find
+    sleep(p)
+    gui.typewrite("Cuticle")
+    #move mouse to click Cuticle view
+    gui.moveTo(cuticle_viewport_unhide, duration=p)
+    gui.click(cuticle_viewport_unhide, duration=p)
+    gui.click(cuticle_viewport_unhide, duration=p)
+
+
 def frame_screenshot():
-    "frames the screenshot"
+    """..."""
+    #move to the left
+    select_cuticle()
+    gui.moveRel(300, 0, duration=p)
+    gui.press("r")
+    sleep(.3)
+    #gui.click(search_box_location, duration=p)
 
-
-def take_screenshot():
+def take_screenshot(neuron, view):
     """"""
+    #make this path work for other os's
+    folder_name = "NeuronScreenshots"
+    filename = f"{neuron}_{view}.png"
+    full_path = os.path.join(folder_name, filename)
+    gui.screenshot(full_path, screenshot_area)
+
 
 def image_neurons(neurons):
     safety_checks()
     create_screenshot_folder()
     select_neuron(neurons[0])
     frame_screenshot()
+    #WE CANNOT SELECT MULTIPLE AT ONCE... SO....
+    #We might have to just make everything transparent- remap the numkey
+    #and finally just take the screenshots..... yikes
+
+    
+    #take_screenshot()
     # for neuron in neurons:
     #     select_neuron(neuron)
 
 def main():
     neurons = read_neuron_file() #get the neurons from the .txt file
-
     image_neurons(neurons)
+    take_screenshot("ADAL", "ortho")
     #find_mouse_location()
 
 
