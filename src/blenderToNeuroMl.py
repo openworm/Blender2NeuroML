@@ -1,11 +1,8 @@
 '''
 Created on 20.07.2011
-
 @author: Sergey Khayrulin
-
 This doesn't run as a standalone script; run it in blender after loading
 the appropriate .blend file
-
 For Run you need do next:
 "Run->External Tools->External Tools..." with the following settings: 
 Main-Tab: 
@@ -17,72 +14,76 @@ Variable: PYTHONPATH
 Value: ${container_loc} 
 and choose "Append environment to native environment"
 '''
-"""
-4.19.2022
+load_from_dump = False
+if 1:
+    load_from_dump = True
+else:
+    import bpy
+import sys, os, pprint
 
-This script must be ran in Blender itself- instead of as a standalone script.
-The README.md has some instructions.
-The standard version of Blender must be ran as admin while loading the virtualworm.blend file
-or else the script cannot access the other blender modules (at least that's how it is on Windows).
-"""
-
-
-### the triple hash indicates that something may be wrong or poorly written in this file
 # Load modules in the script's directory
-import os, sys
+scriptPath = os.path.dirname(os.path.realpath(__file__))
+print("scriptPath %s" % scriptPath)
+scriptPath = '/home/pcm/src/BlenderToNeuroMLConverter/src/'
+sys.path.append(scriptPath)
 
-#Print the three different paths blender uses...
-#Honestly, I wish Blender just allowed natively importing 3rd party modules.
-blendFileDir = os.path.dirname(os.path.realpath(__file__))
-blenderWorkingPath = os.getcwd()
-scriptPath = os.path.abspath(os.path.join(blendFileDir, "..", ".."))
-print("blendFileDir %s\nblenderWorkingPath %s\n scriptPath %s" % (blendFileDir, blenderWorkingPath, scriptPath))
-#add scriptPath to Blender's CWD to allow importing of BLENDER2NEUROML/src modules in Blender 
-sys.path.insert(0, scriptPath)
-
-#import main modules
-import pprint ### not currently being used
-import zipfile 
-import mathutils ### not currently being used
-import xml.parsers.expat
-import xml.dom.minidom
-import bpy #bpy is the Blender Python Module that is necessary for Blender functionality
-
-
-
-
-###Why are these statements commented out...? Does anyone know how this script actually works?
 #import Blender
 #from Blender import Object, Mesh, NMesh, Lamp, Draw, BGL, Image, Text, sys, Mathutils
 
-#import neuroml functions
-from neuroml import Cell as neuroml_Cell
-from neuroml import Segment
-from neuroml import SegmentParent
-from neuroml import Point3DWithDiam
-from neuroml import Morphology
-from neuroml import NeuroMLDocument
-import neuroml.writers as writers
+try:
+    from neuroml import Cell as neuroml_Cell
+    from neuroml import Segment
+    from neuroml import SegmentParent
+    from neuroml import Point3DWithDiam
+    from neuroml import Morphology
+    from neuroml import NeuroMLDocument
+    import neuroml.writers as writers
+except ImportError:
+    pass
 
-#import local modules
 from NeuroMlEntity.Cell import Cell
 from Entity.Entity import Entity
 from Entity.Vertex import Vertex 
 from NeuroMlEntity.Point import Point
 from NeuroMlEntity.Constants import *
-from NeuroMlParser.NeuroMlWriter import NeuroMlWriter ### not currently being used
+from NeuroMlParser.NeuroMlWriter import NeuroMlWriter
+import zipfile
+import xml.parsers.expat
+import xml.dom.minidom
 
-#declare globals
+
+"""
+this is optional if you wanna debug you should add path with pydev debuger to python path
+"""
+#pathTopyDevDebuger = r"C:\eclips\eclipse\plugins\org.python.pydev.debug_1.5.4.2010011921\pysrc"
+#sys.path.append(pathTopyDevDebuger)
+# 
+#import pydevd
+
 fileWithNeuron = scriptPath + '/Data/neurons.txt'
 odsFileWithNeurons = scriptPath + '/Data/302.ods'
+
 neuron = 'ADAL'
 outFileName = 'C.elegans_%s'
 neurons = []
 neurons_name = []
 badNeurons = []
 neuroNameFromOds = []
+
+dump_only = not load_from_dump
+dump_filename = 'blender.dump'
 neuron_dict = {}
 muscle_dict = {}
+
+log_fd = None
+def write_log(*args):
+    global log_fd
+    if log_fd is None:
+        log_fd = open('blender.log', 'w')
+    for (count, s) in enumerate(args):
+        log_fd.write(str(s) + ' ')
+    log_fd.write('\n')
+    log_fd.flush()
 
 def getNeuronsNameFromOdsFile(fileName):
     '''
@@ -101,9 +102,9 @@ def getNeuronsNameFromOdsFile(fileName):
         if len(neuroNameFromOds) != 302:
             raise Exception("file %s doesn't contains all neurons name"%fileName)
     except IOError as ex:
-        print(ex)
+        write_log(ex)
     except Exception as ex:
-        print(ex)
+        write_log(ex)
 
 def loadNeuronsName(fileName):
     '''
@@ -114,6 +115,7 @@ def loadNeuronsName(fileName):
         s = str(line).strip('\n')
         if not neurons_name.__contains__(s):
             neurons_name.append(s)
+            #neuron_dict[s] = None
 
 def export(theObjects, neuronName):
     '''
@@ -126,24 +128,46 @@ def export(theObjects, neuronName):
         bpy.ops.object.transform_apply(scale=True, rotation=True)
         object.select = False
 
-        try:
+        #try:
+        if 1:
             if object.type == "MESH":
                 mesh = object.data
                 # Create tesselation faces
                 mesh.calc_tessface()
                 if len(mesh.materials) > 1:
-                    if ( neuroNameFromOds.__contains__(object.name) ###Do we really need a nested triple 'if'?
+                    if ( neuroNameFromOds.__contains__(object.name)
                         or object.name[:7] == 'mu_bod_'):
                         #and object.name == "PVDR"):# or object.name == "URBL"):#object.getData().materials[0].name != "Motor Neuron"
-                        print(object.name)
-                        print("%d vertices, %d faces" % (len(mesh.vertices),
-                                                                len(mesh.tessfaces)))
-                        print("matrix %s" % object.matrix_world)
-        except Exception:
-           print("Error: object named %s has problem with accessing an attribute" % object.name)
-           badNeurons.append(object.name)
-           continue 
-    print("Bad Neurons: %s" % list(badNeurons))
+                        import mathutils
+                        write_log(object.name)
+                        write_log("%d vertices, %d faces" % (len(mesh.vertices),
+                                                             len(mesh.tessfaces)))
+                        write_log("matrix %s" % object.matrix_world)
+                        neuronName = object.name
+                        if dump_only:
+                            v_list = []
+                            f_list = []
+                            for vertex in mesh.vertices:
+                                v = vertex.co
+                                v_list.append([v[0], v[1], v[2]])
+                            for face in mesh.tessfaces:
+                                cordArr = []
+                                for v in face.vertices:
+                                    cordArr.append(v)
+                                if len(cordArr) == 3:
+                                    cordArr.append(cordArr[0])
+                                f_list.append(cordArr)
+                            neuron_dict[str(neuronName)] = [v_list, f_list]
+                            write_log(neuronName, '=')
+                            write_log(pprint.PrettyPrinter().pformat(mesh))
+                            continue
+                        entity = mesh_to_entity(mesh)
+                        entity_to_cell(entity, neuronName)
+        #except Exception:
+        #    write_log "Error: object named %s has problem with accessing an attribute" % object.name
+        #    badNeurons.append(object.name)
+        #    continue
+    write_log(list(badNeurons))
 
 def mesh_to_entity(mesh):
     entity = Entity()
@@ -153,25 +177,24 @@ def mesh_to_entity(mesh):
     for face in mesh.tessfaces:
         cordArr = []
         for v in face.vertices:
-            print('+', v)
+            write_log('+', v)
             cordArr.append(v)
         if len(cordArr) == 3:
             cordArr.append(cordArr[0])
-        print('=', cordArr)
+        write_log('=', cordArr)
         entity.add_face(cordArr)
     entity.neuronInfo = mesh.materials[0].name
     return entity
 
 def entity_to_cell(entity, neuronName):
     entity.findCenterOfSoma()
-    print('found center of soma')
+    write_log('found center of soma')
     entity.find_point()
     create_cell(neuronName,entity)
 
-def export2(): ###This function isn't even being used... Why is it here?
+def export2():
     for (neuronName, v) in neuron_dict.items():
         print('start %s' % neuronName)
-        ###So we're avoiding certain neurons with this line? I suppose the script can't convert them?
         if neuronName[:7] == 'mu_bod_' or neuronName != 'VA10': # or neuronName in ('M1', 'RMED', 'PVDR', 'PVDL', 'IL1DL', 'IL1DR', 'I5', ):
             continue
         (v_list, f_list) = v
@@ -337,14 +360,31 @@ def createMorphoMlFile(fileName, cell):
     writers.NeuroMLWriter.write(doc, "Output/%s.nml" % fileName)
     
 if __name__ == '__main__':
-    bpy.ops.object.mode_set(mode='OBJECT')
-    #loadNeuronsName(fileWithNeuron) ###why is this commented out? what is this doing here?
+    if not load_from_dump:
+        bpy.ops.object.mode_set(mode='OBJECT')
+    #loadNeuronsName(fileWithNeuron)
     getNeuronsNameFromOdsFile(odsFileWithNeurons)
-    print('Create Neurons')
-    export(bpy.data.objects, '')
-    print('WriteResult To File')
+    write_log('Create Neurons')
+    if load_from_dump:
+        fd = open(dump_filename, 'r')
+        neuron_dict = eval(fd.readline())
+        #write_log(pprint.PrettyPrinter().pformat(neuron_dict))
+        export2()
+        for cell in neurons:
+            neuron_dict[cell.name] = cell
+    else:
+        export(bpy.data.objects, '')
+    if dump_only:
+        try:
+            fd = open(dump_filename, 'w')
+            fd.write(str(neuron_dict))
+            fd.close()
+        except (IOError, OSError, TypeError) as msg:
+            raise
+    write_log('WriteResult To File')
     for neuronName in sorted(neuron_dict.keys()):
         if type(neuron_dict[neuronName]) != type([]):
             createMorphoMlFile(outFileName % neuronName, neuron_dict[neuronName])
-    #createMorphoMlFile(outFileName%'I6') ### Why is this uncommented? if you replaced it, why not remove this line?
-    print('\tFinish')
+
+    #createMorphoMlFile(outFileName%'I6')
+    write_log('\tFinish')
