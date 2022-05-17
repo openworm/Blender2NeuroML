@@ -35,7 +35,7 @@ If you have any problem will be glad to help
 write s.khayrulin@gmail.com or openworm-discuss@googlegroups.com
 
 
-For some scripts (which?) you need to run them in the Blender Scripting console.
+For some scripts (like blenderToNeuroMl.py) you need to run them in the Blender Scripting console.
 
 To Run Python Scripts in the Blender Console:
 1. Install Blender
