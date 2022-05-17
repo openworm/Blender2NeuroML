@@ -14,7 +14,7 @@ HOW TO USE?
 2. Click on the GUI workspace tab
 3. Comment out image_neurons() and uncomment the find_mouse_location() function in main()
 4. Enter in machine specific info
-5. Run the script as admin
+5. Run the script as admin in your terminal or IDE
  
 ******IMPORTANT******
 IF AN ERROR OCCURS:
