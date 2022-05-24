@@ -17,13 +17,13 @@
 
 import bpy
 import mathutils
+import numpy
+import sys
 
 # This is required in order for `import numpy` to succeed on Debian.
-import sys
-sys.path.append("/usr/lib/python3/dist-packages")
+if sys.platform == "linux" or sys.platform == "linux2":
+    sys.path.append("/usr/lib/python3/dist-packages")
 
-import math
-import numpy
 
 def bezier_poly(p, t):
     """

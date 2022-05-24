@@ -33,3 +33,48 @@ In the [src folder](src) there are two Python files which can be run in the cons
 
 If you have any problem will be glad to help
 write s.khayrulin@gmail.com or openworm-discuss@googlegroups.com
+
+
+For some scripts (like blenderToNeuroMl.py) you need to run them in the Blender Scripting console.
+
+To Run Python Scripts in the Blender Console:
+1. Install Blender
+2. Click on the Scripting Workspace Tab near the top right/middle
+3. Under the text editor, click the folder icon that says "Open"
+4. Navigate to your Python Script
+5. Push the play button to run the script
+There likely will be errors. 
+To view the Blender console click on "Window" near the top left and click "Toggle System Console"
+For 3rd party module import errors, remember that Blender uses its own install of Python-
+You will need to get Blender to install those modules to its own internal Python.
+
+To Install 3rd Party Modules to Blender's Internal Python:
+1. Follow the above instructions and open the installDependencies.py in Blender
+2. Run the script. (Blender needs to be open as admin (at least on Windows))
+3. Go for a walk. It might take a bit.
+
+TIPS ABOUT RUNNING SCRIPTS IN BLENDER(3.0.1):
+Editing a script:
+It can be kind of annoying. If you edit a script, in your IDE and save, Blender will not autoupdate the script.
+Reload the script by clicking the "Text" tab (on the "Text Editor" workspace) and then click reload. (Hotkey: ALT+R) 
+If you edit a dependency/module of the main script you're loading, then even reopening the script won't work.
+You need to completely close and reopen Blender for it to update. (If you find a workaround, delete this and write it.)
+
+Making scripting less annoying:
+You can install a fake bpy module to make it so your linter (I use VScode) recognizes your bpy module.
+To install this module just call "pip install fake-bpy-module-2.82" 
+
+Crashing:
+Sometimes it will just crash. 
+My most frequent cause of crashing is Blender's internal version of Python reaching for things on the OS (Windows)
+that it doesn't have permission to. 
+That is why I reccomend opening Blender as admin ('shift + rightclick' the program). 
+I know it's not the best practice, but it's either that or you have to copy 
+all of your scripts into the correct folder of the Blender install. 
+(Even if you did do that, the default install location for Blender on Windows is not on the User's folder. 
+So you need admin permissions to use the OS or SYS modules or edit files there anyways.
+[The whole point of the conversion scripts is to edit files.]
+It's a mess. So, if you really care about security on Windows, just run Blender portably or 
+reinstall Blender in the User's folder... 
+It's almost like Blender wasn't designed for our use case... 
+But then again, if you find a better way to do this, delete my bad advice please.)
