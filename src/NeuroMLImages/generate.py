@@ -4,7 +4,7 @@ import shutil
 
 
 
-all_cells = ['ADAL','RIFL','IL1DR']
+all_cells = ['ADAL','RIFL','IL1DR','SMBVR','PVCR']
 #all_cells = ['AIZL']
 
 info = '## Blender and NeuroML images\n\n'
@@ -28,8 +28,8 @@ for cell in all_cells:
     info2 += '### %s\n'%cell
 
     info2 += '<table border="0">\n'
-    info2 += '   <tr><td>Image generated from NeuroML file <a href="../Output/C.Elegans_%s.nml">C.Elegans_%s.nml</a></td>\n'%(cell,cell)
-    info2 += '   <td>Image generated from Blender</td></tr>\n'
+    info2 += '   <tr><td>Images generated from NeuroML file <a href="../Output/C.Elegans_%s.nml">C.Elegans_%s.nml</a></td>\n'%(cell,cell)
+    info2 += '   <td>Images generated from Blender</td></tr>\n'
     info2 += '   <tr><td><img src="C.Elegans_%s.svg" alt="%s" height="600"></td>\n'%(cell,cell)
     info2 += '   <td><img src="../NeuronBlenderImaging/NeuronScreenshots/%s_side.png" alt="%s" height="200">\n\n'%(cell,cell)
     info2 += '   <img src="../NeuronBlenderImaging/NeuronScreenshots/%s_front.png" alt="%s" height="200">\n\n'%(cell,cell)
