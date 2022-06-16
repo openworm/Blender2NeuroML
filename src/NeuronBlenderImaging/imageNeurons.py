@@ -44,6 +44,7 @@ cuticle_viewport_unhide = (353, 98) #the exact location of the hide/unhide eyeba
 view_port_top_edge = (468, 102) #the top left edge of the 3D viewport (you just don't want to click on an object, but you shouldn't have to worry because it zooms out to avoid that)
 d = -40 #distance move up from the outliner search to click on the non-search outliner portion to allow the "a" command to select all
 p = 0.012 #how long to pause between actions (slower for slower comps)
+p = 0.02
 if using_2012_worm:
     search_box_location = (184, 62)
     d = 250 #this is below in the 2012 file while the 2011 is above
@@ -53,6 +54,7 @@ if using_2012_worm:
 x_start = 465 
 y_start = 52
 ss_width = 1358
+ss_width = 1430
 ss_height = 947
 screenshot_area = (x_start, y_start, ss_width, ss_height)
 
@@ -173,7 +175,7 @@ def image_neurons(neurons):
 
     for neuron in neurons[:]: #if you get some bad neurons, you can specify the range here based on the 302.xlsx file
         select_neuron(neuron)
-        unhide_cuticle()
+        #unhide_cuticle()
         frame_screenshot()
         take_screenshot(neuron, "front")
         take_screenshot(neuron, "side")
