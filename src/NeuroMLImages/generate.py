@@ -22,6 +22,18 @@ for cell in all_cells:
     print('Moving %s to %s'%(orig_swc_file, swc_file))
     shutil.move(orig_swc_file, swc_file)
 
+    from pyneuroml.plot.PlotMorphology import plot_2D
+
+    planes = ['xy','yz', 'zx']
+    for plane in planes:
+
+        p2d_file = nml_file.replace('.nml','.%s.png'%plane).replace('../Output/', './')
+        plot_2D(nml_file,
+                plane2d  = plane,
+                min_width = 0,
+                verbose= False,
+                nogui = True,
+                save_to_file=p2d_file)
 
     info += ' [%s](#%s) '%(cell,cell.lower())
 
@@ -29,11 +41,19 @@ for cell in all_cells:
 
     info2 += '<table border="0">\n'
     info2 += '   <tr><td>Images generated from NeuroML file <a href="../Output/C.Elegans_%s.nml">C.Elegans_%s.nml</a></td>\n'%(cell,cell)
-    info2 += '   <td>Images generated from Blender</td></tr>\n'
-    info2 += '   <tr><td><img src="C.Elegans_%s.svg" alt="%s" height="600"></td>\n'%(cell,cell)
-    info2 += '   <td><img src="../NeuronBlenderImaging/NeuronScreenshots/%s_side.png" alt="%s" height="200">\n\n'%(cell,cell)
-    info2 += '   <img src="../NeuronBlenderImaging/NeuronScreenshots/%s_front.png" alt="%s" height="200">\n\n'%(cell,cell)
-    info2 += '   <img src="../NeuronBlenderImaging/NeuronScreenshots/%s_top.png" alt="%s" height="200"></td></tr>\n\n'%(cell,cell)
+    #info2 += '   <td>Images generated from NeuroML file <a href="../Output/C.Elegans_%s.nml">C.Elegans_%s.nml</a></td>\n'%(cell,cell)
+    info2 += '   <td>Images generated from Blender</td></tr>\n   <tr>\n'
+    #info2 += '   <td><img src="C.Elegans_%s.svg" alt="%s" height="600"/></td>\n'%(cell,cell)
+
+    info2 += '   <td>\n'
+    for plane in planes:
+        info2 += '      <img src="C.Elegans_%s.%s.png" alt="%s_%s" height="150"/>\n'%(cell,plane, cell, plane)
+
+    info2 += '   </td>\n\n'
+
+    info2 += '   <td><img src="../NeuronBlenderImaging/NeuronScreenshots/%s_side.png" alt="%s" height="200"/>\n'%(cell,cell)
+    info2 += '   <img src="../NeuronBlenderImaging/NeuronScreenshots/%s_front.png" alt="%s" height="200"/>\n'%(cell,cell)
+    info2 += '   <img src="../NeuronBlenderImaging/NeuronScreenshots/%s_top.png" alt="%s" height="200"/></td></tr>\n\n'%(cell,cell)
     info2 += '</table>\n\n'
 
 
