@@ -28,7 +28,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install xlrd numpy
-        pip install libneuroml
+        pip install libneuroml==0.3.1 # Last to support 2.7
         pip install matplotlib
 
 
