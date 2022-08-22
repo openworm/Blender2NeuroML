@@ -4,7 +4,7 @@ import shutil
 
 
 
-all_cells = ['ADAL','RIFL','IL1DR','SMBVR','PVCR']
+all_cells = ['ADAL','AIZL','CEPDR','DVC','IL1DR','RIFL','PVCR','SMBVR','URYDR']
 #all_cells = ['AIZL']
 
 info = '## Blender and NeuroML images\n\n'
