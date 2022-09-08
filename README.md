@@ -3,11 +3,14 @@ Blender2NeuroML
 
 Conversion scripts to convert <i>C. elegans</i> 3D neural models created in Blender into NeuroML format.
 
-<p align="center"><img src="images/Blender_ADAL.png" height="230"/>&nbsp;&nbsp;<img src="images/ADAL.png" height="230"/></p>
-<p align="center"><sup><i>Figure showing images of a single cell (<a href="https://www.wormatlas.org/neurons/Individual%20Neurons/ADAframeset.html">ADAL</a>) taken from the original
-<a href="https://github.com/openworm/Blender2NeuroML/blob/master/src/Data/Virtual_Worm_March_2011.blend">3D Blender file</a> on the left, and the corresponding image of the cell in
-<a href="https://docs.neuroml.org/Userdocs/NeuroMLv2.html">NeuroML 2</a> format on the right. See
-<a href="src/NeuroMLImages/README.md">here</a> for more examples.</i></sup></p>
+<p align="center"><img src="https://github.com/openworm/Blender2NeuroML/raw/master/images/Blender_ADAL.png" height="230"/>&nbsp;&nbsp;
+<img src="https://github.com/openworm/Blender2NeuroML/raw/master/images/ADAL.png" height="230"/></p>
+<p align="center"><sup><i>Figure showing a single cell (<a href="https://www.wormatlas.org/neurons/Individual%20Neurons/ADAframeset.html">ADAL</a>) highlighted in orange in the original
+<a href="https://github.com/openworm/Blender2NeuroML/blob/master/src/Data/Virtual_Worm_March_2011.blend">3D Blender file</a> (from the
+<a href="http://caltech.wormbase.org/virtualworm">Virtual Worm Project</a>) on the left, and corresponding images of the cell on its own in Blender (middle 2 panels) and in
+<a href="https://docs.neuroml.org/Userdocs/NeuroMLv2.html">NeuroML 2</a> format (right 2 panels). The NeuroML version is being used in our
+<a href="https://github.com/openworm/c302">biophysical model of the worm nervous system</a>. See
+<a href="https://github.com/openworm/Blender2NeuroML/blob/master/src/NeuroMLImages/README.md">here</a> for more examples.</i></sup></p>
 
 
 **Update 2022: the scripts below have been rechecked and tested in Python 3**
