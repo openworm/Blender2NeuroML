@@ -3,7 +3,7 @@ Blender2NeuroML
 
 Conversion scripts to convert <i>C. elegans</i> 3D neural models created in Blender into NeuroML format.
 
-<p align="center"><img src="images/ADAL.png" height="400"/></p>
+<p align="center"><img src="images/Blender_ADAL.png" height="230"/>&nbsp;&nbsp;<img src="images/ADAL.png" height="230"/></p>
 <p align="center"><sup><i>Figure showing images of a single cell (<a href="https://www.wormatlas.org/neurons/Individual%20Neurons/ADAframeset.html">ADAL</a>) taken from the original
 <a href="https://github.com/openworm/Blender2NeuroML/blob/master/src/Data/Virtual_Worm_March_2011.blend">3D Blender file</a> on the left, and the corresponding image of the cell in
 <a href="https://docs.neuroml.org/Userdocs/NeuroMLv2.html">NeuroML 2</a> format on the right. See
