@@ -64,9 +64,9 @@ class Slice(list):
 
     def add_adjacent_points(self, maybe_center_ring, adjacentPoints, cluster, done, point_idx1):
         for next_point_idx in adjacentPoints[point_idx1]:
-            if done.has_key(next_point_idx):
+            if next_point_idx in done:
                 continue
-            if maybe_center_ring.has_key(next_point_idx):
+            if next_point_idx in maybe_center_ring:
                 cluster.append(next_point_idx)
                 done[next_point_idx] = True
                 self.add_adjacent_points(maybe_center_ring, adjacentPoints, cluster, done, point_idx1)
@@ -360,7 +360,7 @@ def points_in_close_network(point, network_size, shortest_radii, adjacentPoints,
     done[point] = True
     print("points_in_soma %3d %5.2f %d adj pts" % (point, network_size[point], len(adjacentPoints[point])))
     for p in adjacentPoints[point]:
-        if done.has_key(p) or network_size[p] > 3*shortest_radii:
+        if p in done or network_size[p] > 3*shortest_radii:
             continue
         result += points_in_close_network(p, network_size, shortest_radii, adjacentPoints, done)
     return result

@@ -28,11 +28,11 @@ class Entity(object):
 
     def clean_all(self):
         self.faces.clean_all()
-    
+
     def add_vertex(self, coordinates):
         '''
-        Method add vertex to collection point. It get a 
-        collection of coordinates of point, create point 
+        Method add vertex to collection point. It get a
+        collection of coordinates of point, create point
         and append it to collection of point.
         '''
         try:
@@ -43,11 +43,11 @@ class Entity(object):
         except ParserException as ex:
             print('It should be some incorrect data')
             raise ex
-    
+
     def add_face(self, points_arr):
         '''
-        Method add face to faces collection. It get a sequence 
-        of numbers which means position in point collection.       
+        Method add face to faces collection. It get a sequence
+        of numbers which means position in point collection.
         '''
         try:
             if len(points_arr) < 4:
@@ -60,13 +60,13 @@ class Entity(object):
         except ParserException as ex:
             print('Error:%s'%ex)
             print(points_arr)
-            raise ex 
+            raise ex
 
     def findCenterOfSoma(self, use_method2 = False):
         '''
         Method find start point for work main algorithm
-        first point should be in soma. Soma is the 
-        biggest segment of cell. 
+        first point should be in soma. Soma is the
+        biggest segment of cell.
         '''
         iter = 0
         temp_points = []
@@ -84,7 +84,7 @@ class Entity(object):
         slice = Slice(temp_points,self.faces)
         slices.append(slice)
         while len(slice) != 0:
-            temp_points = list(filter(lambda p: not slice.__contains__(p), temp_points))
+            temp_points = list([p for p in temp_points if not slice.__contains__(p)])
             slice = None
             slice = Slice(temp_points,self.faces)
             if len(slice) != 0:
@@ -111,28 +111,28 @@ class Entity(object):
         if not use_method2:
             point_on_perimeter = self.vertices[perimiter_coll[0][0].point]
         self.start_center_point.diametr = 2 * self.start_center_point.len_between_point(point_on_perimeter)
-        
+
     def getAllBrunches(self):
         '''
         Method return dictionary which contains pair key=>value:
-        key it's name of neurite, value - it's sorted sequence 
-        numbers which means position in resulting_points collection  
-        for instance 'axon' => [1,2,4]        
+        key it's name of neurite, value - it's sorted sequence
+        numbers which means position in resulting_points collection
+        for instance 'axon' => [1,2,4]
         '''
         brunches_temp = {}
         result_coll = {}
         i = 0
         roots = [self.resulting_points.index(p) for p in self.resulting_points \
-                 if p.parentPoint == 0 and self.resulting_points.index(p) != 0] 
+                 if p.parentPoint == 0 and self.resulting_points.index(p) != 0]
         for root in roots:
             brunches_temp[root] = []
             for p in self.resulting_points:
                 parent = p.getRoot(self.resulting_points)
                 if parent == root:
                     brunches_temp[root].append(self.resulting_points.index(p))
-        # the first of these two lines works with python3, the second with python2:
-        #for k1, value in sorted(brunches_temp.iteritems(),key=lambda k,v:(len(v),k),reverse=True): # we try to determine  
-        for k1, value in sorted(brunches_temp.iteritems(),key=lambda (k,v):(len(v),k),reverse=True): # we try to determine  
+
+        # Line below has been updated to work in python 2 and 3 
+        for k1, value in sorted(brunches_temp.items(),key=lambda k_v:(len(k_v[1]),k_v[0]),reverse=True): # we try to determine
             if i == 0:
                 for j in value:
                     self.resulting_points[j].isAxon = True
@@ -152,7 +152,7 @@ class Entity(object):
     def create_slice(self, coll, allow_checked = False):
         if self.use_alt_slice():
             if not allow_checked:
-                coll = filter(lambda p: not self.checked_points.__contains__(p.point), coll)
+                coll = [p for p in coll if not self.checked_points.__contains__(p.point)]
             slice = AlternateSlice(coll,self.faces, self.vertices, self.checked_points, self.vertices[self.starting_slice[0].point], None, allow_checked)
         else:
             slice = Slice(coll,self.faces)
@@ -165,9 +165,9 @@ class Entity(object):
             if len(self.starting_slice.extra_dict['adjacentPoints'][slice[p].point]) == 5:
                 return True
         return False
-    
+
     def find_point(self,center_point=Vertex(),iteration=0,
-                   parentPoint=0, isNeurite=False, 
+                   parentPoint=0, isNeurite=False,
                    isBrunchStart=False, _slice=None):
         '''
         Main function find axon dendrite and neurite
@@ -177,7 +177,7 @@ class Entity(object):
         if iteration == 0: center_point = self.start_center_point
         if isNeurite:
             res_point = Result_Point(center_point,parentPoint,2,isBrunchStart)
-            res_point.isNeurite = True 
+            res_point.isNeurite = True
             self.resulting_points.append(res_point)
         elif iteration != 0:
             self.resulting_points.append(Result_Point(center_point,parentPoint,1,isBrunchStart))
@@ -227,11 +227,11 @@ class Entity(object):
                 if self.__more4AdjacentPointCase(adjacentPoints, slice, isBrunchStart,iteration, current_point, center_point):
                     return
             del vector_len[:]
-            vector_len = [HelpPoint(p.point,self.vertices[p.point].len_between_point(center_point)) 
+            vector_len = [HelpPoint(p.point,self.vertices[p.point].len_between_point(center_point))
                           for p in adjacentPoints if not self.checked_points.__contains__(p.point)]
             vector_len = sorted(vector_len,key=lambda p:p.lenght)
         if self.use_alt_slice():
-            vector_len = filter(lambda p: not self.checked_points.__contains__(p.point), vector_len)
+            vector_len = [p for p in vector_len if not self.checked_points.__contains__(p.point)]
             if iteration == 0:
                 adj_dict = self.starting_slice.extra_dict['adjacentPoints']
             else:
@@ -252,16 +252,16 @@ class Entity(object):
         else:
             if isNeurite:
                 res_point = Result_Point(new_center_point,current_point,2,False)
-                res_point.isNeurite = True 
+                res_point.isNeurite = True
                 self.resulting_points.append(res_point)
             elif iteration != 0:
                     self.resulting_points.append(Result_Point(new_center_point,current_point,1,False))
         if iteration == 1:
             self.__checkDendrite(slice, center_point, vector_len,current_point)
-       
+
     def __getCenterPoint(self, slice, minimal = False):
         '''
-        Get center point like center of mass for input collection slice (usually it should be 4 point) 
+        Get center point like center of mass for input collection slice (usually it should be 4 point)
         '''
         x=y=z=0
         n_points = 4
@@ -284,19 +284,19 @@ class Entity(object):
         else:
             print(slice)
         return center_point
-    
+
     def __find_adjacent_vertices(self, num_p1,num_p2):
         '''
         Find for two point adjacent vertices
         '''
         adjacentVertices = []
-        for key,f in self.faces.items():
+        for key,f in list(self.faces.items()):
             if f.order.__contains__(num_p1) and f.order.__contains__(num_p2):
                 for p in f.order:
                     if p != num_p1 and p != num_p2:
                         adjacentVertices.append(p)
         return adjacentVertices
-    
+
     def __find_adjacent_vertices5(self, num_p1):
         '''
         Find for one point adjacent vertices
@@ -315,10 +315,10 @@ class Entity(object):
                         if not near_old_point:
                             adjacentVertices.append(p)
         return adjacentVertices
-    
+
     def __fillUpBrachesCollection(self, adjacentPoints, slice):
         '''
-        Fill branches collection 
+        Fill branches collection
         '''
         branchesCollection = []
         for i in range(4):
@@ -331,24 +331,24 @@ class Entity(object):
                     if (len(s) == 4):
                         if not branchesCollection.__contains__(s):
                             branchesCollection.append(s)
-        
+
         if len(self.create_slice(adjacentPoints)) != 0:
             branchesCollection.append(self.create_slice(adjacentPoints))
         return branchesCollection
 
     def __more4AdjacentPointCase(self, adjacentPoints, slice, isBrunch,iteration, current_point, center_point):
         '''
-        Work when algorithm find more that 4 adjacent points 
+        Work when algorithm find more that 4 adjacent points
         '''
         branchesCollection = self.__fillUpBrachesCollection(adjacentPoints, slice)
         if len(branchesCollection) >= 2 :
             center_points = {}
             thirdBrunchCollection = []
             for branch in branchesCollection:
-                branch_center_point = self.__getCenterPoint(branch) 
+                branch_center_point = self.__getCenterPoint(branch)
                 center_points[branch_center_point] = branch
-            print("%d center_points" % (len(center_points.keys())))
-            for branch_center_point,branch in center_points.items():
+            print("%d center_points" % (len(list(center_points.keys()))))
+            for branch_center_point,branch in list(center_points.items()):
                 old_num_r_points = len(self.resulting_points)
                 print("start branch %d %d %d %d size %d %3d resulting_points"
                       % (branch[0].point, branch[1].point, branch[2].point, branch[3].point, len(branch), len(self.resulting_points)))
@@ -358,7 +358,7 @@ class Entity(object):
                     del self.resulting_points[-1]
                     print("undo branches of length 1")
                 if len(adjacentPoints) > 6:
-                    thirdBrunchCollection.extend(branch) 
+                    thirdBrunchCollection.extend(branch)
             thirdBrunchPoints = [HelpPoint(p.point,self.vertices[p.point].len_between_point(center_point)) \
                        for p in thirdBrunchCollection if not slice.__contains__(p)]
             slice_t = self.create_slice(thirdBrunchPoints)
@@ -369,7 +369,7 @@ class Entity(object):
         elif len(branchesCollection) == 0 or (len(branchesCollection) == 1 and not isBrunch):
                 sortedadjacentPoints = sorted(adjacentPoints,key=lambda p:p.lenght)
                 first_slice = self.create_slice(sortedadjacentPoints)
-                second_slice = self.create_slice(filter(lambda p: first_slice.__contains__(p) == False, sortedadjacentPoints))
+                second_slice = self.create_slice([p for p in sortedadjacentPoints if first_slice.__contains__(p) == False])
                 perimeter_1 = first_slice.getPerimetr(self.vertices)
                 perimeter_2 = second_slice.getPerimetr(self.vertices)
                 if perimeter_1 > perimeter_2 and perimeter_2 != 0:
@@ -379,7 +379,7 @@ class Entity(object):
                 elif perimeter_1 < perimeter_2 or perimeter_2 == 0:
                     if perimeter_1 == 0:
                         if len(branchesCollection) == 1:
-                            first_slice = branchesCollection[0] 
+                            first_slice = branchesCollection[0]
                         else:
                             first_slice.getFaceFromColl(adjacentPoints,self.faces)
                         new_center_point = self.__getCenterPoint(first_slice)
@@ -402,7 +402,7 @@ class Entity(object):
             self.find_point(new_center_point,iteration, parentPoint=current_point,isNeurite=True,isBrunchStart=False, _slice=slice)
             return True
         return False
-    
+
     def __checkDendrite(self, slice, center_point, vector_len, current_point):
         '''
         Private Method.
@@ -410,20 +410,20 @@ class Entity(object):
         if it's contain than run find_point for it.
         '''
         iteration = 1
-        vector_len = filter(lambda p: slice.__contains__(p) == False 
-                                and self.checked_points.__contains__(p.point) == False, vector_len)
+        vector_len = [p for p in vector_len if slice.__contains__(p) == False
+                                and self.checked_points.__contains__(p.point) == False]
         vector_len = sorted(vector_len,key=lambda p:p.lenght)
         for i in range(5):
             slice2 = self.create_slice(vector_len)
             if (len(slice2) == 4 and
-                int(slice.getPerimetr(self.vertices) / slice2.getPerimetr(self.vertices)) <= 1 and 
+                int(slice.getPerimetr(self.vertices) / slice2.getPerimetr(self.vertices)) <= 1 and
                 int(slice2.getPerimetr(self.vertices) / slice.getPerimetr(self.vertices)) <= 1):
-                new_center_point = self.__getCenterPoint(slice2) 
+                new_center_point = self.__getCenterPoint(slice2)
                 iteration += 1
                 self.find_point(new_center_point,iteration,parentPoint=current_point,isNeurite=False,isBrunchStart=False, _slice=slice2)
-            vector_len = filter(lambda p: slice2.__contains__(p) == False 
-                                and self.checked_points.__contains__(p.point) == False, vector_len)
-            vector_len = sorted(vector_len, key=lambda p:p.lenght)    
+            vector_len = [p for p in vector_len if slice2.__contains__(p) == False
+                                and self.checked_points.__contains__(p.point) == False]
+            vector_len = sorted(vector_len, key=lambda p:p.lenght)
 
     #
     # check_unused_coordinates might be of some use in checking for

@@ -4,9 +4,9 @@ name: Test Python scripts
 
 on:
   push:
-    branches: [ master, development ]
+    branches: [ master, development,  tyson_changes, test*, python3_update, nml*  ]
   pull_request:
-    branches: [ master, development ]
+    branches: [ master, development,  tyson_changes, test*, python3_update, nml*  ]
 
 jobs:
   build:
@@ -19,20 +19,23 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
+
     - name: Set up Python  ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
         python-version:  ${{ matrix.python-version }}
-        
+
     - name: Install dependencies
       run: |
-        pip install xlrd
-        
-        
+        pip install xlrd numpy
+        pip install libneuroml==0.3.1 # Last to support 2.7
+        pip install matplotlib
+
+
     - name: Test all
       run: |
         cd src
+        ls -a
+        python CheckWrlFile.py
         python WrlToNeuroML.py
         ls -alt
-        

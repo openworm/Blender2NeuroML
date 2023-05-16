@@ -1,0 +1,8 @@
+#avoid compiled python files
+*.pyc
+#avoid 2to3 script backup files
+*.bak
+#avoid Mac Finder config files
+.DS_Store
+#avoid all venv folders
+*venv/*

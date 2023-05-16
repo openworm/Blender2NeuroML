@@ -1,11 +1,8 @@
 '''
 Created on 20.07.2011
-
 @author: Sergey Khayrulin
-
 This doesn't run as a standalone script; run it in blender after loading
 the appropriate .blend file
-
 For Run you need do next:
 "Run->External Tools->External Tools..." with the following settings: 
 Main-Tab: 
@@ -138,7 +135,7 @@ def export(theObjects, neuronName):
                 # Create tesselation faces
                 mesh.calc_tessface()
                 if len(mesh.materials) > 1:
-                    if( neuroNameFromOds.__contains__(object.name)
+                    if ( neuroNameFromOds.__contains__(object.name)
                         or object.name[:7] == 'mu_bod_'):
                         #and object.name == "PVDR"):# or object.name == "URBL"):#object.getData().materials[0].name != "Motor Neuron"
                         import mathutils

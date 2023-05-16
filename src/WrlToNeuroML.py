@@ -3,7 +3,7 @@ Created on 03.06.2011
 
 @author: Sergey Khayrulin
 '''
-
+from __future__ import absolute_import
 import re, sys, os
 
 import numpy
@@ -29,6 +29,11 @@ from neuroml import Connection
 from neuroml import Morphology
 import neuroml.writers as writers
 import neuroml.loaders as loaders
+import matplotlib
+
+#.use('Agg') allows matplotlib to point in the correct location on windows for my WSL env
+#I'm leaving it commented out in case it ruins the standard usecase
+#matplotlib.use('Agg')
 
 wrlFileName = './Data/Virtual_Worm_March_2011.wrl'
 neuronsFileName = './Data/neurons.txt'
@@ -347,7 +352,7 @@ def createMorphoMlFile(fileName, cell):
     Convert to new neuroml structures and write
     '''
 
-    if not muscle_dict.has_key(cell.name):
+    if cell.name not in muscle_dict:
         neuroMlwriter = NeuroMlWriter(fileName, cell.name)
         neuroMlwriter.addCell(cell)
         neuroMlwriter.writeDocumentToFile()

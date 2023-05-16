@@ -48,3 +48,6 @@ class Vertex(object):
         '''
         p = self - point
         return math.sqrt(p.x*p.x + p.y*p.y + p.z*p.z)
+
+    def __hash__(self):
+        return id(self)
